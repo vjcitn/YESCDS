@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   A1_cancer_table: A1_cancer_table.html
   A2_rates: A2_rates.html
-last_built: 2022-04-13T18:16Z
+last_built: 2022-04-14T10:58Z
 urls:
   reference: https://github.com/vjcitn/YESCDS/reference
   article: https://github.com/vjcitn/YESCDS/articles

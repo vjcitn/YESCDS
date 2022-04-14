@@ -15,7 +15,7 @@ output:
     toc: yes
 ---
 
-```{r setup}
+```{r setup,echo=FALSE,results="hide"}
 suppressMessages({
  suppressPackageStartupMessages({
   library(YESCDS)
