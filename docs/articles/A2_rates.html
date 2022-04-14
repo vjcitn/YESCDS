@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">YESCDS</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.2</span>
       </span>
     </div>
 
@@ -54,6 +54,9 @@
     </li>
     <li>
       <a href="../articles/A2_rates.html">A2 Cancer rates for public health assessment</a>
+    </li>
+    <li>
+      <a href="../articles/A3_monitoring.html">A3 Monitoring of cancer by public health institutions</a>
     </li>
   </ul>
 </li>
@@ -90,17 +93,29 @@
 
     
     
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">suppressMessages</a></span><span class="op">(</span><span class="op">{</span>
- <span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">suppressPackageStartupMessages</a></span><span class="op">(</span><span class="op">{</span>
-  <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/vjcitn/YESCDS">YESCDS</a></span><span class="op">)</span>
-  <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/DT" class="external-link">DT</a></span><span class="op">)</span>
-  <span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">vjc_cancer_net</span><span class="op">)</span>
-  <span class="op">}</span><span class="op">)</span>
- <span class="op">}</span><span class="op">)</span></code></pre></div>
 <div class="section level2">
 <h2 id="cancer-rates-and-public-health">Cancer rates and public health<a class="anchor" aria-label="anchor" href="#cancer-rates-and-public-health"></a>
 </h2>
+<p>Motivations for studying cancer at the <em>population level</em> are detailed on a <a href="https://www.cancer.gov/research/areas/public-health" class="external-link">National Cancer Institute web page.</a></p>
+<p>Briefly, cancers contribute to</p>
+<ul>
+<li>years of life lost</li>
+<li>loss of quality of life for patients and families</li>
+<li>lost productivity</li>
+</ul>
+<p>Furthermore, as the population ages, the effects of cancer will be more pronounced as time goes on.</p>
+<p><em>Although cancer affects individual patients and their families in different ways, studying its impact on large populations can provide important information that influences practices, policies, and programs that directly affect the health of millions of people in the United States each year.</em> – from the NCI web page</p>
+<p>This idea of “studying [cancer’s] impact on large populations” brings us immediately to data science and statistics.</p>
+<p>Two terms of epidemiology will be of use to us</p>
+<ul>
+<li>
+<em>prevalence</em>: the proportion of the population currently affected by a disease</li>
+<li>
+<em>incidence</em>: the proportion of the population, in a given time interval, that was disease-free prior to the interval but developed the disease within the interval</li>
+</ul>
+<p>Prevalence expresses the current burden of disease within a population.</p>
+<p>Incidence expresses the rapidity with which a disease grows in a population.</p>
+<p>For a more detailed discussion of these terms, check <a href="https://www.cdc.gov/csels/dsepd/ss1978/lesson3/section2.html#:~:text=Incidence%20refers%20to%20the%20occurrence,cases%20per%20unit%20of%20population." class="external-link">this CDC site</a>.</p>
 <div class="section level3">
 <h3 id="collecting-cancer-data">Collecting cancer data<a class="anchor" aria-label="anchor" href="#collecting-cancer-data"></a>
 </h3>
@@ -153,7 +168,19 @@
 <div class="section level3">
 <h3 id="exercises-1">Exercises<a class="anchor" aria-label="anchor" href="#exercises-1"></a>
 </h3>
-<p>A.2.3</p>
+<p>A.2.3 Which of the following describes observations on pancreatic cancer between 1992 and 2019?</p>
+<ul>
+<li><ol style="list-style-type: lower-alpha">
+<li>the death rate per 100000 population increased by two units,</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: lower-alpha">
+<li>the rate of new pancreatic cancers per 100000 population increased by two units,</li>
+</ol></li>
+<li><ol start="3" style="list-style-type: lower-alpha">
+<li>the rate of new pancreatic cancers per 100000 population remained stable.</li>
+</ol></li>
+</ul>
+<p>A.2.4 True or false: The death rate, and the incidence rate, for cancers of colon and rectum were approximately halved in the interval between 1992 and 2019.</p>
 </div>
 </div>
   </div>
