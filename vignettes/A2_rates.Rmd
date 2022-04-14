@@ -27,6 +27,39 @@ suppressMessages({
 
 # Cancer rates and public health
 
+Motivations for studying cancer at the *population level* are detailed
+on a [National Cancer Institute web page.](https://www.cancer.gov/research/areas/public-health)
+
+Briefly, cancers contribute to
+
+- years of life lost
+- loss of quality of life for patients and families
+- lost productivity
+
+Furthermore, as the population ages, the effects of cancer will be more pronounced as time goes on.
+
+
+*Although cancer affects individual patients and their families in different ways, studying 
+its impact on large populations can provide important information that influences 
+practices, policies, and programs that directly affect the health of millions of people in 
+the United States each year.* -- from the NCI web page
+
+This idea of "studying [cancer's] impact on large populations" brings us immediately to data
+science and statistics.
+
+Two terms of epidemiology will be of use to us
+
+- *prevalence*: the proportion of the population currently affected by a disease
+- *incidence*: the proportion of the population, in a given time interval, that
+was disease-free prior to the interval but developed the disease within the interval
+
+Prevalence expresses the current burden of disease within a population.
+
+Incidence expresses the rapidity with which a disease grows in a population.
+
+For a more detailed discussion of these terms, check [this CDC site](https://www.cdc.gov/csels/dsepd/ss1978/lesson3/section2.html#:~:text=Incidence%20refers%20to%20the%20occurrence,cases%20per%20unit%20of%20population.).
+
+
 ## Collecting cancer data
 
 The role of statistics in our lives has
@@ -84,5 +117,13 @@ For cancer of the colon or rectum we have:
 
 ## Exercises
 
-A.2.3  
+A.2.3 Which of the following describes observations on pancreatic cancer between
+1992 and 2019?  
+
+- a) the death rate per 100000 population increased by two units,
+- b) the rate of new pancreatic cancers per 100000 population increased by two units,
+- c) the rate of new pancreatic cancers per 100000 population remained stable.
+
+A.2.4 True or false: The death rate, and the incidence rate, for cancers of colon
+and rectum were approximately halved in the interval between 1992 and 2019.
 
