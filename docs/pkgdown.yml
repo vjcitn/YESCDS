@@ -5,7 +5,8 @@ articles:
   A1_cancer_table: A1_cancer_table.html
   A2_rates: A2_rates.html
   A3_monitoring: A3_monitoring.html
-last_built: 2022-04-14T20:37Z
+  A4_interactive_tables: A4_interactive_tables.html
+last_built: 2022-04-15T16:47Z
 urls:
   reference: https://github.com/vjcitn/YESCDS/reference
   article: https://github.com/vjcitn/YESCDS/articles
