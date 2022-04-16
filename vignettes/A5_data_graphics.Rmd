@@ -23,6 +23,7 @@ library(tibble)
 library(dplyr)
 library(plotly)
 library(ggplot2)
+library(ggbeeswarm)
 library(DT)
 data(woncan_meta)
 data(woncan)
@@ -42,8 +43,7 @@ various ways and presenting these aggregates in graphical form.
 
 ```{r doit, echo=FALSE}
 make_hist = function(site="Prostate", binwidth=5) {
- tt = littab |> filter(`Cancer Sites` == site) # |> plot_ly(x=~Age.Adjusted.Rate)
- tt = tt[order(tt$Age.Adjusted.Rate),]
+ tt = littab |> filter(`Cancer Sites` == site)
  suppressMessages({
   suppressWarnings({
    gg = ggplot(tt, aes(x=Age.Adjusted.Rate, text=MSA)) + geom_histogram(binwidth=binwidth) + ggtitle(paste("CDC WONDER incidence for ", site, sep=""))
@@ -53,16 +53,29 @@ make_hist = function(site="Prostate", binwidth=5) {
 }
 
 make_boxplot1 = function(site="Prostate", MSA.in="Baton Rouge, LA") {
- tt = littab |> filter(MSA == MSA.in) # |> plot_ly(x=~Age.Adjusted.Rate)
- tt = tt[order(tt$Age.Adjusted.Rate),]
+ tt = littab |> filter(MSA == MSA.in) 
  suppressMessages({
   suppressWarnings({
-   gg = ggplot(tt, aes(x=Age.Adjusted.Rate, text=MSA)) + geom_histogram(binwidth=binwidth) + ggtitle(paste("CDC WONDER incidence for ", site, sep=""))
-   ggplotly(gg)
+   gg = ggplot(tt, aes(y=Age.Adjusted.Rate, text=`Cancer Sites`)) + geom_boxplot() + ggtitle(paste("CDC WONDER incidence for ", site, sep="")) + scale_y_log10()
+  })
+ })
+ gg
+}
+
+make_pair = function(MSA1="Baton Rouge, LA", MSA2="Tucson, AZ", type="boxplot") {
+ tt = littab |> filter(MSA %in% c(MSA1, MSA2)) |> filter(`Cancer Sites` != "All Invasive Cancer Sites Combined")
+ tt = tt |> filter(Age.Adjusted.Rate > 0)
+ suppressMessages({
+  suppressWarnings({
+  if (type == "boxplot")
+   gg = ggplot(tt, aes(y=Age.Adjusted.Rate, text=`Cancer Sites`, group=MSA)) + geom_boxplot(aes(x=MSA, group=MSA)) + ggtitle(paste("CDC WONDER incidence distribution for ", paste(MSA1, MSA2, sep=", "), sep="")) + scale_y_log10() 
+   else gg = ggplot(tt, aes(y=Age.Adjusted.Rate, text=`Cancer Sites`)) + geom_quasirandom(aes(x=MSA)) + ggtitle(paste("CDC WONDER incidence distribution for ", paste(MSA1, MSA2, sep=", "), sep="")) + scale_y_log10() 
+   gg
   })
  })
 }
 ```
+
 
 ## Histograms
  
@@ -104,3 +117,18 @@ MSAs in the US?
 
 A.5.5 Hover over the leftmost block in the display.  What is the MSA with
 lowest value of Female Breast cancer incidence, and what is the reported rate?
+
+## Boxplots for comparisons
+
+We can compare the variations in all cancer rates between MSAs in
+different ways.  A famous approach is called the boxplot.
+
+```{r lk2}
+make_pair()
+```
+
+More detail can be obtained with an approach called "beeswarm" plotting.
+
+```{r lk3}
+ggplotly(make_pair(type="beeswarm"))
+```
