@@ -1,6 +1,6 @@
 ---
 title: "A3 Monitoring of cancer by public health institutions"
-shorttitle: "Cancer rates"
+shorttitle: "Cancer monitoring"
 author: "Vincent J. Carey, stvjc at channing.harvard.edu"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 vignette: >
