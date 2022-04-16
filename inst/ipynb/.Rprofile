@@ -2,6 +2,10 @@ suppressMessages({
  suppressPackageStartupMessages({
   library(YESCDS)
   library(DT)
+  library(tibble)
+  library(dplyr)
+  data(woncan_meta)
+  data(woncan)
   data(vjc_cancer_net)
 })
 })
