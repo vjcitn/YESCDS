@@ -41,73 +41,6 @@ insights that have a different character.  One objective is to develop a
 sense of variation in a quantity of interest, by aggregating data values in
 various ways and presenting these aggregates in graphical form.
 
-```{r doit, echo=FALSE}
-make_hist = function(site="Prostate", binwidth=5, rate_table) {
- stopifnot( all(c("Cancer Sites", "Age.Adjusted.Rate", "MSA") %in% names(rate_table)) )
- tt = rate_table |> filter(`Cancer Sites` == site)
- suppressMessages({
-  suppressWarnings({
-   gg = ggplot(tt, aes(x=Age.Adjusted.Rate, text=MSA)) + geom_histogram(binwidth=binwidth) + ggtitle(paste("CDC WONDER incidence for ", site, sep=""))
-   ggplotly(gg)
-  })
- })
-}
-
-make_boxplot1 = function(site="Prostate", MSA.in="Baton Rouge, LA", rate_table) {
- stopifnot( all(c("Cancer Sites", "Age.Adjusted.Rate", "MSA") %in% names(rate_table)) )
- tt = rate_table |> filter(MSA == MSA.in) 
- suppressMessages({
-  suppressWarnings({
-   gg = ggplot(tt, aes(y=Age.Adjusted.Rate, text=`Cancer Sites`)) + geom_boxplot() + ggtitle(paste("CDC WONDER incidence for ", site, sep="")) + scale_y_log10()
-  })
- })
- gg
-}
-
-make_pair = function(MSA1="Baton Rouge, LA", MSA2="Tucson, AZ", type="boxplot", rate_table) {
- stopifnot( all(c("Cancer Sites", "Age.Adjusted.Rate", "MSA") %in% names(rate_table)) )
- tt = rate_table |> filter(MSA %in% c(MSA1, MSA2)) |> filter(`Cancer Sites` != "All Invasive Cancer Sites Combined")
- tt = tt |> filter(Age.Adjusted.Rate > 0)
- suppressMessages({
-  suppressWarnings({
-  if (type == "boxplot")
-   gg = ggplot(tt, aes(y=Age.Adjusted.Rate, text=`Cancer Sites`, group=MSA)) + geom_boxplot(aes(x=MSA, group=MSA)) + ggtitle(paste("CDC WONDER incidence distribution for ", paste(MSA1, MSA2, sep=", "), sep="")) + scale_y_log10() 
-   else gg = ggplot(tt, aes(y=Age.Adjusted.Rate, text=`Cancer Sites`)) + geom_quasirandom(aes(x=MSA)) + ggtitle(paste("CDC WONDER incidence distribution for ", paste(MSA1, MSA2, sep=", "), sep="")) + scale_y_log10() 
-   gg
-  })
- })
-}
-
-make_comparison = function(MSA1="Baton Rouge, LA", MSA2="Tucson, AZ", logscale=TRUE, type="scatter", rate_table) {
- stopifnot( all(c("Cancer Sites", "Age.Adjusted.Rate", "MSA") %in% names(rate_table)) )
- tt = rate_table |> filter(MSA %in% c(MSA1, MSA2)) |> filter(`Cancer Sites` != "All Invasive Cancer Sites Combined")
- tt = tt |> filter(Age.Adjusted.Rate > 0)
- tt1 = tt |> filter(MSA==MSA1)
- tt2 = tt |> filter(MSA==MSA2)
- si1 = tt1$`Cancer Sites`
- si2 = tt2$`Cancer Sites`
- oksi = intersect(si1,si2)
- tt1 = tt1 |> filter(`Cancer Sites` %in% oksi)
- tt2 = tt2 |> filter(`Cancer Sites` %in% oksi)
- rate.x = tt1$Age.Adjusted.Rate
- names(rate.x) = tt1$`Cancer Sites`
- rate.y = tt2$Age.Adjusted.Rate
- names(rate.y) = tt2$`Cancer Sites`
- rate.y = rate.y[names(rate.x)] # coordinate the two vectors
- newdf = data.frame(MSA1=MSA1, MSA2=MSA2, rate.x=rate.x, rate.y=rate.y, `Cancer Sites`=names(rate.x), check.names=FALSE)
- suppressMessages({
-  suppressWarnings({
-   if (type == "scatter") {
-    gg = ggplot(newdf, aes(y=rate.y, x=rate.x, text=`Cancer Sites`)) + geom_point() + 
-          ggtitle(paste("CDC WONDER incidence (all body sites): ", paste(MSA1, MSA2, sep=", "), sep="")) + 
-          geom_abline(slope=1, intercept=0)
-    if (logscale) gg = gg + scale_y_log10() + scale_x_log10() + xlab(MSA1) + ylab(MSA2)
-    }
-   ggplotly(gg) 
-  })
- })
-}
-```
 
 
 ## Histograms
@@ -122,7 +55,7 @@ We illustrate with the CDC WONDER data on Prostate cancer incidence.
 make_hist(site="Prostate", binwidth=5, rate_table=littab)
 ```
 
-We can change the character of the histogram display by reducing the bin width.
+We can change the visual character of the histogram display by reducing the bin width.
 
 
 ```{r lkhist2, echo=FALSE}
@@ -151,13 +84,11 @@ MSAs in the US?
 A.5.5 Hover over the leftmost block in the display.  What is the MSA with
 lowest value of Female Breast cancer incidence, and what is the reported rate?
 
-## Boxplots for comparisons
+## Using a histogram to compare cancer incidence rates in two areas
 
-We can compare the variations in all cancer rates between MSAs in
-different ways.  A famous approach is called the boxplot.
 
 ```{r lk2, echo=FALSE}
-make_pair(rate_table=littab)
+ggplotly(make_comparison(rate_table=littab, type="ratios"))
 ```
 
 More detail can be obtained with an approach called "beeswarm" plotting.
