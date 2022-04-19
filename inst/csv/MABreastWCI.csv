@@ -1,0 +1,15 @@
+Area,County,Cancer Type,Year,Sex,Age-Adjusted Rate,lci,uci,Case Count,Population
+Massachusetts,Franklin County,Female Breast,2014-2018,Male and Female,112.1,99.3,126.4,317,181356
+Massachusetts,Suffolk County,Female Breast,2014-2018,Male and Female,115.5,110.8,120.4,2327,2041877
+Massachusetts,Berkshire County,Female Breast,2014-2018,Male and Female,119.2,108.7,130.4,578,328982
+Massachusetts,Bristol County,Female Breast,2014-2018,Male and Female,124.8,119.6,130.2,2298,1441276
+Massachusetts,Hampden County,Female Breast,2014-2018,Male and Female,131.1,125.1,137.3,1972,1211539
+Massachusetts,Dukes County,Female Breast,2014-2018,Male and Female,133.2,103.8,169.1,84,44037
+Massachusetts,Worcester County,Female Breast,2014-2018,Male and Female,137.2,132.5,142,3471,2082965
+Massachusetts,Plymouth County,Female Breast,2014-2018,Male and Female,137.4,131.7,143.3,2395,1316919
+Massachusetts,Essex County,Female Breast,2014-2018,Male and Female,139.9,135.1,144.7,3573,2021617
+Massachusetts,Hampshire County,Female Breast,2014-2018,Male and Female,139.9,128.9,151.6,689,429127
+Massachusetts,Middlesex County,Female Breast,2014-2018,Male and Female,142,138.6,145.5,6884,4072897
+Massachusetts,Norfolk County,Female Breast,2014-2018,Male and Female,149.9,144.7,155.2,3421,1812311
+Massachusetts,Barnstable County,Female Breast,2014-2018,Male and Female,155.7,146.8,165,1558,558043
+Massachusetts,Nantucket County,Female Breast,2014-2018,Male and Female,206.7,158.8,265.1,67,27036

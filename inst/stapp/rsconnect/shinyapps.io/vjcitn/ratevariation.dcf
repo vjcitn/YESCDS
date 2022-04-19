@@ -1,0 +1,13 @@
+name: ratevariation
+title: ratevariation
+username:
+account: vjcitn
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5972529
+bundleId: 5745938
+url: https://vjcitn.shinyapps.io/ratevariation/
+when: 1648659612.58705
+lastSyncTime: 1648659612.58706
+asMultiple: FALSE
+asStatic: FALSE

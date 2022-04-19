@@ -7,7 +7,9 @@ articles:
   A3_monitoring: A3_monitoring.html
   A4_interactive_tables: A4_interactive_tables.html
   A5_data_graphics: A5_data_graphics.html
-last_built: 2022-04-18T16:36Z
+  B1_global: B1_global.html
+  B2_table_plus_geo: B2_table_plus_geo.html
+last_built: 2022-04-19T23:35Z
 urls:
   reference: https://github.com/vjcitn/YESCDS/reference
   article: https://github.com/vjcitn/YESCDS/articles

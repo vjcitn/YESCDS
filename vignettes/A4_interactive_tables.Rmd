@@ -34,7 +34,7 @@ littab = woncan |> select(MSA, `Cancer Sites`, Age.Adjusted.Rate) |> as.data.fra
 We have formatted information from the CDC WONDER system so that
 it can be searched and sorted as desired.
 
-```{r lktab1, echo=FALSE}
+```{r lktab1, echo=TRUE}
 datatable(littab)
 ```
 

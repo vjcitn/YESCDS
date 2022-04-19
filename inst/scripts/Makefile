@@ -1,37 +1,19 @@
-#A1_cancer_table.Rmd		MassachusettsCountiesMap.jpg	piecharts.jpg
-#A2_rates.Rmd			SEERlist.jpg			rateOverview.jpg
-#A3_monitoring.Rmd		colon.jpg			statesOverallMap.jpg
+#
+# Makefile for jupyter notebook production for YESCDS
+# assumes contents of $(notebooks) generated from Rmd in ../../vignettes
+# also run make gupdate to get all png or jpg files into ../ipynb folder
+#
 
-all: ../ipynb/A1_cancer_table.ipynb ../ipynb/A2_rates.ipynb ../ipynb/A3_monitoring.ipynb \
-	../ipynb/SEERlist.jpg ../ipynb/piecharts.jpg ../ipynb/rateOverview.jpg ../ipynb/pancreas.jpg  \
-	../ipynb/colon.jpg ../ipynb/colon8GroupIncidence.jpg
+notebooks: A1_cancer_table.ipynb A2_rates.ipynb A3_monitoring.ipynb A4_interactive_tables.ipynb \
+	A5_data_graphics.ipynb B1_global.ipynb B2_table_plus_geo.ipynb
 
-../ipynb/A1_cancer_table.ipynb: ../../vignettes/A1_cancer_table.Rmd
-	R -e 'AnVILPublish::as_workspace("../../vignettes/A1_cancer_table.Rmd", namespace="use-strides", name="A1_cancer_table", update=FALSE)'
-	mv ../../vignettes/A1_cancer_table.ipynb ../ipynb
+%.Rmd :
+	cp ../../vignettes/$@ .
 
-../ipynb/A2_rates.ipynb: ../../vignettes/A2_rates.Rmd
-	R -e 'AnVILPublish::as_workspace("../../vignettes/A2_rates.Rmd", namespace="use-strides", name="A2_rates", update=FALSE)'
-	mv ../../vignettes/A2_rates.ipynb ../ipynb
+%.ipynb : %.Rmd
+	R -e 'AnVILPublish::as_notebook("$<", namespace="use-strides", name="$@", update=FALSE)'
+	cp $@ ../ipynb
 
-../ipynb/A3_monitoring.ipynb: ../../vignettes/A3_monitoring.Rmd
-	R -e 'AnVILPublish::as_workspace("../../vignettes/A3_monitoring.Rmd", namespace="use-strides", name="A3_monitoring", update=FALSE)'
-	mv ../../vignettes/A3_monitoring.ipynb ../ipynb
+gupdate:
+	cp ../../vignettes/*jpg ../../vignettes/*png ../ipynb
 
-../ipynb/SEERlist.jpg: ../../vignettes/SEERlist.jpg
-	cp $< $@ 
-
-../ipynb/piecharts.jpg: ../../vignettes/piecharts.jpg
-	cp $< $@
-
-../ipynb/rateOverview.jpg: ../../vignettes/rateOverview.jpg
-	cp $< $@
-
-../ipynb/pancreas.jpg: ../../vignettes/pancreas.jpg
-	cp $< $@
-
-../ipynb/colon.jpg: ../../vignettes/colon.jpg
-	cp $< $@
-
-../ipynb/colon8GroupIncidence.jpg: ../../vignettes/colon8GroupIncidence.jpg
-	cp $< $@

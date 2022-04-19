@@ -1,0 +1,15 @@
+Area,County,Cancer Type,Year,Sex,Age-Adjusted Rate,lci,uci,Case Count,Population
+Massachusetts,Franklin County,All Types of Cancer,2014-2018,Male and Female,405.8,387.6,424.6,2141,354002
+Massachusetts,Hampshire County,All Types of Cancer,2014-2018,Male and Female,411.6,398.2,425.4,3939,805247
+Massachusetts,Suffolk County,All Types of Cancer,2014-2018,Male and Female,422.6,415.9,429.4,15991,3952750
+Massachusetts,Hampden County,All Types of Cancer,2014-2018,Male and Female,433.5,425.6,441.4,12446,2342439
+Massachusetts,Middlesex County,All Types of Cancer,2014-2018,Male and Female,440.6,436.2,444.9,40720,7967502
+Massachusetts,Berkshire County,All Types of Cancer,2014-2018,Male and Female,444.6,430.6,458.9,4368,636035
+Massachusetts,Essex County,All Types of Cancer,2014-2018,Male and Female,463.9,457.7,470.2,22662,3901001
+Massachusetts,Bristol County,All Types of Cancer,2014-2018,Male and Female,467.9,460.6,475.3,16477,2795056
+Massachusetts,Norfolk County,All Types of Cancer,2014-2018,Male and Female,472.7,466.1,479.4,20656,3487649
+Massachusetts,Worcester County,All Types of Cancer,2014-2018,Male and Female,474.9,468.6,481.2,23331,4108766
+Massachusetts,Plymouth County,All Types of Cancer,2014-2018,Male and Female,489.8,482,497.6,16411,2561824
+Massachusetts,Barnstable County,All Types of Cancer,2014-2018,Male and Female,490.9,480,502,9773,1068777
+Massachusetts,Dukes County,All Types of Cancer,2014-2018,Male and Female,505.4,465,548.8,664,86526
+Massachusetts,Nantucket County,All Types of Cancer,2014-2018,Male and Female,554.3,497,616.7,358,55282

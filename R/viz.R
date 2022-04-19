@@ -2,7 +2,7 @@
 #' make an interactive histogram for a given cancer site, based on a rate table 
 #' @param site character(1) element of column 'Cancer Sites' that must be present in `rate_table`
 #' @param binwidth numeric(1) passed to `ggplot2::geom_histogram`
-#' @param rate.table data.frame like `woncan` in YESCDS or BiocYES
+#' @param rate_table data.frame like `woncan` in YESCDS or BiocYES
 #' @examples
 #' data(woncan)
 #' make_hist(rate_table=woncan)
@@ -33,7 +33,7 @@ make_boxplot1 = function(site="Prostate", MSA.in="Baton Rouge, LA", rate_table) 
 #' @param MSA1 character(1) element of column 'MSA' that must be present in `rate_table`
 #' @param MSA2 character(1) element of column 'MSA' that must be present in `rate_table`
 #' @param type character(1) either "boxplot" or "beeswarm"
-#' @param rate.table data.frame like `woncan` in YESCDS or BiocYES
+#' @param rate_table data.frame like `woncan` in YESCDS or BiocYES
 #' @examples
 #' data(woncan)
 #' make_hist(rate_table=woncan)
@@ -58,7 +58,7 @@ make_pair = function(MSA1="Baton Rouge, LA", MSA2="Tucson, AZ", type="boxplot", 
 #' @param logscale logical(1) only for type "scatter"; if TRUE (default) log10 transformation is applied to rates
 #' @param type character(1) one of "scatter" or "ratios"; if the latter, a histogram of ratios is produced with MSA1 rates in numerator
 #' @param min.rate numeric(1) minimum number per 100000 for cancer type to be included
-#' @param rate.table data.frame like `woncan` in YESCDS or BiocYES
+#' @param rate_table data.frame like `woncan` in YESCDS or BiocYES
 #' @examples
 #' data(woncan)
 #' make_comparison(type="scatter", rate_table=woncan)

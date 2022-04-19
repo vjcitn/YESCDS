@@ -1,0 +1,96 @@
+---
+title: "B2 Enhancing tables with geography"
+shorttitle: "Tables plus geography"
+author: "Vincent J. Carey, stvjc at channing.harvard.edu"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{B2 Enhancing tables with geography}
+  %\VignetteEncoding{UTF-8}
+output:
+  rmarkdown::html_document:
+    highlight: pygments
+    number_sections: yes
+    theme: united
+    toc: yes
+---
+
+```{r setup,echo=FALSE,results="hide"}
+suppressMessages({
+ suppressPackageStartupMessages({
+  library(YESCDS)
+library(tibble)
+library(dplyr)
+library(plotly)
+library(ggplot2)
+library(ggbeeswarm)
+library(DT)
+data(woncan_meta)
+data(woncan)
+library(sf)
+littab = woncan |> select(MSA, `Cancer Sites`, Age.Adjusted.Rate) |> as.data.frame()
+  })
+ })
+```
+
+# The basic geographic data about US counties
+
+The coordinates of central locations in US counties
+is provided in `us_county_geo`.
+
+```{r lkd3}
+data(us_county_geo)
+us_county_geo |> select(state, county, geometry)
+```
+
+Coordinates for metropolitan statistical areas are provided by
+"statcrunch":
+```{r kd4}
+data(statcrunch_msa)
+head(statcrunch_msa)
+```
+
+This geographic data has already been used to enhance the CDC incidence data
+in `woncan`:
+```{r lk5}
+data(woncan)
+woncan |> group_by(MSA) |> 
+    summarize(lat=head(lat)[1], lng=head(lng)[1]) |> head()
+```
+
+## Exercise
+
+Use 
+```
+library(YESCDS)
+library(DT)
+data(woncan)
+datatable(woncan)
+```
+and find the latitude and longitude of Boston.
+
+# An interactive map of the US with cancer rates
+
+```{r domaca}
+cancer_map_usa()
+```
+
+## Exercise
+
+Create a new notebook cell with the call to `cancer_map_usa` to produce
+prostate cancer statistics.
+
+
+# A data graphic
+
+Finally, to get a different view of variation in cancer rates across the United States,
+run the following cell.  Geographic location is lost, but the range of variation, and
+details of variation can be seen very clearly in these displays.
+
+```{r brow}
+browseURL("https://vjcitn.shinyapps.io/ratevariation")
+```
+
+Change the body site to "Pancreas" (remove "Brain") and find, using the histogram tab,
+the areas with highest and lowest age-adjusted rates of pancreatic cancer.
+

@@ -28,8 +28,8 @@ simple display of confidence intervals for cancer incidence
 }
 \examples{
 oldpar = par(no.readonly=TRUE)
-prost = read.csv(system.file("csv/MASSProstateWCI.csv", package="BiocYES"))
-bre = read.csv(system.file("csv/MABreastWCI.csv", package="BiocYES"))
+prost = read.csv(system.file("csv/MASSProstateWCI.csv", package="YESCDS"))
+bre = read.csv(system.file("csv/MABreastWCI.csv", package="YESCDS"))
 par(mfrow=c(1,2))
 plotwci(prost, site="Prostate", ylim=c(60,180))
 plotwci(bre, site="Breast", ylim=c(90,270))

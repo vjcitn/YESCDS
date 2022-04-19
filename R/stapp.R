@@ -7,12 +7,12 @@
 variation_app = function() {
  cwd = getwd()
  on.exit(setwd(cwd))
- setwd(system.file("stapp", package="BiocYES"))
+ setwd(system.file("stapp", package="YESCDS"))
  shiny::runApp()
 }
 
 variation_app_old = function() {
-  data("woncan", package="BiocYES")
+  data("woncan", package="YESCDS")
   sites = unique(woncan$`Cancer Sites`)
   ss = strsplit(woncan$msa, ", ")
   woncan$state = sapply(ss, "[", 2)

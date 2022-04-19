@@ -51,14 +51,14 @@ bins are plotted on the x axis, and counts of values in bins are plotted on the 
 
 We illustrate with the CDC WONDER data on Prostate cancer incidence.
 
-```{r lkhist, echo=FALSE}
+```{r lkhist, echo=TRUE}
 make_hist(site="Prostate", binwidth=5, rate_table=littab)
 ```
 
 We can change the visual character of the histogram display by reducing the bin width.
 
 
-```{r lkhist2, echo=FALSE}
+```{r lkhist2, echo=TRUE}
 make_hist(site="Prostate", binwidth=2, rate_table=littab)
 ```
 
@@ -90,14 +90,14 @@ By computing differences or ratios and forming the histogram, we
 can assess whether there is a tendency to higher values in
 one of the areas of interest.
 
-```{r lk2, echo=FALSE}
+```{r lk2, echo=TRUE}
 ggplotly(make_comparison(rate_table=littab, type="ratios"))
 ```
 
 More detail about individual
 values can be obtained with an approach called "beeswarm" plotting.
 
-```{r lk3, echo=FALSE}
+```{r lk3, echo=TRUE}
 ggplotly(make_pair(type="beeswarm", rate_table=littab ))
 ```
 

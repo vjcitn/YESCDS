@@ -5,7 +5,7 @@
 map_app = function() {
  cwd = getwd()
  on.exit(setwd(cwd))
- setwd(system.file("map_app", package="BiocYES"))
+ setwd(system.file("map_app", package="YESCDS"))
  shiny::runApp()
 }
 
@@ -34,7 +34,7 @@ cancer_map_usa = function( site = "Stomach", scaling = 1, table.only=FALSE ) {
 cancer_map_app = function() {
  cwd = getwd()
  on.exit(setwd(cwd))
- setwd(system.file("cancer_map", package="BiocYES"))
+ setwd(system.file("cancer_map", package="YESCDS"))
  shiny::runApp()
 }
 
