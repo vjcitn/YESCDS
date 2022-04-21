@@ -35,7 +35,9 @@ RUN conda remove --force-remove -y _libgcc_mutex _r-mutex \
     sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/' && sudo apt update && \
     sudo apt install r-base libudunits2-dev libproj-dev libgdal-dev libjq-dev -y && \
     curl https://raw.githubusercontent.com/Bioconductor/bioconductor_docker/master/bioc_scripts/install_bioc_sysdeps.sh -o /tmp/install_deps.sh && \
-    sh /tmp/install_deps.sh && Rscript -e 'install.packages("IRkernel"); IRkernel::installspec(user = FALSE); install.packages("BiocManager"); BiocManager::install("remotes"); if(strsplit(BiocManager::install("vjcitn/YESCDS", dependencies = TRUE), "/")[[1]][2] %in% rownames(installed.packages())) q(status = 0) else q(status = 1); if(BiocManager::install("geojsonio", dependencies = TRUE) %in% rownames(installed.packages())) q(status = 0) else q(status = 1)'
+    sh /tmp/install_deps.sh && Rscript -e 'install.packages("IRkernel"); install.packages("BiocManager");' && \
+    Rscript -e 'BiocManager::install("remotes"); if(strsplit(BiocManager::install("vjcitn/YESCDS", dependencies = TRUE), "/")[[1]][2] %in% rownames(installed.packages())) q(status = 0) else q(status = 1);' && \
+    Rscript -e 'if(BiocManager::install("geojsonio", dependencies = TRUE) %in% rownames(installed.packages())) q(status = 0) else q(status = 1)'
 
 ENV CC=/usr/bin/gcc
 ENV CXX=/usr/bin/g++
