@@ -24,7 +24,7 @@ make_comparison(
 
 \item{min.rate}{numeric(1) minimum number per 100000 for cancer type to be included}
 
-\item{rate.table}{data.frame like `woncan` in YESCDS or BiocYES}
+\item{rate_table}{data.frame like `woncan` in YESCDS or BiocYES}
 }
 \description{
 make an interactive histogram of rate ratios, or a scatterplot for rate comparisons, between two areas

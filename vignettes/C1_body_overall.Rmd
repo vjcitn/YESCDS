@@ -1,0 +1,51 @@
+---
+title: "C1 Cancer in our bodies: Overall view"
+shorttitle: "Body map of cancer"
+author: "Vincent J. Carey, stvjc at channing.harvard.edu"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{C1 Cancer in our bodies: Overall view}
+  %\VignetteEncoding{UTF-8}
+output:
+  rmarkdown::html_document:
+    highlight: pygments
+    number_sections: yes
+    theme: united
+    toc: yes
+---
+
+```{r setup,echo=FALSE,results="hide"}
+suppressMessages({
+ suppressPackageStartupMessages({
+  library(YESCDS)
+library(tibble)
+library(dplyr)
+library(plotly)
+library(ggplot2)
+library(ggbeeswarm)
+library(DT)
+data(woncan_meta)
+data(woncan)
+littab = woncan |> select(MSA, `Cancer Sites`, Age.Adjusted.Rate) |> as.data.frame()
+  })
+ })
+```
+
+# Cancers begin in specific organs
+
+![Overall, data commons](bodymap.jpg)
+
+## The burden of cancer by primary site
+
+## Survival curves: typical and extreme fates for those with cancer
+
+## Genes that are often mutated in cancer
+
+# A view of breast cancer survival
+
+## An overall survival curve
+
+![Breast cancer genes and survival curve](breastGenGDC.jpg)
+
+## Curves comparing persons with and without mutation

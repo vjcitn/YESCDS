@@ -9,8 +9,8 @@
 #' prost = read.csv(system.file("csv/MASSProstateWCI.csv", package="YESCDS"))
 #' bre = read.csv(system.file("csv/MABreastWCI.csv", package="YESCDS"))
 #' par(mfrow=c(1,2))
-#' plotwci(prost, site="Prostate", ylim=c(60,180))
-#' plotwci(bre, site="Breast", ylim=c(90,270))
+#' plotwci(prost, site="Prostate", ylim=c(60,270))
+#' plotwci(bre, site="Breast", ylim=c(60,280))
 #' par(oldpar)
 #' @export
 plotwci = function(tab, metric="incidence per 100000 2014-2018", site="Overall",
@@ -26,6 +26,5 @@ plotwci = function(tab, metric="incidence per 100000 2014-2018", site="Overall",
   with(tab, segments(xseq, lci, xseq, uci, lwd=2))
   with(tab, text(xseq, uci+5, labels=cnames[ocounty]))
   axis(2)
-  axis(4)
 }
 

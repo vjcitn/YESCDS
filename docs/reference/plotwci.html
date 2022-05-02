@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">YESCDS</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.11</span>
       </span>
     </div>
 
@@ -51,6 +51,12 @@
     </li>
     <li>
       <a href="../articles/B2_table_plus_geo.html">B2 Enhancing tables with geography</a>
+    </li>
+    <li>
+      <a href="../articles/B3_counties.html">B3 Cancer in our counties</a>
+    </li>
+    <li>
+      <a href="../articles/C1_body_overall.html">C1 Cancer in our bodies: Overall view</a>
     </li>
   </ul></li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
@@ -107,8 +113,8 @@
 <span class="r-in"><span class="va">prost</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"csv/MASSProstateWCI.csv"</span>, package<span class="op">=</span><span class="st">"YESCDS"</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-in"><span class="va">bre</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"csv/MABreastWCI.csv"</span>, package<span class="op">=</span><span class="st">"YESCDS"</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">plotwci</span><span class="op">(</span><span class="va">prost</span>, site<span class="op">=</span><span class="st">"Prostate"</span>, ylim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">60</span>,<span class="fl">180</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">plotwci</span><span class="op">(</span><span class="va">bre</span>, site<span class="op">=</span><span class="st">"Breast"</span>, ylim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">90</span>,<span class="fl">270</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu">plotwci</span><span class="op">(</span><span class="va">prost</span>, site<span class="op">=</span><span class="st">"Prostate"</span>, ylim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">60</span>,<span class="fl">270</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu">plotwci</span><span class="op">(</span><span class="va">bre</span>, site<span class="op">=</span><span class="st">"Breast"</span>, ylim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">60</span>,<span class="fl">280</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-plt img"><img src="plotwci-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span><span class="va">oldpar</span><span class="op">)</span></span>
 </code></pre></div>
@@ -125,7 +131,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
       </footer></div>

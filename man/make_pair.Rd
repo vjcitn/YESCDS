@@ -18,7 +18,7 @@ make_pair(
 
 \item{type}{character(1) either "boxplot" or "beeswarm"}
 
-\item{rate.table}{data.frame like `woncan` in YESCDS or BiocYES}
+\item{rate_table}{data.frame like `woncan` in YESCDS or BiocYES}
 }
 \description{
 make interactive beeswarm or box plots for all cancer incidence rates in two areas
