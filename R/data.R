@@ -45,6 +45,11 @@
 #' @format data.frame
 "prostate_met_adeno"
 
+#' a data.frame with (rounded) crude rates of cancer as presented at https://www.statcan.gc.ca/en/dai/btd/asr 
+#' @docType data
+#' @format data.frame
+"canada_crude"
+
 #-rw-r--r--  1 vincentcarey  staff   31905 Mar 31 07:34 prostate_met_adeno.rda
 #-rw-r--r--  1 vincentcarey  staff   79469 Mar 31 06:24 metabric.rda
 #-rw-r--r--  1 vincentcarey  staff     444 Mar 20 14:14 vjc_cancer_net.rda
