@@ -36,11 +36,11 @@ littab = woncan |> select(MSA, `Cancer Sites`, Age.Adjusted.Rate) |> as.data.fra
 # The basic geographic data about US counties
 
 The coordinates of central locations in US counties
-is provided in `us_county_geo`.
+are provided in `us_county_geo`.
 
 ```{r lkd3}
 data(us_county_geo)
-us_county_geo |> select(state, county, geometry)
+us_county_geo |> select(state, county, geometry) |> head()
 ```
 
 Coordinates for metropolitan statistical areas are provided by
@@ -97,6 +97,6 @@ details of variation can be seen very clearly in these displays.
 browseURL("https://vjcitn.shinyapps.io/ratevariation")
 ```
 
-Change the body site to "Prostate" (remove "Brain") and find, using the histogram tab,
-the areas with highest and lowest age-adjusted rates of prostate cancer.
+Change the body site to "Pancreas" (remove "Brain") and find, using the histogram tab,
+the areas with highest and lowest age-adjusted rates of pancreatic cancer.
 

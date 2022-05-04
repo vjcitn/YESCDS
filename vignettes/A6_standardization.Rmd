@@ -50,9 +50,9 @@ regions or time periods being compared.
 Crude rates ignore age structure.  Here are some examples of mortality rates taken (with rounding)
 from a Statistics Canada web site.
 
-```{r lkcru, echo=FALSE}
+```{r examine}
 canada_crude[6,4] = NA
-kable(canada_crude)
+canada_crude
 ```
 
 Question: What is the (rounded) crude mortality rate for the older age group in 2011?
