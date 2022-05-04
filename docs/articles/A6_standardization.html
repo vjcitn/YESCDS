@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A2 Cancer rates for public health assessment • YESCDS</title>
+<title>A6 Age standardization of cancer rates • YESCDS</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="A2 Cancer rates for public health assessment">
+<script src="../pkgdown.js"></script><meta property="og:title" content="A6 Age standardization of cancer rates">
 <meta property="og:description" content="YESCDS">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -102,107 +102,113 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>A2 Cancer rates for public health assessment</h1>
+      <h1 data-toc-skip>A6 Age standardization of cancer rates</h1>
                         <h4 data-toc-skip class="author">Vincent J. Carey, stvjc at channing.harvard.edu</h4>
             
             <h4 data-toc-skip class="date">May 04, 2022</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/vjcitn/YESCDS/blob/HEAD/vignettes/A2_rates.Rmd"><code>vignettes/A2_rates.Rmd</code></a></small>
-      <div class="hidden name"><code>A2_rates.Rmd</code></div>
+      <small class="dont-index">Source: <a href="https://github.com/vjcitn/YESCDS/blob/HEAD/vignettes/A6_standardization.Rmd"><code>vignettes/A6_standardization.Rmd</code></a></small>
+      <div class="hidden name"><code>A6_standardization.Rmd</code></div>
 
     </div>
 
     
     
 <div class="section level2">
-<h2 id="cancer-rates-and-public-health">Cancer rates and public health<a class="anchor" aria-label="anchor" href="#cancer-rates-and-public-health"></a>
+<h2 id="fair-comparisons">Fair comparisons<a class="anchor" aria-label="anchor" href="#fair-comparisons"></a>
 </h2>
-<p>Motivations for studying cancer at the <em>population level</em> are detailed on a <a href="https://www.cancer.gov/research/areas/public-health" class="external-link">National Cancer Institute web page.</a></p>
-<p>Briefly, cancers contribute to</p>
+<p>Two basic types of comparison are of interest in cancer epidemiology:</p>
 <ul>
-<li>years of life lost</li>
-<li>loss of quality of life for patients and families</li>
-<li>lost productivity</li>
+<li>Do cancer rates differ between geographic regions (counties, states, countries, …)?</li>
+<li>Do cancer rates change over time?</li>
 </ul>
-<p>Furthermore, as the population ages, the effects of cancer will be more pronounced as time goes on.</p>
-<p><em>Although cancer affects individual patients and their families in different ways, studying its impact on large populations can provide important information that influences practices, policies, and programs that directly affect the health of millions of people in the United States each year.</em> – from the NCI web page</p>
-<p>This idea of “studying [cancer’s] impact on large populations” brings us immediately to data science and statistics.</p>
-<p>Two terms of epidemiology will be of use to us</p>
-<ul>
-<li>
-<em>prevalence</em>: the proportion of the population currently affected by a disease</li>
-<li>
-<em>incidence</em>: the proportion of the population, in a given time interval, that was disease-free prior to the interval but developed the disease within the interval</li>
-</ul>
-<p>Prevalence expresses the current burden of disease within a population.</p>
-<p>Incidence expresses the rapidity with which a disease grows in a population.</p>
-<p>For a more detailed discussion of these terms, check <a href="https://www.cdc.gov/csels/dsepd/ss1978/lesson3/section2.html#:~:text=Incidence%20refers%20to%20the%20occurrence,cases%20per%20unit%20of%20population." class="external-link">this CDC site</a>.</p>
-<div class="section level3">
-<h3 id="collecting-cancer-data">Collecting cancer data<a class="anchor" aria-label="anchor" href="#collecting-cancer-data"></a>
-</h3>
-<p>The role of statistics in our lives has intensified with the COVID-19 pandemic.</p>
-<p>Policymakers have proposed that personal protective behaviors and legal obligations to mask or avoid traveling can change depending on the “infection rates” in localities.</p>
-<p>Cancer Registries are systems managed at the state level that collect information on cancers as they are identified by health care providers.</p>
-<p>“SEER” stands for Surveillance, Epidemiology and End Results. It is a program developed at the National Institutes of Health (NIH) National Cancer Institute (NCI). Data are collected at 17 regional centers.</p>
-<p>The SEER web site, offers various facets of cancer data to investigate.</p>
-<div class="figure">
-<img src="SEERlist.jpg" alt=""><p class="caption">SEERlist</p>
-</div>
-</div>
-<div class="section level3">
-<h3 id="body-sites-with-relatively-high-cancer-incidence">Body sites with relatively high cancer incidence<a class="anchor" aria-label="anchor" href="#body-sites-with-relatively-high-cancer-incidence"></a>
-</h3>
-<div class="figure">
-<img src="piecharts.jpg" alt=""><p class="caption">SEER 2021 pie charts</p>
-</div>
-</div>
-<div class="section level3">
-<h3 id="new-diagnoses-and-deaths-over-time">New diagnoses, and deaths, over time<a class="anchor" aria-label="anchor" href="#new-diagnoses-and-deaths-over-time"></a>
-</h3>
-<p>A very broad overview of cancer’s impact on Americans over the past 20 years:</p>
-<div class="figure">
-<img src="rateOverview.jpg" alt=""><p class="caption">SEER overview, 2021</p>
-</div>
-</div>
-<div class="section level3">
-<h3 id="exercises">Exercises<a class="anchor" aria-label="anchor" href="#exercises"></a>
-</h3>
-<p>A.2.1 The display just above asserts that over 1.8 million Americans will present with a new cancer diagnosis in 2021. Re-express this prediction as a “rate per 100,000 persons”.</p>
-<p>A.2.2 True or False: Of cancers newly identified in US citizens in 2021, more than 8% arise in the pancreas.</p>
-</div>
+<p>Because cancer risks increaase generally as people age, comparisons of cancer risk should account for the “age structure” in the regions or time periods being compared.</p>
 </div>
 <div class="section level2">
-<h2 id="a-view-of-pancreatic-cancer-incidence">A view of pancreatic cancer incidence<a class="anchor" aria-label="anchor" href="#a-view-of-pancreatic-cancer-incidence"></a>
+<h2 id="crude-rate-examples">Crude rate examples<a class="anchor" aria-label="anchor" href="#crude-rate-examples"></a>
 </h2>
-<p>We can “drill down” on specific cancer types using the drop-down menu at seer.cancer.gov. For cancer of the pancreas we have:</p>
-<div class="figure">
-<img src="pancreas.jpg" alt=""><p class="caption">SEER pancreas, 2021</p>
-</div>
+<p>Crude rates ignore age structure. Here are some examples of mortality rates taken (with rounding) from a Statistics Canada web site.</p>
+<table class="table">
+<thead><tr class="header">
+<th align="left">agegrp</th>
+<th align="left">characteristic</th>
+<th align="right">2000</th>
+<th align="right">2011</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">0 to 39y</td>
+<td align="left">estimate of population</td>
+<td align="right">17000000</td>
+<td align="right">17200000</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"># cancer deaths</td>
+<td align="right">1340</td>
+<td align="right">1000</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">crude rate</td>
+<td align="right">7</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="left">40y and older</td>
+<td align="left">estimate of population</td>
+<td align="right">13600000</td>
+<td align="right">17150000</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"># cancer deaths</td>
+<td align="right">61300</td>
+<td align="right">71400</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">crude rate</td>
+<td align="right">450</td>
+<td align="right">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">All ages</td>
+<td align="left">estimate of population</td>
+<td align="right">30600000</td>
+<td align="right">34400000</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"># cancer deaths</td>
+<td align="right">62640</td>
+<td align="right">72400</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">crude rate</td>
+<td align="right">204</td>
+<td align="right">210</td>
+</tr>
+</tbody>
+</table>
+<p>Question: What is the (rounded) crude mortality rate for the older age group in 2011?</p>
 </div>
 <div class="section level2">
-<h2 id="a-view-of-colorectal-cancer-incidence">A view of colorectal cancer incidence<a class="anchor" aria-label="anchor" href="#a-view-of-colorectal-cancer-incidence"></a>
+<h2 id="age-structure">Age structure<a class="anchor" aria-label="anchor" href="#age-structure"></a>
 </h2>
-<p>For cancer of the colon or rectum we have:</p>
-<div class="figure">
-<img src="colon.jpg" alt=""><p class="caption">SEER colon and rectum, 2021</p>
+<p>The “age structure” of a population is the percentage of population reporting ages in different groups. Usually the grouping is finer than what we are using in this example.</p>
+<p>Statistics Canada proposed using the age structure of Canada in 1991 as a reference for standardization. In 1991, 62% of Canadians were age 0 to 39y, and 38% were 40y and older.</p>
+<p>We use these percentages to adjust the crude rates.</p>
 </div>
-<div class="section level3">
-<h3 id="exercises-1">Exercises<a class="anchor" aria-label="anchor" href="#exercises-1"></a>
-</h3>
-<p>A.2.3 Which of the following describes observations on pancreatic cancer between 1992 and 2019?</p>
-<ul>
-<li><ol style="list-style-type: lower-alpha">
-<li>the death rate per 100000 population increased by two units,</li>
-</ol></li>
-<li><ol start="2" style="list-style-type: lower-alpha">
-<li>the rate of new pancreatic cancers per 100000 population increased by two units,</li>
-</ol></li>
-<li><ol start="3" style="list-style-type: lower-alpha">
-<li>the rate of new pancreatic cancers per 100000 population remained stable.</li>
-</ol></li>
-</ul>
-<p>A.2.4 True or false: The death rate, and the incidence rate, for cancers of colon and rectum were approximately halved in the interval between 1992 and 2019.</p>
-</div>
+<div class="section level2">
+<h2 id="adjusted-rate-computation">Adjusted rate computation<a class="anchor" aria-label="anchor" href="#adjusted-rate-computation"></a>
+</h2>
+<p>For the year 2000, we take the crude rates of 7 and 450 (per 100000 population) and reweight and sum:</p>
+<pre><code><span class="fl">7</span> <span class="op">*</span> <span class="fl">.62</span> <span class="op">+</span> <span class="fl">450</span> <span class="op">*</span> <span class="fl">.38</span></code></pre>
+<p>yielding 175.3 per 100000 “standard population”. This is the age standardized mortality rate in the year 2000.</p>
+<p>Question: What is the age standardized mortality rate for 2011?</p>
+<p>Question: What can you say about the cancer mortality trend in Canada between 2000 and 2011?</p>
 </div>
   </div>
 
