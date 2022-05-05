@@ -57,7 +57,7 @@ the reported rates are imprecise.  Therefore
 Here are the prostate cancer rates in Massachusetts counties,
 plotted with confidence limits.
 
-```{r lkd5, echo=FALSE}
+```{r lkd5}
 plotwci(MA_cancer_rate_table("prostate"), ylim=c(90,270))
 ```
 
@@ -67,13 +67,28 @@ cancer in Nantucket county has an estimated age-adjusted incidence in
 but the actual rate may be lower or higher.
 The uncertainty of the estimate arises from the
 relatively small population of Nantucket county.
-With a population of over 4 million, the estimate
-in Middlesex county is considerably more precise.
-
 
 # Exercises
 
 - What are the reported population sizes for Middlesex
 and Nantucket counties?
 
-- [Obtain a table using statecancerprofiles.cancer.gov...]
+- Run the following chunk to produce a different
+representation of incidence rates for cancers
+of lung and bronchus in California counties:
+
+```
+ordered_seg_cal()
+```
+
+Two statistics are presented for the 
+US as a whole and for the entire state of California.
+
+True or False: We are fairly confident that the incidence
+of cancers of lung and bronchus in San Joaquin county is
+lower than that of the US as a whole.
+
+The midpoint of the plotted interval is the estimated
+incidence rate.
+Which California counties have incidence rates that
+are around half that of the US as a whole?

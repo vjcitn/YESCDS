@@ -61,7 +61,8 @@ Question: What is the (rounded) crude mortality rate for the older age group in 
 
 The "age structure" of a population is the percentage of population
 reporting ages in different groups.  Usually the grouping is
-finer than what we are using in this example.
+finer than what we are using in this example; more realistic
+illustrations are given below.
 
 Statistics Canada proposed using the age structure of Canada in 1991
 as a reference for standardization.  In 1991, 62% of Canadians
@@ -83,4 +84,17 @@ Question: What is the age standardized mortality rate for 2011?
 
 Question: What can you say about the cancer mortality trend in Canada between 2000 and 2011?
 
+# Some examples of age structure models
 
+A [methods paper](https://wonder.cdc.gov/wonder/help/cancer/fayfeuerconfidenceintervals.pdf) on
+confidence intervals for standardized rates includes the following display:
+
+![Age structure](standardPopGraphs.jpg)
+
+We read this as showing that in the US in 1970, about 18% of the population
+was under 10 years of age, while in the world overall, about 22% of the
+population was under 10 years of age.
+
+Question: What features of the bottom two displays above suggest that
+it will be important to differentiate age distributions for men and
+women in forming standardized rates?
