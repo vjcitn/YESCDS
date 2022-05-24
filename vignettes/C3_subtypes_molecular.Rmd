@@ -1,0 +1,62 @@
+---
+title: "C3 Molecular origins of diverse cancers"
+shorttitle: "Subtypes"
+author: "Vincent J. Carey, stvjc at channing.harvard.edu"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{C3 Molecular origins of diverse cancers}
+  %\VignetteEncoding{UTF-8}
+output:
+  rmarkdown::html_document:
+    highlight: pygments
+    number_sections: yes
+    theme: united
+    toc: yes
+---
+
+```{r setup,echo=FALSE,results="hide"}
+suppressMessages({
+ suppressPackageStartupMessages({
+  library(YESCDS)
+library(tibble)
+library(dplyr)
+library(plotly)
+library(ggplot2)
+library(ggbeeswarm)
+library(DT)
+data(woncan_meta)
+data(woncan)
+littab = woncan |> select(MSA, `Cancer Sites`, Age.Adjusted.Rate) |> as.data.frame()
+  })
+ })
+```
+
+# Cancers locate in specific organs
+
+![Overall, data commons](bodymap.jpg)
+
+## The burden of cancer by primary site
+
+SEER (Surveillance, Epidemiology and End Results)
+[estimates for 2017](https://seer.cancer.gov/statistics/preliminary-estimates/preliminary.html) for
+males:
+
+![SEER2017 male](SEERMALE.jpg)
+
+For females:
+
+![SEER2017 female](SEERFEMALE.jpg)
+
+
+## Survival curves: typical and extreme fates for those with cancer
+
+## Genes that are often mutated in cancer
+
+# A view of breast cancer survival
+
+## An overall survival curve
+
+![Breast cancer genes and survival curve](breastGenGDC.jpg)
+
+## Curves comparing persons with and without mutation
