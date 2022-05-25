@@ -48,15 +48,6 @@ For females:
 
 ![SEER2017 female](SEERFEMALE.jpg)
 
+## Cancer subtype hierarchy
 
-## Survival curves: typical and extreme fates for those with cancer
-
-## Genes that are often mutated in cancer
-
-# A view of breast cancer survival
-
-## An overall survival curve
-
-![Breast cancer genes and survival curve](breastGenGDC.jpg)
-
-## Curves comparing persons with and without mutation
+![Oncotree snippet](oncotreeSNIP.jpg)
