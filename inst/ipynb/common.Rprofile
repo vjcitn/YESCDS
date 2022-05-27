@@ -2,6 +2,7 @@
 suppressMessages({
  suppressPackageStartupMessages({
   library(YESCDS)
+library(survival)
 library(geojsonio)
 library(tibble)
 library(dplyr)
