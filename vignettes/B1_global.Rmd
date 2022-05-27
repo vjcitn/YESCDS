@@ -13,6 +13,7 @@ output:
     number_sections: yes
     theme: united
     toc: yes
+    css: custom.css
 ---
 
 ```{r setup,echo=FALSE,results="hide"}
@@ -43,6 +44,17 @@ littab = woncan |> select(MSA, `Cancer Sites`, Age.Adjusted.Rate) |> as.data.fra
 	* Are culturally shared behaviors leading to increased risk?
 * Even though we are comfortable with annotated maps, creating and using "cancer maps" to reason about cancer risk requires some training
 * In this notebook we will work with some interactive maps on the web, and we will produce some maps using R programming
+
+A basic concern in mapping cancer rates is discovery of "clusters".  A review of cancer cluster investigations
+was [published in 2012](https://pubmed.ncbi.nlm.nih.gov/22519802/).  Results:
+
+> We reviewed 428 investigations evaluating 567 cancers of concern. An increase in incidence was confirmed for 72 (13%) cancer categories (including the category "all sites"). Three of those were linked (with variable degree of certainty) to hypothesized exposures, but only one investigation revealed a clear cause.
+
+The conclusion of this report:
+
+> There are fundamental shortcomings to our current methods of investigating community cancer clusters. We recommend a multidisciplinary national dialogue on creative, innovative approaches to understanding when and why cancer and other chronic diseases cluster in space and time.
+
+This motivates us to learn about map production and rate estimation in YES for CURE.
 
 ## Exercises
 

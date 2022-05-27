@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">YESCDS</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.18</span>
       </span>
     </div>
 
@@ -47,10 +47,34 @@
       <a href="../articles/A5_data_graphics.html">A5 Data graphics</a>
     </li>
     <li>
+      <a href="../articles/A6_standardization.html">A6 Age standardization of cancer rates</a>
+    </li>
+    <li>
       <a href="../articles/B1_global.html">B1 Cancer across the globe</a>
     </li>
     <li>
       <a href="../articles/B2_table_plus_geo.html">B2 Enhancing tables with geography</a>
+    </li>
+    <li>
+      <a href="../articles/B3_counties.html">B3 Cancer in our counties</a>
+    </li>
+    <li>
+      <a href="../articles/C1_body_overall.html">C1 Cancer in our bodies: Overall view</a>
+    </li>
+    <li>
+      <a href="../articles/C2_variation_survival.html">C2 Variation in survival with cancer</a>
+    </li>
+    <li>
+      <a href="../articles/C3_subtypes_molecular.html">C3 Molecular origins of diverse cancers</a>
+    </li>
+    <li>
+      <a href="../articles/D1_equipoise.html">D1 Equipoise: when medical knowledge can only advance by experimenting</a>
+    </li>
+    <li>
+      <a href="../articles/D2_randomization_bias.html">D2 Randomization to reduce bias</a>
+    </li>
+    <li>
+      <a href="../articles/D3_comparing_trt.html">D3 Methods of comparing treatments</a>
     </li>
   </ul></li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
@@ -80,13 +104,25 @@
         </td>
         <td><p>simple tables of confidence intervals for cancer incidence</p></td>
       </tr><tr><td>
+          <p><code><a href="SEER_2018.html">SEER_2018</a></code> </p>
+        </td>
+        <td><p>a data.frame with SEER estimates of cancer incidence for 2018</p></td>
+      </tr><tr><td>
           <p><code><a href="build_deck.html">build_deck()</a></code> </p>
         </td>
         <td><p>make a deck of cards with 52 elements and unicode symbols for suits</p></td>
       </tr><tr><td>
+          <p><code><a href="build_simple_survival_curve.html">build_simple_survival_curve()</a></code> </p>
+        </td>
+        <td><p>utility for survival curve illustration</p></td>
+      </tr><tr><td>
           <p><code><a href="build_surv_for_mut.html">build_surv_for_mut()</a></code> </p>
         </td>
         <td><p>use curatedTCGAData to produce survival time structure and mutation matrix for a TCGA tumor type</p></td>
+      </tr><tr><td>
+          <p><code><a href="canada_crude.html">canada_crude</a></code> </p>
+        </td>
+        <td><p>a data.frame with (rounded) crude rates of cancer as presented at https://www.statcan.gc.ca/en/dai/btd/asr</p></td>
       </tr><tr><td>
           <p><code><a href="cancer_map_app.html">cancer_map_app()</a></code> </p>
         </td>
@@ -103,6 +139,10 @@
           <p><code><a href="compare_tumors.html">compare_tumors()</a></code> </p>
         </td>
         <td><p>compare multiple tumor times with respect to survival</p></td>
+      </tr><tr><td>
+          <p><code><a href="do_new_surv.html">do_new_surv()</a></code> </p>
+        </td>
+        <td><p>utility for survival curve, alternate shape</p></td>
       </tr><tr><td>
           <p><code><a href="faces.html">faces()</a></code> </p>
         </td>
@@ -136,6 +176,10 @@
         </td>
         <td><p>use shiny to explore aspects of geographic mapping</p></td>
       </tr><tr><td>
+          <p><code><a href="mass_cancer_map.html">mass_cancer_map()</a></code> </p>
+        </td>
+        <td><p>map cancer rates for selected sites to MA counties</p></td>
+      </tr><tr><td>
           <p><code><a href="mass_map.html">mass_map()</a></code> </p>
         </td>
         <td><p>simple function to display HTML map of MA</p></td>
@@ -148,6 +192,10 @@
         </td>
         <td><p>test for one pair</p></td>
       </tr><tr><td>
+          <p><code><a href="ordered_seg_cal.html">ordered_seg_cal()</a></code> </p>
+        </td>
+        <td><p>big display of ordered CIs for California Lung and Bronchus incidence 2014-2018</p></td>
+      </tr><tr><td>
           <p><code><a href="plotwci.html">plotwci()</a></code> </p>
         </td>
         <td><p>simple display of confidence intervals for cancer incidence</p></td>
@@ -156,6 +204,14 @@
         </td>
         <td><p>a data.frame with clinical features of a metastatic prostate adenocarcinoma study</p></td>
       </tr><tr><td>
+          <p><code><a href="show_5y_estimate.html">show_5y_estimate()</a></code> </p>
+        </td>
+        <td><p>utility for survival curve illustration: 5y survprob estimate sketch</p></td>
+      </tr><tr><td>
+          <p><code><a href="show_median_estimate.html">show_median_estimate()</a></code> </p>
+        </td>
+        <td><p>utility for survival curve illustration: median estimate sketch</p></td>
+      </tr><tr><td>
           <p><code><a href="statcrunch_msa.html">statcrunch_msa</a></code> </p>
         </td>
         <td><p>geographic information from statcrunch.com on metropolitan statistical areas</p></td>
@@ -163,6 +219,10 @@
           <p><code><a href="suits.html">suits()</a></code> </p>
         </td>
         <td><p>get suits of a collection of cards</p></td>
+      </tr><tr><td>
+          <p><code><a href="table_woncan.html">table_woncan()</a></code> </p>
+        </td>
+        <td><p>simplify table view of WONDER CDC statistsics</p></td>
       </tr><tr><td>
           <p><code><a href="two_pairs.html">two_pairs()</a></code> </p>
         </td>
@@ -216,7 +276,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
       </footer></div>

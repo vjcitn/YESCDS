@@ -1,5 +1,5 @@
-pandoc: '2.13'
-pkgdown: 2.0.2
+pandoc: '2.5'
+pkgdown: 2.0.3
 pkgdown_sha: ~
 articles:
   A1_cancer_table: A1_cancer_table.html
@@ -7,9 +7,17 @@ articles:
   A3_monitoring: A3_monitoring.html
   A4_interactive_tables: A4_interactive_tables.html
   A5_data_graphics: A5_data_graphics.html
+  A6_standardization: A6_standardization.html
   B1_global: B1_global.html
   B2_table_plus_geo: B2_table_plus_geo.html
-last_built: 2022-04-19T23:35Z
+  B3_counties: B3_counties.html
+  C1_body_overall: C1_body_overall.html
+  C2_variation_survival: C2_variation_survival.html
+  C3_subtypes_molecular: C3_subtypes_molecular.html
+  D1_equipoise: D1_equipoise.html
+  D2_randomization_bias: D2_randomization_bias.html
+  D3_comparing_trt: D3_comparing_trt.html
+last_built: 2022-05-27T15:21Z
 urls:
   reference: https://github.com/vjcitn/YESCDS/reference
   article: https://github.com/vjcitn/YESCDS/articles

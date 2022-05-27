@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">YESCDS</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.18</span>
       </span>
     </div>
 
@@ -65,10 +65,34 @@
       <a href="../articles/A5_data_graphics.html">A5 Data graphics</a>
     </li>
     <li>
+      <a href="../articles/A6_standardization.html">A6 Age standardization of cancer rates</a>
+    </li>
+    <li>
       <a href="../articles/B1_global.html">B1 Cancer across the globe</a>
     </li>
     <li>
       <a href="../articles/B2_table_plus_geo.html">B2 Enhancing tables with geography</a>
+    </li>
+    <li>
+      <a href="../articles/B3_counties.html">B3 Cancer in our counties</a>
+    </li>
+    <li>
+      <a href="../articles/C1_body_overall.html">C1 Cancer in our bodies: Overall view</a>
+    </li>
+    <li>
+      <a href="../articles/C2_variation_survival.html">C2 Variation in survival with cancer</a>
+    </li>
+    <li>
+      <a href="../articles/C3_subtypes_molecular.html">C3 Molecular origins of diverse cancers</a>
+    </li>
+    <li>
+      <a href="../articles/D1_equipoise.html">D1 Equipoise: when medical knowledge can only advance by experimenting</a>
+    </li>
+    <li>
+      <a href="../articles/D2_randomization_bias.html">D2 Randomization to reduce bias</a>
+    </li>
+    <li>
+      <a href="../articles/D3_comparing_trt.html">D3 Methods of comparing treatments</a>
     </li>
   </ul>
 </li>
@@ -96,7 +120,7 @@
       <h1 data-toc-skip>B1 Cancer across the globe</h1>
                         <h4 data-toc-skip class="author">Vincent J. Carey, stvjc at channing.harvard.edu</h4>
             
-            <h4 data-toc-skip class="date">April 19, 2022</h4>
+            <h4 data-toc-skip class="date">May 27, 2022</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/vjcitn/YESCDS/blob/HEAD/vignettes/B1_global.Rmd"><code>vignettes/B1_global.Rmd</code></a></small>
       <div class="hidden name"><code>B1_global.Rmd</code></div>
@@ -121,12 +145,21 @@
 <li>Even though we are comfortable with annotated maps, creating and using “cancer maps” to reason about cancer risk requires some training</li>
 <li>In this notebook we will work with some interactive maps on the web, and we will produce some maps using R programming</li>
 </ul>
+<p>A basic concern in mapping cancer rates is discovery of “clusters”. A review of cancer cluster investigations was <a href="https://pubmed.ncbi.nlm.nih.gov/22519802/" class="external-link">published in 2012</a>. Results:</p>
+<blockquote>
+<p>We reviewed 428 investigations evaluating 567 cancers of concern. An increase in incidence was confirmed for 72 (13%) cancer categories (including the category “all sites”). Three of those were linked (with variable degree of certainty) to hypothesized exposures, but only one investigation revealed a clear cause.</p>
+</blockquote>
+<p>The conclusion of this report:</p>
+<blockquote>
+<p>There are fundamental shortcomings to our current methods of investigating community cancer clusters. We recommend a multidisciplinary national dialogue on creative, innovative approaches to understanding when and why cancer and other chronic diseases cluster in space and time.</p>
+</blockquote>
+<p>This motivates us to learn about map production and rate estimation in YES for CURE.</p>
 <div class="section level3">
 <h3 id="exercises">Exercises<a class="anchor" aria-label="anchor" href="#exercises"></a>
 </h3>
 <p>Use the <a href="https://gco.iarc.fr/today/online-analysis-map?v=2020&amp;mode=population&amp;mode_population=continents&amp;population=900&amp;populations=900&amp;key=asr&amp;sex=0&amp;cancer=39&amp;type=0&amp;statistic=5&amp;prevalence=0&amp;population_group=0&amp;ages_group%5B%5D=0&amp;ages_group%5B%5D=17&amp;nb_items=10&amp;group_cancer=1&amp;include_nmsc=0&amp;include_nmsc_other=0&amp;projection=natural-earth&amp;color_palette=default&amp;map_scale=quantile&amp;map_nb_colors=5&amp;continent=0&amp;show_ranking=0&amp;rotate=%255B10%252C0%255D" class="external-link">International Agency for Research on Cancer (IARC) map tool</a> to survey mortality from cancer in 2020 for individuals aged 10-24. You should see something like the display below.</p>
 <div class="figure">
-<img src="IARCoverall.jpg" alt=""><p class="caption">IARC map</p>
+<img src="IARCoverall.jpg" alt="IARC map"><p class="caption">IARC map</p>
 </div>
 <ul>
 <li>True or False: Age standardized mortality from cancer in 2020 for persons aged 10-24 is greater in Vietnam than in neighboring countries.</li>
@@ -156,7 +189,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
       </footer>

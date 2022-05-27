@@ -1,7 +1,7 @@
 #' simple app to show different ways of examining variation over body sites and MSAs
 #' @import shiny
 #' @importFrom dplyr filter
-#' @import plotly
+#' @importFrom plotly ggplotly plotlyOutput renderPlotly
 #' @rawNamespace import(ggplot2, except=last_plot)
 #' @export
 variation_app = function() {

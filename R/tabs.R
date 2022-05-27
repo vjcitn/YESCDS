@@ -31,3 +31,11 @@ filter_woncan = function(site) {
   woncan |> dplyr::filter(`Cancer Sites` == site) |> dplyr::mutate(aarate=Age.Adjusted.Rate)
 }
 
+
+#' simplify table view of WONDER CDC statistsics
+#' @param site character(1) name of anatomic site, must reside in value of `woncan_types()`
+#' @export
+table_woncan = function(site) {
+  data("woncan", package="YESCDS")
+  DT::datatable(filter_woncan(site))
+}

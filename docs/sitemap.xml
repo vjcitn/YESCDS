@@ -19,10 +19,34 @@
     <loc>https://github.com/vjcitn/YESCDS/articles/A5_data_graphics.html</loc>
   </url>
   <url>
+    <loc>https://github.com/vjcitn/YESCDS/articles/A6_standardization.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/vjcitn/YESCDS/articles/B1_global.html</loc>
   </url>
   <url>
     <loc>https://github.com/vjcitn/YESCDS/articles/B2_table_plus_geo.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/articles/B3_counties.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/articles/C1_body_overall.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/articles/C2_variation_survival.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/articles/C3_subtypes_molecular.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/articles/D1_equipoise.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/articles/D2_randomization_bias.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/articles/D3_comparing_trt.html</loc>
   </url>
   <url>
     <loc>https://github.com/vjcitn/YESCDS/articles/index.html</loc>
@@ -37,10 +61,19 @@
     <loc>https://github.com/vjcitn/YESCDS/reference/MA_cancer_rate_table.html</loc>
   </url>
   <url>
+    <loc>https://github.com/vjcitn/YESCDS/reference/SEER_2018.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/build_deck.html</loc>
   </url>
   <url>
+    <loc>https://github.com/vjcitn/YESCDS/reference/build_simple_survival_curve.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/build_surv_for_mut.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/reference/canada_crude.html</loc>
   </url>
   <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/cancer_map_app.html</loc>
@@ -53,6 +86,9 @@
   </url>
   <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/compare_tumors.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/reference/do_new_surv.html</loc>
   </url>
   <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/faces.html</loc>
@@ -82,6 +118,9 @@
     <loc>https://github.com/vjcitn/YESCDS/reference/map_app.html</loc>
   </url>
   <url>
+    <loc>https://github.com/vjcitn/YESCDS/reference/mass_cancer_map.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/mass_map.html</loc>
   </url>
   <url>
@@ -91,16 +130,28 @@
     <loc>https://github.com/vjcitn/YESCDS/reference/one_pair.html</loc>
   </url>
   <url>
+    <loc>https://github.com/vjcitn/YESCDS/reference/ordered_seg_cal.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/plotwci.html</loc>
   </url>
   <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/prostate_met_adeno.html</loc>
   </url>
   <url>
+    <loc>https://github.com/vjcitn/YESCDS/reference/show_5y_estimate.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/reference/show_median_estimate.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/statcrunch_msa.html</loc>
   </url>
   <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/suits.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/reference/table_woncan.html</loc>
   </url>
   <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/two_pairs.html</loc>

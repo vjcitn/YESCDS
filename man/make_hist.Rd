@@ -11,7 +11,7 @@ make_hist(site = "Prostate", binwidth = 5, rate_table)
 
 \item{binwidth}{numeric(1) passed to `ggplot2::geom_histogram`}
 
-\item{rate.table}{data.frame like `woncan` in YESCDS or BiocYES}
+\item{rate_table}{data.frame like `woncan` in YESCDS or BiocYES}
 }
 \description{
 make an interactive histogram for a given cancer site, based on a rate table
