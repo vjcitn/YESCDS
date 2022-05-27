@@ -67,6 +67,9 @@
     <loc>https://github.com/vjcitn/YESCDS/reference/build_deck.html</loc>
   </url>
   <url>
+    <loc>https://github.com/vjcitn/YESCDS/reference/build_simple_survival_curve.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/build_surv_for_mut.html</loc>
   </url>
   <url>
@@ -83,6 +86,9 @@
   </url>
   <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/compare_tumors.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/reference/do_new_surv.html</loc>
   </url>
   <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/faces.html</loc>
@@ -131,6 +137,12 @@
   </url>
   <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/prostate_met_adeno.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/reference/show_5y_estimate.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/reference/show_median_estimate.html</loc>
   </url>
   <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/statcrunch_msa.html</loc>

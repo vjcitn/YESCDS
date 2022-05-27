@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">YESCDS</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.17</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.18</span>
       </span>
     </div>
 
@@ -137,7 +137,9 @@
 <h3 id="basic-definition">Basic definition<a class="anchor" aria-label="anchor" href="#basic-definition"></a>
 </h3>
 <p>When times from diagnosis to death have been recorded on individuals in a cohort, a survival curve is a plot with values (x, y) where x is time elapsed from diagnosis, and y is the proportion of individuals surviving at least x units of time.</p>
-<p><img src="C2_variation_survival_files/figure-html/doc1-1.png" width="700"></p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/build_simple_survival_curve.html">build_simple_survival_curve</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p><img src="C2_variation_survival_files/figure-html/show1-1.png" width="700"></p>
 <p>Note that at 0 months, the probability of surviving is 100%. The probability of surviving at least 12 years (144 months) in this cohort is very small.</p>
 </div>
 <div class="section level3">
@@ -145,18 +147,24 @@
 </h3>
 <p>The median of a set of numbers is the “middle” number <span class="math inline">\(m\)</span>, with as many values smaller than <span class="math inline">\(m\)</span> as there are values larger than <span class="math inline">\(m\)</span>. Thus the median of the numbers 1, 2, 3, 4, 5 is 3. If there is an even number of values, we average the two middle numbers (e.g., for 1, 2, 3, 4, 5, 6, we would use 3.5 as the median.)</p>
 <p>The following display shows how to read the median survival time from a survival curve: draw the horizontal line at <span class="math inline">\(y = 1/2\)</span> and determine the <span class="math inline">\(x\)</span> value where the intersection occurs.</p>
-<p><img src="C2_variation_survival_files/figure-html/doc2-1.png" width="700"></p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/show_median_estimate.html">show_median_estimate</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p><img src="C2_variation_survival_files/figure-html/show2-1.png" width="700"></p>
 </div>
 <div class="section level3">
 <h3 id="reading-off-the-five-year-survival-probability">Reading off the five-year survival probability<a class="anchor" aria-label="anchor" href="#reading-off-the-five-year-survival-probability"></a>
 </h3>
-<p><img src="C2_variation_survival_files/figure-html/do5y-1.png" width="700"></p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/show_5y_estimate.html">show_5y_estimate</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p><img src="C2_variation_survival_files/figure-html/show3-1.png" width="700"></p>
 </div>
 <div class="section level3">
 <h3 id="exercises">Exercises<a class="anchor" aria-label="anchor" href="#exercises"></a>
 </h3>
 <p>For a different cohort of patients, the survival curve is depicted below:</p>
-<p><img src="C2_variation_survival_files/figure-html/donew-1.png" width="700"></p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/do_new_surv.html">do_new_surv</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p><img src="C2_variation_survival_files/figure-html/show4-1.png" width="700"></p>
 <ul>
 <li><p>True or false: For this cohort, almost all individuals live at least 1.5 years after diagnosis</p></li>
 <li><p>Estimate the median survival time in months.</p></li>

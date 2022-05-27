@@ -19,6 +19,7 @@ output:
 suppressMessages({
  suppressPackageStartupMessages({
   library(YESCDS)
+library(survival)
 library(tibble)
 library(dplyr)
 library(plotly)
@@ -45,16 +46,8 @@ individuals in a cohort, a survival curve is a plot with
 values (x, y) where x is time elapsed from diagnosis,
 and y is the proportion of individuals surviving at least x units of time.
 
-```{r doc1, echo=FALSE}
-set.seed(1234)
-x = rexp(200, .3/12)
-library(survival)
-sx = Surv(x, rep(1,200))
-meddat = median(sx)
-plot(survfit(sx~1), lwd=2, ylab="Survival probability", xlab="Months from diagnosis",
-   axes=FALSE, xlim=c(0,168), conf.int=FALSE)
-axis(2)
-axis(1, at = seq(0,max(x),12L))
+```{r show1}
+build_simple_survival_curve()
 ```
 
 Note that at 0 months, the probability of surviving is 100%.
@@ -73,24 +66,14 @@ The following display shows how to read the median survival time
 from a survival curve: draw the horizontal line at $y = 1/2$ and
 determine the $x$ value where the intersection occurs.
 
-```{r doc2, echo=FALSE}
-plot(survfit(sx~1), lwd=2, ylab="Survival probability", xlab="Months from diagnosis",
-   axes=FALSE, xlim=c(0,168), conf.int=FALSE)
-axis(2)
-axis(1, at = seq(0,max(x),12L))
-abline(h=.5, lwd=2, lty=3)
-arrows(meddat$quantile, .5, meddat$quantile, 0, lwd=2, col="blue")
+```{r show2}
+show_median_estimate()
 ```
 
 ## Reading off the five-year survival probability
 
-```{r do5y,echo=FALSE}
-plot(survfit(sx~1), lwd=2, ylab="Survival probability", xlab="Months from diagnosis",
-   axes=FALSE, xlim=c(0,168), conf.int=FALSE)
-axis(2)
-axis(1, at = seq(0,max(x),12L))
-arrows(60, .22, 0, .22, lwd=2, col="purple")
-arrows(60, .0, 60, .22, lwd=2, col="purple")
+```{r show3}
+show_5y_estimate()
 ```
 
 ## Exercises
@@ -98,13 +81,8 @@ arrows(60, .0, 60, .22, lwd=2, col="purple")
 For a different cohort of patients, the survival curve
 is depicted below:
 
-```{r donew,echo=FALSE}
-set.seed(1234)
-z = rgamma(200, 10, .15)
-gg = Surv(z, rep(1,200))
-plot(survfit(gg~1), conf.int=FALSE, axes=FALSE)
-axis(2)
-axis(1, at = seq(0,max(z),12L))
+```{r show4}
+do_new_surv()
 ```
 
 - True or false: For this cohort, almost all individuals live at least 1.5 years

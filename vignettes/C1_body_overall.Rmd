@@ -152,4 +152,15 @@ with(mlung |> filter(Race=="All Races" & Year >=2013), lm(rate.2.2018~I(Year-200
 
 ## Cancer subtype hierarchy
 
+The lists of cancer sites we've seen thus far are
+fairly informal.  Cancer subtypes can be identified by
+various methods, with implications for prognosis and treatment.
+
+The oncotree resource at Memorial Sloan-Kettering presents a snapshot
+of current thinking about relationships among cancer types.
+
+Below is a small excerpt from the [oncotree](http://oncotree.mskcc.org/#/home), showing a subset
+of subtypes of brain cancer types.  Many of the nodes on the right
+can be expanded to reveal additional subtypes.
+
 ![Oncotree snippet](oncotreeSNIP.jpg)
