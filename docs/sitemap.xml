@@ -34,6 +34,21 @@
     <loc>https://github.com/vjcitn/YESCDS/articles/C1_body_overall.html</loc>
   </url>
   <url>
+    <loc>https://github.com/vjcitn/YESCDS/articles/C2_variation_survival.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/articles/C3_subtypes_molecular.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/articles/D1_equipoise.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/articles/D2_randomization_bias.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/articles/D3_comparing_trt.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/vjcitn/YESCDS/articles/index.html</loc>
   </url>
   <url>
@@ -44,6 +59,9 @@
   </url>
   <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/MA_cancer_rate_table.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/reference/SEER_2018.html</loc>
   </url>
   <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/build_deck.html</loc>
@@ -104,6 +122,9 @@
   </url>
   <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/one_pair.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/reference/ordered_seg_cal.html</loc>
   </url>
   <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/plotwci.html</loc>

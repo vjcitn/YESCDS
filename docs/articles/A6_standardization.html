@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">YESCDS</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.13</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.17</span>
       </span>
     </div>
 
@@ -79,6 +79,21 @@
     <li>
       <a href="../articles/C1_body_overall.html">C1 Cancer in our bodies: Overall view</a>
     </li>
+    <li>
+      <a href="../articles/C2_variation_survival.html">C2 Variation in survival with cancer</a>
+    </li>
+    <li>
+      <a href="../articles/C3_subtypes_molecular.html">C3 Molecular origins of diverse cancers</a>
+    </li>
+    <li>
+      <a href="../articles/D1_equipoise.html">D1 Equipoise: when medical knowledge can only advance by experimenting</a>
+    </li>
+    <li>
+      <a href="../articles/D2_randomization_bias.html">D2 Randomization to reduce bias</a>
+    </li>
+    <li>
+      <a href="../articles/D3_comparing_trt.html">D3 Methods of comparing treatments</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -105,7 +120,7 @@
       <h1 data-toc-skip>A6 Age standardization of cancer rates</h1>
                         <h4 data-toc-skip class="author">Vincent J. Carey, stvjc at channing.harvard.edu</h4>
             
-            <h4 data-toc-skip class="date">May 04, 2022</h4>
+            <h4 data-toc-skip class="date">May 27, 2022</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/vjcitn/YESCDS/blob/HEAD/vignettes/A6_standardization.Rmd"><code>vignettes/A6_standardization.Rmd</code></a></small>
       <div class="hidden name"><code>A6_standardization.Rmd</code></div>
@@ -128,76 +143,25 @@
 <h2 id="crude-rate-examples">Crude rate examples<a class="anchor" aria-label="anchor" href="#crude-rate-examples"></a>
 </h2>
 <p>Crude rates ignore age structure. Here are some examples of mortality rates taken (with rounding) from a Statistics Canada web site.</p>
-<table class="table">
-<thead><tr class="header">
-<th align="left">agegrp</th>
-<th align="left">characteristic</th>
-<th align="right">2000</th>
-<th align="right">2011</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left">0 to 39y</td>
-<td align="left">estimate of population</td>
-<td align="right">17000000</td>
-<td align="right">17200000</td>
-</tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left"># cancer deaths</td>
-<td align="right">1340</td>
-<td align="right">1000</td>
-</tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left">crude rate</td>
-<td align="right">7</td>
-<td align="right">5</td>
-</tr>
-<tr class="even">
-<td align="left">40y and older</td>
-<td align="left">estimate of population</td>
-<td align="right">13600000</td>
-<td align="right">17150000</td>
-</tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left"># cancer deaths</td>
-<td align="right">61300</td>
-<td align="right">71400</td>
-</tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left">crude rate</td>
-<td align="right">450</td>
-<td align="right">NA</td>
-</tr>
-<tr class="odd">
-<td align="left">All ages</td>
-<td align="left">estimate of population</td>
-<td align="right">30600000</td>
-<td align="right">34400000</td>
-</tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left"># cancer deaths</td>
-<td align="right">62640</td>
-<td align="right">72400</td>
-</tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left">crude rate</td>
-<td align="right">204</td>
-<td align="right">210</td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">canada_crude</span><span class="op">[</span><span class="fl">6</span>,<span class="fl">4</span><span class="op">]</span> <span class="op">=</span> <span class="cn">NA</span>
+<span class="va">canada_crude</span></code></pre></div>
+<pre><code><span class="co">##          agegrp         characteristic     2000     2011</span>
+<span class="co">## 1      0 to 39y estimate of population 17000000 17200000</span>
+<span class="co">## 2                      # cancer deaths     1340     1000</span>
+<span class="co">## 3                           crude rate        7        5</span>
+<span class="co">## 4 40y and older estimate of population 13600000 17150000</span>
+<span class="co">## 5                      # cancer deaths    61300    71400</span>
+<span class="co">## 6                           crude rate      450       NA</span>
+<span class="co">## 7      All ages estimate of population 30600000 34400000</span>
+<span class="co">## 8                      # cancer deaths    62640    72400</span>
+<span class="co">## 9                           crude rate      204      210</span></code></pre>
 <p>Question: What is the (rounded) crude mortality rate for the older age group in 2011?</p>
 </div>
 <div class="section level2">
 <h2 id="age-structure">Age structure<a class="anchor" aria-label="anchor" href="#age-structure"></a>
 </h2>
-<p>The “age structure” of a population is the percentage of population reporting ages in different groups. Usually the grouping is finer than what we are using in this example.</p>
+<p>The “age structure” of a population is the percentage of population reporting ages in different groups. Usually the grouping is finer than what we are using in this example; more realistic illustrations are given below.</p>
 <p>Statistics Canada proposed using the age structure of Canada in 1991 as a reference for standardization. In 1991, 62% of Canadians were age 0 to 39y, and 38% were 40y and older.</p>
 <p>We use these percentages to adjust the crude rates.</p>
 </div>
@@ -209,6 +173,16 @@
 <p>yielding 175.3 per 100000 “standard population”. This is the age standardized mortality rate in the year 2000.</p>
 <p>Question: What is the age standardized mortality rate for 2011?</p>
 <p>Question: What can you say about the cancer mortality trend in Canada between 2000 and 2011?</p>
+</div>
+<div class="section level2">
+<h2 id="some-examples-of-age-structure-models">Some examples of age structure models<a class="anchor" aria-label="anchor" href="#some-examples-of-age-structure-models"></a>
+</h2>
+<p>A <a href="https://wonder.cdc.gov/wonder/help/cancer/fayfeuerconfidenceintervals.pdf" class="external-link">methods paper</a> on confidence intervals for standardized rates includes the following display:</p>
+<div class="figure">
+<img src="standardPopGraphs.jpg" alt="Age structure"><p class="caption">Age structure</p>
+</div>
+<p>We read this as showing that in the US in 1970, about 18% of the population was under 10 years of age, while in the world overall, about 22% of the population was under 10 years of age.</p>
+<p>Question: What features of the bottom two displays above suggest that it will be important to differentiate age distributions for men and women in forming standardized rates?</p>
 </div>
   </div>
 

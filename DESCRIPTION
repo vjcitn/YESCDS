@@ -1,6 +1,6 @@
 Package: YESCDS
 Title: Cancer data science activities for CZI YES for CURE collaboration
-Version: 0.0.16
+Version: 0.0.17
 Authors@R:
     person(given = "Vince",
            family = "Carey",
@@ -14,7 +14,7 @@ Suggests: knitr, BiocStyle, testthat, rmarkdown, tibble, DT, TCGAutils, ontoProc
 License: Artistic-2.0
 VignetteBuilder: knitr
 biocViews: Cancer
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.0
 Encoding: UTF-8
 BugReports: https://github.com/vjcitn/YESCDS/issues
 URL: https://github.com/vjcitn/YESCDS
