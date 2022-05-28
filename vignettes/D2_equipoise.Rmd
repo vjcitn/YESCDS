@@ -1,11 +1,11 @@
 ---
-title: "D1 Equipoise: when medical knowledge can only advance by experimenting"
+title: "D2 Equipoise: when medical knowledge can only advance by experimenting"
 shorttitle: "Understanding equipoise"
 author: "Vincent J. Carey, stvjc at channing.harvard.edu"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 vignette: >
   %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteIndexEntry{D1 Equipoise: when medical knowledge can only advance by experimenting}
+  %\VignetteIndexEntry{D2 Equipoise: when medical knowledge can only advance by experimenting}
   %\VignetteEncoding{UTF-8}
 output:
   rmarkdown::html_document:

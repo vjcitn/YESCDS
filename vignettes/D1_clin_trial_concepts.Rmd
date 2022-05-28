@@ -1,0 +1,55 @@
+---
+title: "D1 Clinical trials concepts"
+shorttitle: "Clinical trials concepts"
+author: "Vincent J. Carey, stvjc at channing.harvard.edu"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{D1 Clinical trials concepts}
+  %\VignetteEncoding{UTF-8}
+output:
+  rmarkdown::html_document:
+    highlight: pygments
+    number_sections: yes
+    theme: united
+    toc: yes
+---
+
+```{r setup,echo=FALSE,results="hide"}
+suppressMessages({
+ suppressPackageStartupMessages({
+  library(YESCDS)
+library(tibble)
+library(dplyr)
+library(plotly)
+library(ggplot2)
+library(ggbeeswarm)
+library(DT)
+data(woncan_meta)
+data(woncan)
+littab = woncan |> select(MSA, `Cancer Sites`, Age.Adjusted.Rate) |> as.data.frame()
+  })
+ })
+```
+
+# Clinical trials for cancer treatments
+
+- Despite massive investments in cancer research and treatment development,
+cancer remains a leading cause of death
+
+- We have examined many aspects of cancer's diversity
+    - tissue of origin
+    - somatic mutations
+    - response to treatment
+
+- The main modalities of medical response to cancer are
+    - surgery
+    - chemotherapy
+    - radiation
+
+- Each of these modalities has a collection of subtypes, and they are often used in combination
+
+- How do doctors and patients navigate the available options?
+    - Answer: interpret available data as evidence in favor of or against certain options
+
+- The "gold standard" for evidence in medical decisionmaking is the randomized clinical trial (RCT)

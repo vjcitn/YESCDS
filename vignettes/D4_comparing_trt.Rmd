@@ -1,11 +1,11 @@
 ---
-title: "D3 Methods of comparing treatments"
+title: "D4 Methods of comparing treatments"
 shorttitle: "Comparing trial arms"
 author: "Vincent J. Carey, stvjc at channing.harvard.edu"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 vignette: >
   %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteIndexEntry{D3 Methods of comparing treatments}
+  %\VignetteIndexEntry{D4 Methods of comparing treatments}
   %\VignetteEncoding{UTF-8}
 output:
   rmarkdown::html_document:
