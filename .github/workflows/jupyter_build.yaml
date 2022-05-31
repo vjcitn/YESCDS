@@ -8,7 +8,7 @@ jobs:
       fail-fast: false
     steps:
       - uses: actions/checkout@v2
-      - run: docker build . -t almahmoud/yes-jupyter:21.10 -f jupyter-galaxy-Dockerfile
+      - run: docker build . -t bioconductor/yes-jupyter:21.10 -f jupyter-galaxy-Dockerfile
       - name: Login to docker hub
         uses: actions-hub/docker/login@master
         env:
@@ -17,4 +17,4 @@ jobs:
       - name: Push to docker hub
         uses: actions-hub/docker@master
         with:
-          args: push almahmoud/yes-jupyter:21.10
+          args: push bioconductor/yes-jupyter:21.10
