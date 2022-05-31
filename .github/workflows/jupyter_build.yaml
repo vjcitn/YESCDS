@@ -1,0 +1,20 @@
+name: Build Jupyter Galaxy Image
+on: [push, workflow_dispatch]
+jobs:
+  build:
+    name: Build image
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v2
+      - run: docker build . -t almahmoud/yes-jupyter:21.10 -f jupyter-galaxy-Dockerfile
+      - name: Login to docker hub
+        uses: actions-hub/docker/login@master
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+      - name: Push to docker hub
+        uses: actions-hub/docker@master
+        with:
+          args: push almahmoud/yes-jupyter:21.10

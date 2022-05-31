@@ -1,0 +1,28 @@
+name: Build Container Image
+on: push
+jobs:
+  build:
+    name: Build container image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set repo name
+        id: repo
+        run: echo "::set-output name=name::$(echo $GITHUB_WORKSPACE | awk -F / '{print $5}' | tr '[:upper:]' '[:lower:]')"
+      - uses: almahmoud/r-notebook-container-build-action@main
+        with:
+          image-name: "almahmoud/bioconductor_docker"
+          image-tag: ${{ steps.repo.outputs.name }}
+          base-image: "bioconductor/bioconductor_docker"
+          base-tag: "RELEASE_3_14"
+          build-command: |
+            Rscript -e "BiocManager::install(remotes::local_package_deps(dependencies=TRUE))" 
+      - name: Login to DockerHub
+        uses: actions-hub/docker/login@master
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+      - name: Push to DockerHub with repo name
+        uses: actions-hub/docker@master
+        with:
+          args: push almahmoud/bioconductor_docker:${{ steps.repo.outputs.name }}
