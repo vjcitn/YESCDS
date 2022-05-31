@@ -1,11 +1,11 @@
 ---
-title: "D2 Randomization to reduce bias"
+title: "D3 Randomization to reduce bias"
 shorttitle: "Randomization"
 author: "Vincent J. Carey, stvjc at channing.harvard.edu"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 vignette: >
   %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteIndexEntry{D2 Randomization to reduce bias}
+  %\VignetteIndexEntry{D3 Randomization to reduce bias}
   %\VignetteEncoding{UTF-8}
 output:
   rmarkdown::html_document:

@@ -5,6 +5,7 @@
 
 #' locations of US counties
 #' @docType data
+#' @import sf
 #' @format sf instance
 "us_county_geo"
 
@@ -42,6 +43,7 @@
 
 #' a data.frame with clinical features of a metastatic prostate adenocarcinoma study
 #' @docType data
+#' @import data.table
 #' @format data.frame
 "prostate_met_adeno"
 

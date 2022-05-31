@@ -2,6 +2,7 @@
 suppressMessages({
  suppressPackageStartupMessages({
   library(YESCDS)
+library(survival)
 library(geojsonio)
 library(tibble)
 library(dplyr)
@@ -17,4 +18,5 @@ data("vjc_cancer_net", package="YESCDS")
 littab = woncan |> select(MSA, `Cancer Sites`, Age.Adjusted.Rate) |> as.data.frame()
   })
 data(canada_crude)
+data(SEER_2018)
  })
