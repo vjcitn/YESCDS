@@ -11,7 +11,7 @@ jobs:
         run: echo "::set-output name=name::$(echo $GITHUB_WORKSPACE | awk -F / '{print $5}' | tr '[:upper:]' '[:lower:]')"
       - uses: almahmoud/r-notebook-container-build-action@main
         with:
-          image-name: "bioconductor/bioconductor_docker"
+          image-name: "bioconductor/rstudio_yescds"
           image-tag: ${{ steps.repo.outputs.name }}
           base-image: "bioconductor/bioconductor_docker"
           base-tag: "RELEASE_3_14"
