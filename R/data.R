@@ -60,6 +60,11 @@
 #' Rates are per 100,000 and are age-adjusted to the 2000 US Std Population (19 age groups - Census P25-1130).
 "SEER_2018"
 
+#' a SummarizedExperiment collecting BRCA mutations and colData from curatedTCGAData
+#' @docType data
+#' @format SummarizedExperiment
+"brcamutSE"
+
 #-rw-r--r--  1 vincentcarey  staff   31905 Mar 31 07:34 prostate_met_adeno.rda
 #-rw-r--r--  1 vincentcarey  staff   79469 Mar 31 06:24 metabric.rda
 #-rw-r--r--  1 vincentcarey  staff     444 Mar 20 14:14 vjc_cancer_net.rda

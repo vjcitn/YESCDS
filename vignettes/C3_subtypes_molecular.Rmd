@@ -32,31 +32,4 @@ littab = woncan |> select(MSA, `Cancer Sites`, Age.Adjusted.Rate) |> as.data.fra
  })
 ```
 
-# Cancers locate in specific organs
-
-![Overall, data commons](bodymap.jpg)
-
-## The burden of cancer by primary site
-
-SEER (Surveillance, Epidemiology and End Results)
-[estimates for 2017](https://seer.cancer.gov/statistics/preliminary-estimates/preliminary.html) for
-males:
-
-![SEER2017 male](SEERMALE.jpg)
-
-For females:
-
-![SEER2017 female](SEERFEMALE.jpg)
-
-
-## Survival curves: typical and extreme fates for those with cancer
-
-## Genes that are often mutated in cancer
-
-# A view of breast cancer survival
-
-## An overall survival curve
-
-![Breast cancer genes and survival curve](breastGenGDC.jpg)
-
-## Curves comparing persons with and without mutation
+# Commonly seen mutations in breast cancers
