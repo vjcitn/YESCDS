@@ -32,4 +32,36 @@ littab = woncan |> select(MSA, `Cancer Sites`, Age.Adjusted.Rate) |> as.data.fra
  })
 ```
 
-# Commonly seen mutations in breast cancers
+# Preliminaries
+
+## Human genome
+
+![Genome overview](chromosomes.jpg)
+
+## Central dogma
+
+A schematic from [Wikipedia](https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology#/media/File:Cdmb.svg), by Adenosine
+
+![Central dogma](centralDogma.jpg)
+
+## Gene counts by chromosome
+
+![Gene counts](genecounts.jpg)
+
+# Views of genomic variation in breast cancer
+
+## A [2012 view](http://www.ncbi.nlm.nih.gov/pubmed/22522925) of the whole genome
+
+![Genome-wide drivers](shahGenomeWide.jpg)
+
+## TCGA: common mutations; TTN mutation and survival
+
+This display is from the NCI Genomic Data Commons:
+ 
+![Breast cancer summary](breastTTN.jpg)
+
+## Clustering mRNA profiles of genes and tumors to find subtypes: [van 't Veer et al. 2002](https://www.nature.com/articles/415530a.pdf?origin=ppub)
+
+![Classic heatmap](vantveerHeat.jpg)
+
+
