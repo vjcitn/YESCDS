@@ -40,13 +40,25 @@
     <loc>https://github.com/vjcitn/YESCDS/articles/C3_subtypes_molecular.html</loc>
   </url>
   <url>
+    <loc>https://github.com/vjcitn/YESCDS/articles/D1_clin_trial_concepts.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/vjcitn/YESCDS/articles/D1_equipoise.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/articles/D2_equipoise.html</loc>
   </url>
   <url>
     <loc>https://github.com/vjcitn/YESCDS/articles/D2_randomization_bias.html</loc>
   </url>
   <url>
     <loc>https://github.com/vjcitn/YESCDS/articles/D3_comparing_trt.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/articles/D3_randomization_bias.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/articles/D4_comparing_trt.html</loc>
   </url>
   <url>
     <loc>https://github.com/vjcitn/YESCDS/articles/index.html</loc>
@@ -62,6 +74,9 @@
   </url>
   <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/SEER_2018.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/reference/brcamutSE.html</loc>
   </url>
   <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/build_deck.html</loc>
@@ -100,6 +115,9 @@
     <loc>https://github.com/vjcitn/YESCDS/reference/full_house.html</loc>
   </url>
   <url>
+    <loc>https://github.com/vjcitn/YESCDS/reference/has_mut_in.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/index.html</loc>
   </url>
   <url>
@@ -133,7 +151,16 @@
     <loc>https://github.com/vjcitn/YESCDS/reference/ordered_seg_cal.html</loc>
   </url>
   <url>
+    <loc>https://github.com/vjcitn/YESCDS/reference/plot.two_sample_mut_surv.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/reference/plot_seer_trend.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/plotwci.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/reference/print.two_sample_mut_surv.html</loc>
   </url>
   <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/prostate_met_adeno.html</loc>
@@ -151,10 +178,16 @@
     <loc>https://github.com/vjcitn/YESCDS/reference/suits.html</loc>
   </url>
   <url>
+    <loc>https://github.com/vjcitn/YESCDS/reference/summary.two_sample_mut_surv.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/table_woncan.html</loc>
   </url>
   <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/two_pairs.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/vjcitn/YESCDS/reference/two_sample_surv_setup.html</loc>
   </url>
   <url>
     <loc>https://github.com/vjcitn/YESCDS/reference/us_county_geo.html</loc>

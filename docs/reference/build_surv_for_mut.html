@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">YESCDS</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.18</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.23</span>
       </span>
     </div>
 
@@ -68,13 +68,16 @@
       <a href="../articles/C3_subtypes_molecular.html">C3 Molecular origins of diverse cancers</a>
     </li>
     <li>
-      <a href="../articles/D1_equipoise.html">D1 Equipoise: when medical knowledge can only advance by experimenting</a>
+      <a href="../articles/D1_clin_trial_concepts.html">D1 Clinical trials concepts</a>
     </li>
     <li>
-      <a href="../articles/D2_randomization_bias.html">D2 Randomization to reduce bias</a>
+      <a href="../articles/D2_equipoise.html">D2 Equipoise: when medical knowledge can only advance by experimenting</a>
     </li>
     <li>
-      <a href="../articles/D3_comparing_trt.html">D3 Methods of comparing treatments</a>
+      <a href="../articles/D3_randomization_bias.html">D3 Randomization to reduce bias</a>
+    </li>
+    <li>
+      <a href="../articles/D4_comparing_trt.html">D4 Methods of comparing treatments</a>
     </li>
   </ul></li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
@@ -130,20 +133,24 @@
 <span class="r-msg co"><span class="r-pr">#&gt;</span> see ?curatedTCGAData and browseVignettes('curatedTCGAData') for documentation</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> loading from cache</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> require(“RaggedExperiment”)</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error:</span> failed to load resource</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span>   name: EH4783</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span>   title: BRCA_Mutation-20160128</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span>   reason: require(“RaggedExperiment”) failed: use BiocManager::install() to install package?</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Working on: BRCA_colData-20160128</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> see ?curatedTCGAData and browseVignettes('curatedTCGAData') for documentation</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> loading from cache</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Working on: BRCA_metadata-20160128</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> see ?curatedTCGAData and browseVignettes('curatedTCGAData') for documentation</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> loading from cache</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Working on: BRCA_sampleMap-20160128</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> see ?curatedTCGAData and browseVignettes('curatedTCGAData') for documentation</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> loading from cache</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> harmonizing input:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>   removing 14592 sampleMap rows not in names(experiments)</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>   removing 121 colData rownames not in sampleMap 'primary'</span>
 <span class="r-in"><span class="va">has_TTN</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/apply.html" class="external-link">apply</a></span><span class="op">(</span><span class="va">br</span><span class="op">$</span><span class="va">mutdata</span>, <span class="fl">2</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/any.html" class="external-link">any</a></span><span class="op">(</span><span class="va">x</span> <span class="op">==</span> <span class="st">"TTN"</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in br$mutdata:</span> object of type 'closure' is not subsettable</span>
 <span class="r-in"><span class="va">fi</span> <span class="op">=</span> <span class="fu">survival</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/survfit.html" class="external-link">survfit</a></span><span class="op">(</span><span class="va">br</span><span class="op">$</span><span class="va">surv</span> <span class="op">~</span> <span class="va">has_TTN</span><span class="op">)</span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in br$surv:</span> object of type 'closure' is not subsettable</span>
 <span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fi</span>, lwd<span class="op">=</span><span class="fl">2</span>, col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"blue"</span>, <span class="st">"orange"</span><span class="op">)</span>, xlab <span class="op">=</span> <span class="st">"t = Years from diagnosis"</span>, ylab<span class="op">=</span><span class="st">"S(t) = Prob(survive beyond t)"</span><span class="op">)</span>  <span class="co"># KM-plot</span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in h(simpleError(msg, call)):</span> error in evaluating the argument 'x' in selecting a method for function 'plot': object 'fi' not found</span>
 <span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/legend.html" class="external-link">legend</a></span><span class="op">(</span><span class="fl">.1</span>, <span class="fl">.3</span>, lwd<span class="op">=</span><span class="fl">2</span>, col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"blue"</span>, <span class="st">"orange"</span><span class="op">)</span>, lty<span class="op">=</span><span class="fl">1</span>, legend<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"TTN wild-type"</span>, <span class="st">"TTN-mutant"</span><span class="op">)</span>, bty<span class="op">=</span><span class="st">"n"</span><span class="op">)</span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in (function (s, units = "user", cex = NULL, font = NULL, vfont = NULL,     ...) {    if (!is.null(vfont))         vfont &lt;- c(typeface = pmatch(vfont[1L], Hershey$typeface),             fontindex = pmatch(vfont[2L], Hershey$fontindex))    .External.graphics(C_strWidth, as.graphicsAnnot(s), pmatch(units,         c("user", "figure", "inches")), cex, font, vfont, ...)})(dots[[1L]][[1L]], cex = dots[[2L]][[1L]], font = dots[[3L]][[1L]],     units = "user"):</span> plot.new has not been called yet</span>
 <span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/title.html" class="external-link">title</a></span><span class="op">(</span><span class="st">"TCGA BRCA survival"</span><span class="op">)</span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in title("TCGA BRCA survival"):</span> plot.new has not been called yet</span>
+<span class="r-plt img"><img src="build_surv_for_mut-1.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>
   </div>

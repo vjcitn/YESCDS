@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">YESCDS</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.18</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.23</span>
       </span>
     </div>
 
@@ -68,13 +68,16 @@
       <a href="../articles/C3_subtypes_molecular.html">C3 Molecular origins of diverse cancers</a>
     </li>
     <li>
-      <a href="../articles/D1_equipoise.html">D1 Equipoise: when medical knowledge can only advance by experimenting</a>
+      <a href="../articles/D1_clin_trial_concepts.html">D1 Clinical trials concepts</a>
     </li>
     <li>
-      <a href="../articles/D2_randomization_bias.html">D2 Randomization to reduce bias</a>
+      <a href="../articles/D2_equipoise.html">D2 Equipoise: when medical knowledge can only advance by experimenting</a>
     </li>
     <li>
-      <a href="../articles/D3_comparing_trt.html">D3 Methods of comparing treatments</a>
+      <a href="../articles/D3_randomization_bias.html">D3 Randomization to reduce bias</a>
+    </li>
+    <li>
+      <a href="../articles/D4_comparing_trt.html">D4 Methods of comparing treatments</a>
     </li>
   </ul></li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
@@ -107,6 +110,10 @@
           <p><code><a href="SEER_2018.html">SEER_2018</a></code> </p>
         </td>
         <td><p>a data.frame with SEER estimates of cancer incidence for 2018</p></td>
+      </tr><tr><td>
+          <p><code><a href="brcamutSE.html">brcamutSE</a></code> </p>
+        </td>
+        <td><p>a SummarizedExperiment collecting BRCA mutations and colData from curatedTCGAData</p></td>
       </tr><tr><td>
           <p><code><a href="build_deck.html">build_deck()</a></code> </p>
         </td>
@@ -156,6 +163,10 @@
         </td>
         <td><p>test for full house</p></td>
       </tr><tr><td>
+          <p><code><a href="has_mut_in.html">has_mut_in()</a></code> </p>
+        </td>
+        <td><p>check all columns for presence of symbol in a SE with ragged mutation matrix as assay</p></td>
+      </tr><tr><td>
           <p><code><a href="is_flush.html">is_flush()</a></code> </p>
         </td>
         <td><p>test for flush</p></td>
@@ -196,9 +207,21 @@
         </td>
         <td><p>big display of ordered CIs for California Lung and Bronchus incidence 2014-2018</p></td>
       </tr><tr><td>
+          <p><code><a href="plot.two_sample_mut_surv.html">plot(<i>&lt;two_sample_mut_surv&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>plot method</p></td>
+      </tr><tr><td>
+          <p><code><a href="plot_seer_trend.html">plot_seer_trend()</a></code> </p>
+        </td>
+        <td><p>plot the rate statistics over time for selected cancer sites and subgroups</p></td>
+      </tr><tr><td>
           <p><code><a href="plotwci.html">plotwci()</a></code> </p>
         </td>
         <td><p>simple display of confidence intervals for cancer incidence</p></td>
+      </tr><tr><td>
+          <p><code><a href="print.two_sample_mut_surv.html">print(<i>&lt;two_sample_mut_surv&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>print method</p></td>
       </tr><tr><td>
           <p><code><a href="prostate_met_adeno.html">prostate_met_adeno</a></code> </p>
         </td>
@@ -220,6 +243,10 @@
         </td>
         <td><p>get suits of a collection of cards</p></td>
       </tr><tr><td>
+          <p><code><a href="summary.two_sample_mut_surv.html">summary(<i>&lt;two_sample_mut_surv&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>summary method</p></td>
+      </tr><tr><td>
           <p><code><a href="table_woncan.html">table_woncan()</a></code> </p>
         </td>
         <td><p>simplify table view of WONDER CDC statistsics</p></td>
@@ -227,6 +254,10 @@
           <p><code><a href="two_pairs.html">two_pairs()</a></code> </p>
         </td>
         <td><p>test for two pairs</p></td>
+      </tr><tr><td>
+          <p><code><a href="two_sample_surv_setup.html">two_sample_surv_setup()</a></code> </p>
+        </td>
+        <td><p>two-sample survival comparison dependent on mutation present in gene</p></td>
       </tr><tr><td>
           <p><code><a href="us_county_geo.html">us_county_geo</a></code> </p>
         </td>
