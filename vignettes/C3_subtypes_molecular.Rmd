@@ -34,11 +34,27 @@ littab = woncan |> select(MSA, `Cancer Sites`, Age.Adjusted.Rate) |> as.data.fra
 
 # Preliminaries
 
+In this segment we will review basic definitions underlying
+the use of data to understand variation in genetic processes connnected
+with initiation and progression of cancer.
+
 ## Human genome
+
+The human genome is composed of 22 autosomal chromosome pairs
+and 1 pair of sex chromosomes.  Autosomal chromosomes are numbered 1-22;
+females have a pair of X chromosomes, and males have a pair labeled X and Y.
 
 ![Genome overview](chromosomes.jpg)
 
 ## Central dogma
+
+"DNA makes RNA makes protein"
+
+The genetic material from which chromosomes are formed is DNA (deoxyribonucleic acid).
+
+DNA is transcribed to RNA (ribonucleic acid)
+
+RNA is translated to protein.
 
 A schematic from [Wikipedia](https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology#/media/File:Cdmb.svg), by Adenosine
 
@@ -46,13 +62,36 @@ A schematic from [Wikipedia](https://en.wikipedia.org/wiki/Central_dogma_of_mole
 
 ## Gene counts by chromosome
 
+"Gene" refers to a physical and functional component of the genome that
+is inherited between generations.
+
+Gene finding and gene counting are basic tasks of bioinformatic analysis.
+
+The sizes of chromosomes and numbers of genes currently known are depicted here:
+
 ![Gene counts](genecounts.jpg)
 
 # Views of genomic variation in breast cancer
 
 ## A [2012 view](http://www.ncbi.nlm.nih.gov/pubmed/22522925) of the whole genome
 
+In this display, the chromosomes are ordered across the screen, from 1 to 22 followed by X.
+
+Because this display concerns breast cancer in females, no Y chromosome is depicted.
+
+The display is focused on "copy number alterations" (CNAs) in tumors -- where (possibly large)
+segments of chromosomal
+DNA have been duplicated or deleted in the tumor.  Red spikes denote positions where
+duplicating CNAs are associated with expression changes of nearby genes, blue spikes
+where a deleting CNA affects expression.
+
 ![Genome-wide drivers](shahGenomeWide.jpg)
+
+The figure above is drawn from a paper studying 2000 breast tumors.  A more recent [survey](https://www.frontiersin.org/articles/10.3389/fonc.2021.700568/full)
+shows that the phenomenon pervades a broad spectrum of cancer types studied in The Cancer
+Genome Atlas (TCGA).
+
+![2021 CNA survey](COSMICCNA.jpg)
 
 ## TCGA: common mutations; TTN mutation and survival
 
