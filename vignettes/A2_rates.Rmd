@@ -59,6 +59,9 @@ Incidence expresses the rapidity with which a disease grows in a population.
 
 For a more detailed discussion of these terms, check [this CDC site](https://www.cdc.gov/csels/dsepd/ss1978/lesson3/section2.html#:~:text=Incidence%20refers%20to%20the%20occurrence,cases%20per%20unit%20of%20population.).
 
+An excellent resource on rate estimation and interpretation is the [online book on
+cancer screening](https://www.ncbi.nlm.nih.gov/books/NBK550212/pdf/Bookshelf_NBK550212.pdf) by Pamela Marcus, hosted at NCI.
+
 
 ## Collecting cancer data
 
