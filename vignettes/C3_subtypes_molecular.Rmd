@@ -189,3 +189,8 @@ Huang and colleagues map the clonal diversification of the primary tumor genome 
 tumors that emerged in different organs.
 
 ![Evolutionary map](marthEvolve.jpg)
+
+One of the elements with which this map of progressive metastasis was constructed
+is an analysis of copy number aberrations (CNAs).  An interactive view of
+these CNAs in sampes from the 28 tumors in different body site is 
+<a href="cnv-heatmap.html">here</a>.
