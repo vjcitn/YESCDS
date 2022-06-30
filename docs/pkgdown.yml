@@ -1,5 +1,5 @@
 pandoc: '2.5'
-pkgdown: 2.0.3
+pkgdown: 2.0.4
 pkgdown_sha: ~
 articles:
   A1_cancer_table: A1_cancer_table.html
@@ -18,7 +18,7 @@ articles:
   D2_equipoise: D2_equipoise.html
   D3_randomization_bias: D3_randomization_bias.html
   D4_comparing_trt: D4_comparing_trt.html
-last_built: 2022-06-12T18:34Z
+last_built: 2022-06-30T10:41Z
 urls:
   reference: https://github.com/vjcitn/YESCDS/reference
   article: https://github.com/vjcitn/YESCDS/articles
