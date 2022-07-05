@@ -33,7 +33,7 @@ littab = woncan |> select(MSA, `Cancer Sites`, Age.Adjusted.Rate) |> as.data.fra
  })
 ```
 
-# The basic geographic data about US counties
+# Basic geographic data about US counties
 
 The coordinates of central locations in US counties
 are provided in `us_county_geo`.

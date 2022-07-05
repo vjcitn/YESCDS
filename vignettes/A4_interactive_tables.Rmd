@@ -29,6 +29,8 @@ littab = woncan |> select(MSA, `Cancer Sites`, Age.Adjusted.Rate) |> as.data.fra
  })
 ```
 
+# Interactive rate tables
+
 # A tabulation of cancer types and incidence rates across 'Metropolitan Statistical Areas'
 
 We have formatted information from the CDC WONDER system so that

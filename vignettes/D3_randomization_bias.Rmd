@@ -32,7 +32,7 @@ littab = woncan |> select(MSA, `Cancer Sites`, Age.Adjusted.Rate) |> as.data.fra
  })
 ```
 
-# Blinding to reduce bias
+# Blinding and randomization to reduce bias
 
 The concept of the double-blind clinical experiment is well-established
 
@@ -92,7 +92,7 @@ The use of a different approach to randomization, in which small blocks
 of allocations are randomized independently, can reduce the size
 and duration of periods of imbalance over time.
 
-![Excursions 1](tight.jpg)
+![Excursions 2](tight.jpg)
 
 Randomization is a well-accepted tool in experimental design, but
 must be conducted with care.  The [wikipedia article](https://en.wikipedia.org/wiki/Randomized_experiment) has some interesting references on assessment of the overall effect of

@@ -34,7 +34,7 @@ littab = woncan |> select(MSA, `Cancer Sites`, Age.Adjusted.Rate) |> as.data.fra
 data(canada_crude)
 ```
 
-# Fair comparisons
+# Age adjustment for fair comparisons
 
 Two basic types of comparison are of interest in cancer epidemiology:
 

@@ -32,7 +32,7 @@ littab = woncan |> select(MSA, `Cancer Sites`, Age.Adjusted.Rate) |> as.data.fra
  })
 ```
 
-# Preliminaries
+# Molecular origins of tumors and their spread
 
 In this segment we will review basic definitions underlying
 the use of data to understand variation in genetic processes connnected

@@ -23,7 +23,7 @@ suppressMessages({
  })
 ```
 
-# Variation in cancer rates, recorded at the county level
+# County-level variation in cancer rates
 
 We focus on colorectal cancer:
 
