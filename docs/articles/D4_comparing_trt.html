@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">YESCDS</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.26</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.27</span>
       </span>
     </div>
 
@@ -117,13 +117,17 @@
 
       
 
-      </header><div class="row">
+      </header><script src="D4_comparing_trt_files/htmlwidgets-1.5.4/htmlwidgets.js"></script><link href="D4_comparing_trt_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="D4_comparing_trt_files/datatables-binding-0.23/datatables.js"></script><link href="D4_comparing_trt_files/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="D4_comparing_trt_files/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="D4_comparing_trt_files/dt-core-1.11.3/js/jquery.dataTables.min.js"></script><link href="D4_comparing_trt_files/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="D4_comparing_trt_files/crosstalk-1.2.0/js/crosstalk.min.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>D4 Methods of comparing treatments</h1>
                         <h4 data-toc-skip class="author">Vincent J. Carey, stvjc at channing.harvard.edu</h4>
             
-            <h4 data-toc-skip class="date">June 30, 2022</h4>
+            <h4 data-toc-skip class="date">July 05, 2022</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/vjcitn/YESCDS/blob/HEAD/vignettes/D4_comparing_trt.Rmd"><code>vignettes/D4_comparing_trt.Rmd</code></a></small>
       <div class="hidden name"><code>D4_comparing_trt.Rmd</code></div>
@@ -135,6 +139,113 @@
 <div class="section level2">
 <h2 id="comparing-cancer-treatments">Comparing cancer treatments<a class="anchor" aria-label="anchor" href="#comparing-cancer-treatments"></a>
 </h2>
+<p>In section C2 we learned how to interpret survival curves, which indicate the probability of surviving beyond a given period of time from diagnosis of disease.</p>
+<p>In this section we will examine data from a study published in 1979, that is conveniently available with R’s <code>survival</code> package.</p>
+<p>The citation for the study is</p>
+<pre><code>J H Edmonson, T R Fleming, D G Decker, G D Malkasian, E O Jorgensen, J A Jefferies, 
+M J Webb, L K Kvols, Cancer Treat Rep . 1979 Feb;63(2):241-7.
+Different chemotherapeutic sensitivities and host factors affecting prognosis in 
+advanced ovarian carcinoma versus minimal residual disease</code></pre>
+<p>The abstract is provided at the end of this vignette.</p>
+<p>The data for the ovarian cancer study has the following form:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/therneau/survival" class="external-link">survival</a></span><span class="op">)</span></span>
+<span><span class="fu">datatable</span><span class="op">(</span><span class="va">ovarian</span><span class="op">)</span></span></code></pre></div>
+<div id="htmlwidget-fd2f2928f64ba78b6dd1" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fd2f2928f64ba78b6dd1">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26"],[59,115,156,421,431,448,464,475,477,563,638,744,769,770,803,855,1040,1106,1129,1206,1227,268,329,353,365,377],[1,1,1,0,1,0,1,1,0,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0],[72.3315,74.4932,66.4658,53.3644,50.3397,56.4301,56.937,59.8548,64.1753,55.1781,56.7562,50.1096,59.6301,57.0521,39.2712,43.1233,38.8932,44.6,53.9068,44.2055,59.589,74.5041,43.137,63.2192,64.4247,58.3096],[2,2,2,2,2,1,2,2,2,1,1,1,2,2,1,1,2,1,1,2,1,2,2,1,2,1],[1,1,1,2,1,1,2,2,1,2,1,2,2,2,1,1,1,1,2,2,2,1,1,2,2,2],[1,1,2,1,1,2,2,2,1,2,2,1,2,1,1,2,2,1,1,1,2,2,1,2,1,1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>futime<\/th>\n      <th>fustat<\/th>\n      <th>age<\/th>\n      <th>resid.ds<\/th>\n      <th>rx<\/th>\n      <th>ecog.ps<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><p>The variable description is</p>
+<pre><code>Format:
+
+       futime:    survival or censoring time                           
+       fustat:    censoring status                                     
+       age:       in years                                             
+       resid.ds:  residual disease present (1=no,2=yes)                
+       rx:        treatment group                                      
+       ecog.ps:   ECOG performance status (1 is better, see reference) </code></pre>
+<p>We will consider three aspects of interpretation of these data.</p>
+<div class="section level3">
+<h3 id="estimation-of-survival-probabilities-by-treatment-group">Estimation of survival probabilities by treatment group<a class="anchor" aria-label="anchor" href="#estimation-of-survival-probabilities-by-treatment-group"></a>
+</h3>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">osurv</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">Surv</a></span><span class="op">(</span><span class="va">ovarian</span><span class="op">$</span><span class="va">futime</span>, <span class="va">ovarian</span><span class="op">$</span><span class="va">fustat</span><span class="op">)</span></span>
+<span><span class="va">ofit1</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/survival/man/survfit.html" class="external-link">survfit</a></span><span class="op">(</span><span class="va">osurv</span><span class="op">~</span><span class="va">ovarian</span><span class="op">$</span><span class="va">rx</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">ofit1</span>, lty<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/legend.html" class="external-link">legend</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">.4</span>, lty<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span>, legend<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"cyc 1g/m2"</span>, <span class="st">"cyc .5g/m2 + adria"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p><img src="D4_comparing_trt_files/figure-html/doplot-1.png" width="700"></p>
+</div>
+<div class="section level3">
+<h3 id="testing-for-treatment-effect">Testing for treatment effect<a class="anchor" aria-label="anchor" href="#testing-for-treatment-effect"></a>
+</h3>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/survdiff.html" class="external-link">survdiff</a></span><span class="op">(</span><span class="va">osurv</span><span class="op">~</span><span class="va">ovarian</span><span class="op">$</span><span class="va">rx</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## Call:</span></span>
+<span><span class="co">## survdiff(formula = osurv ~ ovarian$rx)</span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">##               N Observed Expected (O-E)^2/E (O-E)^2/V</span></span>
+<span><span class="co">## ovarian$rx=1 13        7     5.23     0.596      1.06</span></span>
+<span><span class="co">## ovarian$rx=2 13        5     6.77     0.461      1.06</span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">##  Chisq= 1.1  on 1 degrees of freedom, p= 0.3</span></span></code></pre>
+</div>
+<div class="section level3">
+<h3 id="modeling-the-survival-curves-for-the-effect-of-residual-disease">Modeling the survival curves for the effect of residual disease<a class="anchor" aria-label="anchor" href="#modeling-the-survival-curves-for-the-effect-of-residual-disease"></a>
+</h3>
+<p>We can produce a very compact, two parameter model for the survival distributions for patients with and without residual disease.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/survreg.html" class="external-link">survreg</a></span><span class="op">(</span><span class="va">osurv</span><span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/AsIs.html" class="external-link">I</a></span><span class="op">(</span><span class="va">ovarian</span><span class="op">$</span><span class="va">resid.ds</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span>, </span>
+<span>   dist<span class="op">=</span><span class="st">"exponential"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## </span></span>
+<span><span class="co">## Call:</span></span>
+<span><span class="co">## survreg(formula = osurv ~ I(ovarian$resid.ds - 1), dist = "exponential")</span></span>
+<span><span class="co">##                          Value Std. Error     z      p</span></span>
+<span><span class="co">## (Intercept)              7.919      0.577 13.72 &lt;2e-16</span></span>
+<span><span class="co">## I(ovarian$resid.ds - 1) -1.214      0.667 -1.82  0.069</span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">## Scale fixed at 1 </span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">## Exponential distribution</span></span>
+<span><span class="co">## Loglik(model)= -96.1   Loglik(intercept only)= -98</span></span>
+<span><span class="co">##  Chisq= 3.87 on 1 degrees of freedom, p= 0.049 </span></span>
+<span><span class="co">## Number of Newton-Raphson Iterations: 4 </span></span>
+<span><span class="co">## n= 26</span></span></code></pre>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ofit2</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/survival/man/survfit.html" class="external-link">survfit</a></span><span class="op">(</span><span class="va">osurv</span><span class="op">~</span><span class="va">ovarian</span><span class="op">$</span><span class="va">resid.ds</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">ofit2</span>, lty<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">)</span></span>
+<span><span class="va">tim</span> <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">1200</span></span>
+<span><span class="va">pp_nores</span> <span class="op">=</span> <span class="fl">1</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/stats/Exponential.html" class="external-link">pexp</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">1200</span>, <span class="fl">1</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">exp</a></span><span class="op">(</span><span class="fl">7.9</span><span class="op">)</span><span class="op">)</span> <span class="co"># round parameter value</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">tim</span>, <span class="va">pp_nores</span>, col<span class="op">=</span><span class="st">"blue"</span><span class="op">)</span></span>
+<span><span class="va">pp_res</span> <span class="op">=</span> <span class="fl">1</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/stats/Exponential.html" class="external-link">pexp</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">1200</span>, <span class="fl">1</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">exp</a></span><span class="op">(</span><span class="fl">7.9</span><span class="op">-</span><span class="fl">1.2</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">tim</span>, <span class="va">pp_res</span>, col<span class="op">=</span><span class="st">"red"</span><span class="op">)</span></span></code></pre></div>
+<p><img src="D4_comparing_trt_files/figure-html/dosummmm-1.png" width="700"></p>
+</div>
+<div class="section level3">
+<h3 id="exercises">Exercises<a class="anchor" aria-label="anchor" href="#exercises"></a>
+</h3>
+<ul>
+<li>Interpret confidence intervals for the one-year survival probabilities for the two treatments, ignoring the presence or absence of residual disease.</li>
+</ul>
+<p><img src="D4_comparing_trt_files/figure-html/doconf-1.png" width="700"></p>
+<ul>
+<li>
+</ul>
+<p>Abstract of 1979 paper:</p>
+<pre><code>Treatment of patients with advanced ovarian carcinoma (stages IIIB and IV) using 
+either cyclophosphamide alone (1 g/m2) or cyclophosphamide (500 mg/m2) plus 
+adriamycin (40 mg/m2) by iv injection every 3 weeks each produced partial 
+regression in approximately one third of the patients. Survival curves and 
+time-to-progression curves for the two regimens were nearly identical 
+in these patients with advanced disease. These same regimens produced different 
+results when used monthly in patients who had minimal residual 
+disease (stages II and IIIA). In patients with minimal residual disease 
+the therapeutic index of the combination regimen was superior to that of 
+cyclophosphamide alone. Prognosis was better overall among patients with 
+minimal residual disease than among patients with advanced disease. Within 
+the minimal-disease group grossly complete excision of tumor prior to 
+chemotherapy was associated with still better prognosis. Among patients 
+with advanced disease, prognosis was significantly better for older patients 
+despite their generally less favorable performance scores. Much 
+of this prognostic superiority appeared to be related to menopausal 
+status and presumably to the depletion of endogenous estrogens in the older patients.</code></pre>
+</div>
 </div>
   </div>
 
@@ -155,7 +266,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
       </footer>
