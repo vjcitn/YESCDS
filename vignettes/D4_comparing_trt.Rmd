@@ -106,7 +106,7 @@ lines(tim, pp_res, col="red")
 - Interpret confidence intervals for the one-year survival probabilities for
 the two treatments, ignoring the presence or absence of residual disease.
 
-```{r doconf, echo=FALSE}
+```{r doconf, echo=TRUE}
 par(mfrow=c(1,2))
 with(ovarian[ovarian$rx==1,], plot(survfit(Surv(futime,fustat)~1),conf.int=TRUE))
 with(ovarian[ovarian$rx==2,], plot(survfit(Surv(futime,fustat)~1),conf.int=TRUE))

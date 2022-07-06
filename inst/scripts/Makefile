@@ -3,6 +3,11 @@
 # assumes contents of $(notebooks) generated from Rmd in ../../vignettes
 # also run make gupdate to get all png or jpg files into ../ipynb folder
 #
+# USAGE: 
+#   make prepare
+#   make gupdate
+#   make
+#
 
 notebooks: A1_cancer_table.ipynb A2_rates.ipynb A3_monitoring.ipynb A4_interactive_tables.ipynb \
 	A5_data_graphics.ipynb A6_standardization.ipynb \
@@ -14,9 +19,6 @@ notebooks: A1_cancer_table.ipynb A2_rates.ipynb A3_monitoring.ipynb A4_interacti
 	D3_randomization_bias.ipynb \
 	D4_comparing_trt.ipynb
 
-
-%.Rmd :
-	cp ../../vignettes/$< .
 
 %.ipynb : %.Rmd
 	R -e 'AnVILPublish::as_notebook("$<", namespace="use-strides", name="$@", update=FALSE)'

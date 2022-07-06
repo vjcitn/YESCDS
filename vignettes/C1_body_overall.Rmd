@@ -104,11 +104,11 @@ datatable(SEER_2018[,2:6])
 
 This can be used to visualize trends over time.
 ```{r dopl1,echo=TRUE}
-mkid = SEER_2018 |> filter(CancerSite == "Kidney and Renal Pelvis" & Sex == "Male") 
-fcol = SEER_2018 |> filter(CancerSite == "Colon and Rectum" & Sex == "Female") 
-with(mkid |> filter(Race=="All Races"), plot(rate.2.2018~Year, ylab="Incidence per 100000", xlab="Year",
+mkid = SEER_2018 |> dplyr::filter(CancerSite == "Kidney and Renal Pelvis" & Sex == "Male") 
+fcol = SEER_2018 |> dplyr::filter(CancerSite == "Colon and Rectum" & Sex == "Female") 
+with(mkid |> dplyr::filter(Race=="All Races"), plot(rate.2.2018~Year, ylab="Incidence per 100000", xlab="Year",
     main="SEER Kidney and Renal Pelvis, Male"))
-with(fcol |> filter(Race=="All Races"), plot(rate.2.2018~Year, ylab="Incidence per 100000", xlab="Year",
+with(fcol |> dplyr::filter(Race=="All Races"), plot(rate.2.2018~Year, ylab="Incidence per 100000", xlab="Year",
     main="SEER Colon and Rectum, Female"))
 ```
 
@@ -125,27 +125,27 @@ reliably summarize them in the face of these complications.
 
 <!--
 dim(mkid)
-with(mkid |> filter(Race=="All Races" & Year >= 2013), lm(rate.2.2018~Year))
-with(mkid |> filter(Race=="All Races" & Year >= 2013), plot(rate.2.2018~Year))
+with(mkid |> dplyr::filter(Race=="All Races" & Year >= 2013), lm(rate.2.2018~Year))
+with(mkid |> dplyr::filter(Race=="All Races" & Year >= 2013), plot(rate.2.2018~Year))
 6/17
 17+.35*17
-with(mkid |> filter(Race=="All Races"), plot(rate.2.2018~I(Year-2000)))
-with(mkid |> filter(Race=="All Races"), lm(rate.2.2018~I(Year-2000)))
+with(mkid |> dplyr::filter(Race=="All Races"), plot(rate.2.2018~I(Year-2000)))
+with(mkid |> dplyr::filter(Race=="All Races"), lm(rate.2.2018~I(Year-2000)))
 .34/17
-with(mpanc |> filter(Race=="All Races"), lm(rate.2.2018~I(Year-2000)))
+with(mpanc |> dplyr::filter(Race=="All Races"), lm(rate.2.2018~I(Year-2000)))
 .125/12.89
 head(mkid)
 head(mpanc)
-SEER_2018 |> filter(CancerSite == "Leukemia" & Sex == "Male")  -> mleuk
+SEER_2018 |> dplyr::filter(CancerSite == "Leukemia" & Sex == "Male")  -> mleuk
 head(mleuk)
-SEER_2018 |> filter(CancerSite == "Lung and Bronchus" & Sex == "Male")  -> mlung
+SEER_2018 |> dplyr::filter(CancerSite == "Lung and Bronchus" & Sex == "Male")  -> mlung
 head(mlung)
-with(mlung |> filter(Race=="All Races"), lm(rate.2.2018~I(Year-2000)))
-with(mlung |> filter(Race=="All Races"), plot(rate.2.2018~I(Year-2000)))
+with(mlung |> dplyr::filter(Race=="All Races"), lm(rate.2.2018~I(Year-2000)))
+with(mlung |> dplyr::filter(Race=="All Races"), plot(rate.2.2018~I(Year-2000)))
 -1.8.88.7
 -1.8/88.7
-with(mlung |> filter(Race=="All Races" & Year >=2013), plot(rate.2.2018~I(Year-2000)))
-with(mlung |> filter(Race=="All Races" & Year >=2013), lm(rate.2.2018~I(Year-2000)))
+with(mlung |> dplyr::filter(Race=="All Races" & Year >=2013), plot(rate.2.2018~I(Year-2000)))
+with(mlung |> dplyr::filter(Race=="All Races" & Year >=2013), lm(rate.2.2018~I(Year-2000)))
 -2.06/91.5
 -->
 
