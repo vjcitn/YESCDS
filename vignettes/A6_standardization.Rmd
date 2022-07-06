@@ -89,7 +89,7 @@ Question: What can you say about the cancer mortality trend in Canada between 20
 A [methods paper](https://wonder.cdc.gov/wonder/help/cancer/fayfeuerconfidenceintervals.pdf) on
 confidence intervals for standardized rates includes the following display:
 
-![Age structure](standardPopGraphs.jpg)
+![Age structure](images/standardPopGraphs.jpg)
 
 We read this as showing that in the US in 1970, about 18% of the population
 was under 10 years of age, while in the world overall, about 22% of the

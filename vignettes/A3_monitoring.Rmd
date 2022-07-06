@@ -27,7 +27,7 @@ suppressMessages({
 
 We focus on colorectal cancer:
 
-![NIH/CDC State Cancer Profiles](colon8GroupIncidence.jpg)
+![NIH/CDC State Cancer Profiles](images/colon8GroupIncidence.jpg)
 
 # Exercises
 
