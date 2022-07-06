@@ -35,7 +35,7 @@ littab = woncan |> select(MSA, `Cancer Sites`, Age.Adjusted.Rate) |> as.data.fra
 
 # Cancers originate in specific organs
 
-![Overall, data commons](bodymap.jpg)
+![Overall, data commons](images/bodymap.jpg)
 
 This display can be found at the NCI [Genomic Data Commons](https://portal.gdc.cancer.gov/).
 
@@ -47,7 +47,7 @@ information about ongoing cancer risks.
 
 Click on the right shoulder of the female form to find
 
-![Lymphatic cancers](lymphlogic.png)
+![Lymphatic cancers](images/lymphlogic.png)
 
 Notice the description of the logic of selecting the 'shoulder', which
 contains an icon depicting lymph nodes.  There are tiles expressing
@@ -56,12 +56,12 @@ data commons.  "Primary Site" IS "lymph nodes" AND "Tissue or Organ
 Of Origin" IN and then a parenthesis begins.  Click on the
 ellipsis to reveal the full set of lymph-related tissues:
 
-![Details of lymphatic cancers](lymExpanded.png)
+![Details of lymphatic cancers](images/lymExpanded.png)
 
 If we "clear" the selection, we get a complete overview of
 all studies and cancer types.
 
-![Selection cleared](clearGDC.png)
+![Selection cleared](images/clearGDC.png)
 
 Exercise: After clearing the selection, hover over the
 "Disease Type" pie chart to learn the most common cancer types.
@@ -87,11 +87,11 @@ SEER (Surveillance, Epidemiology and End Results)
 [estimates for 2017](https://seer.cancer.gov/statistics/preliminary-estimates/preliminary.html) for
 males:
 
-![SEER2017 male](SEERMALE.jpg)
+![SEER2017 male](images/SEERMALE.jpg)
 
 For females:
 
-![SEER2017 female](SEERFEMALE.jpg)
+![SEER2017 female](images/SEERFEMALE.jpg)
 
 ### Detailed visualization of the trends
 
@@ -163,4 +163,4 @@ Below is a small excerpt from the [oncotree](http://oncotree.mskcc.org/#/home), 
 of subtypes of brain cancer types.  Many of the nodes on the right
 can be expanded to reveal additional subtypes.
 
-![Oncotree snippet](oncotreeSNIP.jpg)
+![Oncotree snippet](images/oncotreeSNIP.jpg)

@@ -84,17 +84,17 @@ National Cancer Institute (NCI).  Data are collected at 17 regional centers.
 The SEER web site, offers various facets of cancer data to investigate.
 
 
-![SEERlist](SEERlist.jpg)
+![SEERlist](images/SEERlist.jpg)
 
 ## Body sites with relatively high cancer incidence
 
-![SEER 2021 pie charts](piecharts.jpg)
+![SEER 2021 pie charts](images/piecharts.jpg)
 
 ## New diagnoses, and deaths, over time
 
 A very broad overview of cancer's impact on Americans over the past 20 years:
 
-![SEER overview, 2021](rateOverview.jpg)
+![SEER overview, 2021](images/rateOverview.jpg)
 
 ## Exercises
 
@@ -110,13 +110,13 @@ arise in the pancreas.
 We can "drill down" on specific cancer types using the drop-down menu
 at seer.cancer.gov.  For cancer of the pancreas we have:
 
-![SEER pancreas, 2021](pancreas.jpg)
+![SEER pancreas, 2021](images/pancreas.jpg)
 
 # A view of colorectal cancer incidence
 
 For cancer of the colon or rectum we have:
 
-![SEER colon and rectum, 2021](colon.jpg)
+![SEER colon and rectum, 2021](images/colon.jpg)
 
 ## Exercises
 
