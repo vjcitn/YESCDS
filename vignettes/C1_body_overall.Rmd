@@ -103,7 +103,7 @@ datatable(SEER_2018[,2:6])
 ```
 
 This can be used to visualize trends over time.
-```{r dopl1,echo=FALSE}
+```{r dopl1,echo=TRUE}
 mkid = SEER_2018 |> filter(CancerSite == "Kidney and Renal Pelvis" & Sex == "Male") 
 fcol = SEER_2018 |> filter(CancerSite == "Colon and Rectum" & Sex == "Female") 
 with(mkid |> filter(Race=="All Races"), plot(rate.2.2018~Year, ylab="Incidence per 100000", xlab="Year",
