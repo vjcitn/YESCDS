@@ -84,6 +84,18 @@ MSAs in the US?
 A.5.5 Hover over the leftmost block in the display.  What is the MSA with
 lowest value of Female Breast cancer incidence, and what is the reported rate?
 
+### Answers
+
+A.5.1
+
+A.5.2
+
+A.5.3
+
+A.5.4
+
+A.5.5
+
 ## Using a histogram to compare cancer incidence rates in two areas
 
 By computing differences or ratios and forming the histogram, we
@@ -125,3 +137,9 @@ interactive scatterplot, compute the ratio of
 incidence rates for prostate cancer in Baton Rouge
 compared to those in Tucson.  Compare to the result
 provided in the `make_comparison` histogram above.
+
+### Answers
+
+A.5.6
+
+A.5.7

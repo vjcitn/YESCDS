@@ -63,14 +63,31 @@ requiring extensive literature search and acquisition of public data
 
 # Questions to answer in designing a clinical trial  [(Article)](https://www.cancer.org/treatment/treatments-and-side-effects/clinical-trials/what-you-need-to-know/phases-of-clinical-trials.html)
 
-- What is the current standard of care?  
-- What care outcomes do we want to improve, and how much improvement would could as a real advance?
-    - Here risk-benefit comparison becomes important
-- What is the proposed alternative?
-- How do we determine a safe "dose" of the proposed alternative?
-    - In the case of surgery this question may not make sense
-- How do we verify that the proposed alternative has any effect at all?
-- How do we measure the overall benefit conferred by using the alternative method?
+D.1.1 What is the current standard of care?  
+
+D.1.2 What care outcomes do we want to improve, and how much improvement would count as a real advance? (Here risk-benefit comparison becomes important)
+
+D.1.3 What is the proposed alternative?
+
+D.1.4 How do we determine a safe "dose" of the proposed alternative? (In the case of surgery this question may not make sense)
+
+D.1.5 How do we verify that the proposed alternative has any effect at all?
+
+D.1.6 How do we measure the overall benefit conferred by using the alternative method?
+
+# Answers
+
+D.1.1
+
+D.1.2
+
+D.1.3
+
+D.1.4
+
+D.1.5
+
+D.1.6
 
 # The typical strategy: Three phases
 - Phase I: enroll healthy volunteers to do dose finding, assessing toxicity and side effects

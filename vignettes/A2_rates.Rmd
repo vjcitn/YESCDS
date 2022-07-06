@@ -105,6 +105,12 @@ a "rate per 100,000 persons".
 A.2.2 True or False: Of cancers newly identified in US citizens in 2021, more than 8\%
 arise in the pancreas.
 
+## Answers
+
+A.2.1
+
+A.2.2
+
 # A view of pancreatic cancer incidence
 
 We can "drill down" on specific cancer types using the drop-down menu
@@ -130,3 +136,8 @@ A.2.3 Which of the following describes observations on pancreatic cancer between
 A.2.4 True or false: The death rate, and the incidence rate, for cancers of colon
 and rectum were approximately halved in the interval between 1992 and 2019.
 
+## Answers
+
+A.2.3
+
+A.2.4
