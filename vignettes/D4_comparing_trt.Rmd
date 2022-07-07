@@ -103,7 +103,7 @@ lines(tim, pp_res, col="red")
 
 ## Exercises
 
-- Interpret confidence intervals for the one-year survival probabilities for
+D.4.1 Interpret confidence intervals for the one-year survival probabilities for
 the two treatments, ignoring the presence or absence of residual disease.
 
 ```{r doconf, echo=TRUE}

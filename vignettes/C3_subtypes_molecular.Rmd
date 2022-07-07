@@ -87,10 +87,16 @@ call introns.  The transcript is a series of stitched-together exons.
 
 ### Exercises
 
-- Use the UCSC genome browser to visualize the entirety of chromosome 17 in
+C.3.1 Use the UCSC genome browser to visualize the entirety of chromosome 17 in
 reference build "hg19".  What is the length of the chromosome in base pairs?
 
-- Browse to the gene BRCA2.  What is its length in base pairs?
+C.3.2 Browse to the gene BRCA2.  What is its length in base pairs?
+
+### Answers
+
+C.3.1
+
+C.3.2
 
 ## Copy number alterations
 
@@ -148,18 +154,24 @@ the collection of mutated genes found for each patient.
 
 ### Exercises
 
-- Use the Genomic Data Commons data portal to explore data
+C.3.3 Use the Genomic Data Commons data portal to explore data
 on prostate cancer in the TCGA project.  What are the five
 genes reported to present the largest number of mutations
 across patients in that project?
 
 - Repeat the exercise for ovarian cancer in TCGA.
 
-- Use the "Survival" widget at the Genomic Data Commons to compare
+C.3.4 Use the "Survival" widget at the Genomic Data Commons to compare
 the survival times for ovarian cancer patients
 with and without mutation in CSMD3.  Is CSMD3 mutation associated
 with longer or shorter median survival time?  About how
 large is the difference?
+
+### Answers
+
+C.3.3
+
+C.3.4
 
 ## Clustering mRNA profiles of genes and tumors to find subtypes: [van 't Veer et al. 2002](https://www.nature.com/articles/415530a.pdf?origin=ppub)
 

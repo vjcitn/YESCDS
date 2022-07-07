@@ -63,8 +63,14 @@ all studies and cancer types.
 
 ![Selection cleared](images/clearGDC.png)
 
-Exercise: After clearing the selection, hover over the
+#### Exercise
+
+C.1.1 After clearing the selection, hover over the
 "Disease Type" pie chart to learn the most common cancer types.
+
+#### Answer
+
+C.1.1
 
 ## Resources on the burden of cancer in the population, by primary site
 

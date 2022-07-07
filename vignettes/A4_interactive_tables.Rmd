@@ -49,3 +49,14 @@ A.4.2 Which state has four different areas reporting age-adjusted prostate cance
 A.4.3 Which state has three different areas reporting female breast cancer incidence exceeding 130 per 100000 women?
 
 A.4.4 Comment on the difficulty of making focused queries using this tabular presentation.
+
+
+# Answers
+
+A.4.1
+
+A.4.2
+
+A.4.3
+
+A.4.4

@@ -9,8 +9,8 @@
 #   make
 #
 
-notebooks: A1_cancer_table.ipynb A2_rates.ipynb A3_monitoring.ipynb A4_interactive_tables.ipynb \
-	A5_data_graphics.ipynb A6_standardization.ipynb \
+notebooks: A0_intro_notebook.ipynb A1_cancer_table.ipynb A2_rates.ipynb A3_monitoring.ipynb \
+	A4_interactive_tables.ipynb A5_data_graphics.ipynb A6_standardization.ipynb \
 	B1_global.ipynb B2_table_plus_geo.ipynb B3_counties.ipynb C1_body_overall.ipynb \
 	C2_variation_survival.ipynb \
 	C3_subtypes_molecular.ipynb \
@@ -25,7 +25,7 @@ notebooks: A1_cancer_table.ipynb A2_rates.ipynb A3_monitoring.ipynb A4_interacti
 	cp $@ ../ipynb
 
 gupdate:
-	cp ../../vignettes/*jpg ../../vignettes/*png ../ipynb
+	cp -r ../../vignettes/images ../ipynb/images
 
 prepare:
 	-mkdir /tmp/dumpst
