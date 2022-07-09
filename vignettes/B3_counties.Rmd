@@ -70,10 +70,10 @@ relatively small population of Nantucket county.
 
 # Exercises
 
-- What are the reported population sizes for Middlesex
+B.3.1 What are the reported population sizes for Middlesex
 and Nantucket counties?
 
-- Run the following chunk to produce a different
+B.3.2 Run the following chunk to produce a different
 representation of incidence rates for cancers
 of lung and bronchus in California counties:
 
@@ -84,11 +84,22 @@ ordered_seg_cal()
 Two statistics are presented for the 
 US as a whole and for the entire state of California.
 
-True or False: We are fairly confident that the incidence
+B.3.3 True or False: We are fairly confident that the incidence
 of cancers of lung and bronchus in San Joaquin county is
 lower than that of the US as a whole.
 
 The midpoint of the plotted interval is the estimated
 incidence rate.
-Which California counties have incidence rates that
+
+B.3.4 Which California counties have incidence rates that
 are around half that of the US as a whole?
+
+# Answers
+
+B.3.1
+
+B.3.2
+
+B.3.3
+
+B.3.4

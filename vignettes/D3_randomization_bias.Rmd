@@ -97,3 +97,7 @@ and duration of periods of imbalance over time.
 Randomization is a well-accepted tool in experimental design, but
 must be conducted with care.  The [wikipedia article](https://en.wikipedia.org/wiki/Randomized_experiment) has some interesting references on assessment of the overall effect of
 use of randomization in health research.
+
+# Discussion Questions
+
+D.3.1 

@@ -60,11 +60,15 @@ woncan |> group_by(MSA) |>
 
 ## Exercise
 
-Create a new notebook cell and run
-```
-YESCDS::table_woncan("Prostate")
-```
-Use this table to find the latitude and longitude of Boston.
+B.2.1 Create a new notebook cell and run `YESCDS::table_woncan("Prostate")`
+
+B.2.2 Use this table to find the latitude and longitude of Boston.
+
+## Answers
+
+B.2.1
+
+B.2.2
 
 # An interactive map of the US with cancer rates
 
@@ -81,11 +85,15 @@ cancer_map_usa(site="Stomach")
 
 ## Exercise
 
-Create a new notebook cell and run
-```
-cancer_map_usa(site="Prostate", scaling=0.05)
-```
-Can you identify the area with the highest incidence of prostate cancer?
+B.2.3 Create a new notebook cell and run `cancer_map_usa(site="Prostate", scaling=0.05)`
+
+B.2.4 Can you identify the area with the highest incidence of prostate cancer?
+
+## Answers
+
+B.2.3
+
+B.2.4
 
 # A data graphic
 
@@ -97,6 +105,11 @@ details of variation can be seen very clearly in these displays.
 browseURL("https://vjcitn.shinyapps.io/ratevariation")
 ```
 
-Change the body site to "Pancreas" (remove "Brain") and find, using the histogram tab,
+## Exercise
+
+B.2.5 Change the body site to "Pancreas" (remove "Brain") and find, using the histogram tab,
 the areas with highest and lowest age-adjusted rates of pancreatic cancer.
 
+## Answer
+
+B.2.5
