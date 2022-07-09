@@ -1,5 +1,5 @@
 # YESCDS
-Cancer Data Science resources for DFCI YES for CURE
+Cancer Data Science resources for DFCI YES for CURE -- intended for use by secondary and undergraduate students
 
 ![coggle map](man/figures/YESCDS_map.png)
 
