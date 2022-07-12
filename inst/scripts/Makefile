@@ -25,7 +25,7 @@ notebooks: A0_intro_notebook.ipynb A1_cancer_table.ipynb A2_rates.ipynb A3_monit
 	cp $@ ../ipynb
 
 gupdate:
-	cp -r ../../vignettes/images ../ipynb/images
+	rm -r ../ipynb/images && cp -r ../../vignettes/images ../ipynb/
 
 prepare:
 	-mkdir /tmp/dumpst
