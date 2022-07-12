@@ -76,6 +76,12 @@ cancer incidence reported in the cities surveyed?
 A.0.5 What is approximately the number of cities reporting rates lower
 than 120 per 100000 men?
 
+### Answers
+
+A.0.4
+
+A.0.5
+
 ## Interpreting data
 
 This figure shows changes in the rate of new kidney cancers compiled by
