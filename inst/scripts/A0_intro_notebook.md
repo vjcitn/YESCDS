@@ -16,13 +16,18 @@ ability.
 
 A.0.1 Mark T (for True) or F (for False) next to each statement
 
-A.0.1.1 \_\_ NCI is funded by federal tax dollars A.0.1.2 \_\_ NCI sets
-the prices for cancer treatments in the US A.0.1.3 \_\_ NCI leads
-efforts in the US to improve cancer treatment and survivorship A.0.1.4
-\_\_ Cancer researchers can apply to NCI to receive money to investigate
-questions about cancer biology A.0.1.5 \_\_ Some cancers and their
-outcomes are not actively researched because of limited resources
-available to NCI
+A.0.1.1 \_\_ NCI is funded by federal tax dollars
+
+A.0.1.2 \_\_ NCI sets the prices for cancer treatments in the US
+
+A.0.1.3 \_\_ NCI leads efforts in the US to improve cancer treatment and
+survivorship
+
+A.0.1.4 \_\_ Cancer researchers can apply to NCI to receive money to
+investigate questions about cancer biology
+
+A.0.1.5 \_\_ Some cancers and their outcomes are not actively researched
+because of limited resources available to NCI
 
 ## Terminology
 
@@ -81,9 +86,14 @@ the NCI Surveillance, Epidemiology and End Results program.
 ### Question
 
 A.0.6 Which of the following could be a likely explanation for the
-change in rate reports between 2009 and 2010, and why? a) Improved
-health b) data error c) change in diagnostic procedure and/or definition
-of kidney/pelvic cancer incidence
+change in rate reports between 2009 and 2010, and why?
+
+1.  Improved health
+
+2.  data error
+
+3.  change in diagnostic procedure and/or definition of kidney/pelvic
+    cancer incidence
 
 ### Answer
 
