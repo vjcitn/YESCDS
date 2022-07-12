@@ -2,6 +2,7 @@ name: Vignettes to ipynb
 
 on: 
   workflow_dispatch: {}
+  push: {}
 
 jobs:
   buildipynb:
