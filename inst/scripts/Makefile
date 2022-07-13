@@ -1,6 +1,5 @@
 #
 # Makefile for jupyter notebook production for YESCDS
-# assumes contents of $(notebooks) generated from Rmd in ../../vignettes
 # also run make gupdate to get all png or jpg files into ../ipynb folder
 #
 # USAGE: 
@@ -9,25 +8,13 @@
 #   make
 #
 
-notebooks: A0_intro_notebook.ipynb A1_cancer_table.ipynb A2_rates.ipynb A3_monitoring.ipynb \
-	A4_interactive_tables.ipynb A5_data_graphics.ipynb A6_standardization.ipynb \
-	B1_global.ipynb B2_table_plus_geo.ipynb B3_counties.ipynb C1_body_overall.ipynb \
-	C2_variation_survival.ipynb \
-	C3_subtypes_molecular.ipynb \
-	D1_clin_trial_concepts.ipynb \
-	D2_equipoise.ipynb \
-	D3_randomization_bias.ipynb \
-	D4_comparing_trt.ipynb
-
-
-%.ipynb : %.Rmd
-	R -e 'AnVILPublish::as_notebook("$<", namespace="use-strides", name="$@", update=FALSE)'
-	cp $@ ../ipynb
+default:
+	mkdir -p pub_files
+	ls ../../vignettes | grep ".Rmd" | sed "s/.Rmd//" | xargs -i bash -c "cp ../../vignettes/{}.Rmd ./ && R -e \"AnVILPublish::as_notebook('{}.Rmd', namespace='use-strides', name='{}.ipynb', update=FALSE)\" && cp {}.ipynb ../ipynb && mv {}.* pub_files/"
 
 gupdate:
 	rm -r ../ipynb/images && cp -r ../../vignettes/images ../ipynb/
 
 prepare:
-	-mkdir /tmp/dumpst
-	-mv *.Rmd *.md *ipynb /tmp/dumpst
 	cp ../../vignettes/*Rmd .
+	mkdir -p publish_files
