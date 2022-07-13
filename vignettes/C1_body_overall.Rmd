@@ -70,7 +70,9 @@ C.1.1 After clearing the selection, hover over the
 
 #### Answer
 
+```
 C.1.1
+```
 
 ## Resources on the burden of cancer in the population, by primary site
 

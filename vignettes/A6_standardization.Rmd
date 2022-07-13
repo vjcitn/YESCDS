@@ -88,9 +88,11 @@ A.6.2 What can you say about the cancer mortality trend in Canada between 2000 a
 
 ## Answers
 
+```
 A.6.1
 
 A.6.2
+```
 
 # Some examples of age structure models
 
@@ -111,4 +113,6 @@ women in forming standardized rates?
 
 ## Answer
 
+```
 A.6.3
+```

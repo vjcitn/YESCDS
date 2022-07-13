@@ -50,9 +50,9 @@ A.4.3 Which state has three different areas reporting female breast cancer incid
 
 A.4.4 Comment on the difficulty of making focused queries using this tabular presentation.
 
-
 # Answers
 
+```
 A.4.1
 
 A.4.2
@@ -60,3 +60,4 @@ A.4.2
 A.4.3
 
 A.4.4
+```

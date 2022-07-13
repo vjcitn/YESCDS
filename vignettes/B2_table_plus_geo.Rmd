@@ -66,9 +66,11 @@ B.2.2 Use this table to find the latitude and longitude of Boston.
 
 ## Answers
 
+```
 B.2.1
 
 B.2.2
+```
 
 # An interactive map of the US with cancer rates
 
@@ -91,9 +93,11 @@ B.2.4 Can you identify the area with the highest incidence of prostate cancer?
 
 ## Answers
 
+```
 B.2.3
 
 B.2.4
+```
 
 # A data graphic
 
@@ -112,4 +116,6 @@ the areas with highest and lowest age-adjusted rates of pancreatic cancer.
 
 ## Answer
 
+```
 B.2.5
+```
