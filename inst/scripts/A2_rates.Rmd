@@ -107,9 +107,11 @@ arise in the pancreas.
 
 ## Answers
 
+```
 A.2.1
 
 A.2.2
+```
 
 # A view of pancreatic cancer incidence
 
@@ -138,6 +140,8 @@ and rectum were approximately halved in the interval between 1992 and 2019.
 
 ## Answers
 
+```
 A.2.3
 
 A.2.4
+```

@@ -69,9 +69,9 @@ C.3.2 Browse to the gene BRCA2. What is its length in base pairs?
 
 ### Answers
 
-C.3.1
+    C.3.1
 
-C.3.2
+    C.3.2
 
 ## Copy number alterations
 
@@ -148,9 +148,9 @@ survival time? About how large is the difference?
 
 ### Answers
 
-C.3.3
+    C.3.3
 
-C.3.4
+    C.3.4
 
 ## Clustering mRNA profiles of genes and tumors to find subtypes: [van ’t Veer et al. 2002](https://www.nature.com/articles/415530a.pdf?origin=ppub)
 

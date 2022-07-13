@@ -52,8 +52,8 @@ survival probability?
 
 ## Answers
 
-C.2.1
+    C.2.1
 
-C.2.2
+    C.2.2
 
-C.2.3
+    C.2.3

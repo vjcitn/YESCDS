@@ -85,9 +85,9 @@ more than 8% arise in the pancreas.
 
 ## Answers
 
-A.2.1
+    A.2.1
 
-A.2.2
+    A.2.2
 
 # A view of pancreatic cancer incidence
 
@@ -119,6 +119,6 @@ of colon and rectum were approximately halved in the interval between
 
 ## Answers
 
-A.2.3
+    A.2.3
 
-A.2.4
+    A.2.4

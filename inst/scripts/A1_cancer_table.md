@@ -19,6 +19,6 @@ A.1.2. How could this table be made more informative?
 
 # Answers
 
-A.1.1.
+    A.1.1.
 
-A.1.2.
+    A.1.2.

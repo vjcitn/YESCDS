@@ -50,15 +50,15 @@ rate?
 
 ### Answers
 
-A.5.1
+    A.5.1
 
-A.5.2
+    A.5.2
 
-A.5.3
+    A.5.3
 
-A.5.4
+    A.5.4
 
-A.5.5
+    A.5.5
 
 ## Using a histogram to compare cancer incidence rates in two areas
 
@@ -99,6 +99,6 @@ to those in Tucson. Compare to the result provided in the
 
 ### Answers
 
-A.5.6
+    A.5.6
 
-A.5.7
+    A.5.7

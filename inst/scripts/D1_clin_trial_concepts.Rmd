@@ -77,6 +77,7 @@ D.1.6 How do we measure the overall benefit conferred by using the alternative m
 
 # Answers
 
+```
 D.1.1
 
 D.1.2
@@ -88,6 +89,7 @@ D.1.4
 D.1.5
 
 D.1.6
+```
 
 # The typical strategy: Three phases
 - Phase I: enroll healthy volunteers to do dose finding, assessing toxicity and side effects

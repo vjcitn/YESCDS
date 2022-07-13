@@ -28,9 +28,9 @@ B.2.2 Use this table to find the latitude and longitude of Boston.
 
 ## Answers
 
-B.2.1
+    B.2.1
 
-B.2.2
+    B.2.2
 
 # An interactive map of the US with cancer rates
 
@@ -51,9 +51,9 @@ cancer?
 
 ## Answers
 
-B.2.3
+    B.2.3
 
-B.2.4
+    B.2.4
 
 # A data graphic
 
@@ -72,4 +72,4 @@ rates of pancreatic cancer.
 
 ## Answer
 
-B.2.5
+    B.2.5

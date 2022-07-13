@@ -53,9 +53,9 @@ between 2000 and 2011?
 
 ## Answers
 
-A.6.1
+    A.6.1
 
-A.6.2
+    A.6.2
 
 # Some examples of age structure models
 
@@ -78,4 +78,4 @@ in forming standardized rates?
 
 ## Answer
 
-A.6.3
+    A.6.3

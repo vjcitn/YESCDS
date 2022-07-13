@@ -70,7 +70,9 @@ of residual disease.
     with(ovarian[ovarian$rx==1,], plot(survfit(Surv(futime,fustat)~1),conf.int=TRUE))
     with(ovarian[ovarian$rx==2,], plot(survfit(Surv(futime,fustat)~1),conf.int=TRUE))
 
--   
+## Answers
+
+    D.4.1 
 
 Abstract of 1979 paper:
 

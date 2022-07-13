@@ -56,17 +56,17 @@ alternative method?
 
 # Answers
 
-D.1.1
+    D.1.1
 
-D.1.2
+    D.1.2
 
-D.1.3
+    D.1.3
 
-D.1.4
+    D.1.4
 
-D.1.5
+    D.1.5
 
-D.1.6
+    D.1.6
 
 # The typical strategy: Three phases
 

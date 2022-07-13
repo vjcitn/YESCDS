@@ -36,7 +36,7 @@ chart to learn the most common cancer types.
 
 #### Answer
 
-C.1.1
+    C.1.1
 
 ## Resources on the burden of cancer in the population, by primary site
 

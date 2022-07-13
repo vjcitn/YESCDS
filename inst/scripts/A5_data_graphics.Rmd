@@ -86,6 +86,7 @@ lowest value of Female Breast cancer incidence, and what is the reported rate?
 
 ### Answers
 
+```
 A.5.1
 
 A.5.2
@@ -95,6 +96,7 @@ A.5.3
 A.5.4
 
 A.5.5
+```
 
 ## Using a histogram to compare cancer incidence rates in two areas
 
@@ -140,6 +142,8 @@ provided in the `make_comparison` histogram above.
 
 ### Answers
 
+```
 A.5.6
 
 A.5.7
+```

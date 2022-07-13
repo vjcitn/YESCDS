@@ -48,10 +48,10 @@ half that of the US as a whole?
 
 # Answers
 
-B.3.1
+    B.3.1
 
-B.3.2
+    B.3.2
 
-B.3.3
+    B.3.3
 
-B.3.4
+    B.3.4
