@@ -1,0 +1,47 @@
+---
+title: "E1 Inclusive genomic data science education, illustrated with cancer genomics"
+shorttitle: "Inclusive cancer data science"
+author: "Vincent J. Carey, stvjc at channing.harvard.edu"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{E1 Inclusive genomic data science education, illustrated with cancer genomics}
+  %\VignetteEncoding{UTF-8}
+output:
+  rmarkdown::html_document:
+    highlight: pygments
+    number_sections: yes
+    theme: united
+    toc: yes
+---
+
+```{r setup,echo=FALSE,results="hide"}
+suppressMessages({
+ suppressPackageStartupMessages({
+  library(YESCDS)
+library(tibble)
+library(dplyr)
+library(plotly)
+library(ggplot2)
+library(ggbeeswarm)
+library(survival)
+library(DT)
+  })
+ })
+```
+
+# Introduction: Grow the genomics data science workforce
+
+![GDSCN schema](images/gdscnSchema.jpg)
+
+# Bioconductor as a vehicle
+
+![Bioc triangle](images/triangle.jpg)
+
+# R packages and r markdown as instructional assets
+
+![facepage](images/yespkgdown.jpg)
+
+# Galaxy deployed in NSF Jetstream2 as the presentation/experience platform
+
+![yescure](images/yescure.jpg)

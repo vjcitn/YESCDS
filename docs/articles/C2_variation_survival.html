@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">YESCDS</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.28</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.30</span>
       </span>
     </div>
 
@@ -100,6 +100,9 @@
     <li>
       <a href="../articles/D4_comparing_trt.html">D4 Methods of comparing treatments</a>
     </li>
+    <li>
+      <a href="../articles/E1_heidelberg2022.html">E1 Inclusive genomic data science education, illustrated with cancer genomics</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -126,7 +129,7 @@
       <h1 data-toc-skip>C2 Variation in survival with cancer</h1>
                         <h4 data-toc-skip class="author">Vincent J. Carey, stvjc at channing.harvard.edu</h4>
             
-            <h4 data-toc-skip class="date">July 19, 2022</h4>
+            <h4 data-toc-skip class="date">September 15, 2022</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/vjcitn/YESCDS/blob/HEAD/vignettes/C2_variation_survival.Rmd"><code>vignettes/C2_variation_survival.Rmd</code></a></small>
       <div class="hidden name"><code>C2_variation_survival.Rmd</code></div>
@@ -135,6 +138,9 @@
 
     
     
+<pre><code><span><span class="co">## Warning: multiple methods tables found for 'aperm'</span></span></code></pre>
+<pre><code><span><span class="co">## Warning: replacing previous import 'BiocGenerics::aperm' by</span></span>
+<span><span class="co">## 'DelayedArray::aperm' when loading 'SummarizedExperiment'</span></span></code></pre>
 <div class="section level2">
 <h2 id="the-survival-curve-for-a-cohort-of-individuals">The survival curve for a cohort of individuals<a class="anchor" aria-label="anchor" href="#the-survival-curve-for-a-cohort-of-individuals"></a>
 </h2>
@@ -143,7 +149,7 @@
 <h3 id="basic-definition">Basic definition<a class="anchor" aria-label="anchor" href="#basic-definition"></a>
 </h3>
 <p>When times from diagnosis to death have been recorded on individuals in a cohort, a survival curve is a plot with values (x, y) where x is time elapsed from diagnosis, and y is the proportion of individuals surviving at least x units of time.</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/build_simple_survival_curve.html">build_simple_survival_curve</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="C2_variation_survival_files/figure-html/show1-1.png" width="700"></p>
 <p>Note that at 0 months, the probability of surviving is 100%. The probability of surviving at least 12 years (144 months) in this cohort is very small.</p>
@@ -153,14 +159,14 @@
 </h3>
 <p>The median of a set of numbers is the “middle” number <span class="math inline">\(m\)</span>, with as many values smaller than <span class="math inline">\(m\)</span> as there are values larger than <span class="math inline">\(m\)</span>. Thus the median of the numbers 1, 2, 3, 4, 5 is 3. If there is an even number of values, we average the two middle numbers (e.g., for 1, 2, 3, 4, 5, 6, we would use 3.5 as the median.)</p>
 <p>The following display shows how to read the median survival time from a survival curve: draw the horizontal line at <span class="math inline">\(y = 1/2\)</span> and determine the <span class="math inline">\(x\)</span> value where the intersection occurs.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/show_median_estimate.html">show_median_estimate</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="C2_variation_survival_files/figure-html/show2-1.png" width="700"></p>
 </div>
 <div class="section level3">
 <h3 id="reading-off-the-five-year-survival-probability">Reading off the five-year survival probability<a class="anchor" aria-label="anchor" href="#reading-off-the-five-year-survival-probability"></a>
 </h3>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/show_5y_estimate.html">show_5y_estimate</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="C2_variation_survival_files/figure-html/show3-1.png" width="700"></p>
 </div>
@@ -168,7 +174,7 @@
 <h3 id="exercises">Exercises<a class="anchor" aria-label="anchor" href="#exercises"></a>
 </h3>
 <p>For a different cohort of patients, the survival curve is depicted below:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/do_new_surv.html">do_new_surv</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="C2_variation_survival_files/figure-html/show4-1.png" width="700"></p>
 <p>C.2.1 True or false: For this cohort, almost all individuals live at least 1.5 years after diagnosis</p>
@@ -204,7 +210,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer>
