@@ -16,6 +16,7 @@ output:
 ---
 
 ```{r setup,echo=FALSE,results="hide"}
+suppressWarnings({
 suppressMessages({
  suppressPackageStartupMessages({
   library(YESCDS)
@@ -30,6 +31,7 @@ data(woncan_meta)
 data(woncan)
 littab = woncan |> select(MSA, `Cancer Sites`, Age.Adjusted.Rate) |> as.data.frame()
   })
+ })
  })
 ```
 

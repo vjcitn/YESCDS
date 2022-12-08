@@ -7,10 +7,7 @@ output:
   tufte::tufte_handout:
     citation_package: natbib
     latex_engine: xelatex
-  tufte::tufte_book:
-    citation_package: natbib
-    margin_references: true
-    latex_engine: xelatex
+natbiboptions: round
 bibliography: yescds.bib
 link-citations: yes
 ---
@@ -33,7 +30,7 @@ The [YES for CURE](https://www.dfhcc.harvard.edu/research/cancer-disparities/stu
 program has a long history of engaging undergraduate and high school students in
 cancer research activities, mostly in wet-lab applications (@Michel2021).
 
-In 2021, with support from Chan-Zuckerberg Essential Open Source Software,
+In 2021, with support from Chan-Zuckerberg Essential Open Source Software^[Bioconductor: Sustaining a Worldwide Community of Genome Data Scientists, EOSS D&I],
 we began work on a series of presentations related to cancer data science.
 In the summer of 2022, 11 undergraduate students joined a five-session
 program.
@@ -41,7 +38,7 @@ program.
 This brochure addresses our approaches to 
 
 - recruitment
-- curriculum authoring using Bioconductor, R packages, and R markdown
+- curriculum authoring using Bioconductor^[https://bioconductor.org], R packages^[https://cran.r-project.org/doc/manuals/R-exts.html], and R markdown^[https://rmarkdown.rstudio.com]
 - Galaxy-based deployment of student notebooks in jupyterlab
 - forthcoming enhancements accommodating a broader spectrum of authoring approaches
 - technical internals involving Helm and github actions
@@ -79,6 +76,33 @@ using `pkgdown`.  See Figure 2.
 # Deployment with Galaxy
 
 Figure 3 shows the entry point to the system based on a Galaxy deployment
-in the NSF ACCESS Jetstream2 academic cloud.
+in the NSF ACCESS Jetstream2 academic cloud.  Each chapter can spawn an interactive
+tool in a private VM for each student.
 
 ![Face page of yescure.bioconductor.org](galax1.jpg)
+
+# Forthcoming enhancements
+
+- Any github-resident document in a form that Posit's Quarto^[https://quarto.org/] system
+can process can be contributed as a curriculum component, eliminating
+the current essential role of R packages.  We would expect
+content testing to be conducted using a github action.
+See [https://github.com/almahmoud/teachMultiplexImaging](https://github.com/almahmoud/teachMultiplexImaging)
+for an early glimpse.
+
+- YESCDS delivers a "code-free" experience, because all operations of
+significance have been coded into functions in the package, which
+are simply executed in jupyter notebook cells.  A
+deployment based on the forthcoming YESCODE package will
+expose more of the programming and will involve the students
+in code modifications to change data analysis and visualization
+operations.
+ 
+# Technical underpinnings
+
+Helm charts and actions will be discussed during the showcase.
+
+# Support
+
+This work supported in part by NHGRI U24 HG004059 (Bioconductor) and U24 HG010263 (AnVIL), 
+CZI EOSS D&I, and NSF ACCESS BIR190004.
