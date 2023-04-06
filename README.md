@@ -1,7 +1,15 @@
 # YESCDS
 Cancer Data Science resources for DFCI YES for CURE -- intended for use by secondary and undergraduate students
 
-![coggle map](man/figures/YESCDS_map.png)
+![Use the 'Articles' tab above for detailed contents.](man/figures/YESCDS_map.png)
+
+Contributors: 
+
+- Alexandru Mahmoud, Channing Division of Network Medicine, Mass General Brigham
+- Brittany Michel, Dana-Farber Cancer Institute
+- Latrice Landry, Perelman School of Medicine, University of Pennsylvania
+- Karen Burns White, Dana-Farber Cancer Institute
+- Vincent Carey, Channing Division of Network Medicine, Mass General Brigham
 
 This project supported in part by
 

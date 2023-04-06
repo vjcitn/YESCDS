@@ -32,8 +32,8 @@ us_map = function(provider="CartoDB.Positron")
 mass_cancer_map = function(site = "breast") {
  data("us_county_geo", package="YESCDS")
  rate.tab = MA_cancer_rate_table(site=site)
- lj = left_join(mutate(rate.tab, county=County),   # mutate: obtain new variable name
-                filter(us_county_geo, state=="MA"), by="county") # merge rates and geography
+ lj = dplyr::left_join(mutate(rate.tab, county=County),   # mutate: obtain new variable name
+                dplyr::filter(us_county_geo, state=="MA"), by="county") # merge rates and geography
  lj$lng = sapply(lj$geometry, "[", 1) # "geometry" is a special structure
  lj$lat = sapply(lj$geometry, "[", 2) # need to peel apart latitude and longitude
  lj$aarat = lj$Age.Adjusted.Rate   # shorter name
