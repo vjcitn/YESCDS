@@ -10,7 +10,7 @@
 MA_cancer_rate_table = function(site="breast", simple=TRUE) {
  stopifnot(site %in% c("breast", "prostate"))
  if (site == "prostate") ans = read.csv(system.file("csv/MASSProstateWCI.csv", package="YESCDS"))
- ans = read.csv(system.file("csv/MABreastWCI.csv", package="YESCDS"))
+ else ans = read.csv(system.file("csv/MABreastWCI.csv", package="YESCDS"))
  if (simple) ans = ans[, -c(1,5)]
  ans
 }
