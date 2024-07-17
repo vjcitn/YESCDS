@@ -1,6 +1,6 @@
 Package: YESCDS
 Title: Cancer data science activities for CZI YES for CURE collaboration
-Version: 0.99.3
+Version: 0.99.4
 Authors@R:
     person(given = "Vince",
            family = "Carey",
@@ -11,11 +11,12 @@ Description: Provide code and software for cancer data science activities for CZ
 Depends: R (>= 4.0.0), tools, utils, sf, leaflet, shiny, RaggedExperiment
 Imports: dplyr, shiny, ggplot2, plotly, curatedTCGAData, survival, htmltools,
 	sf, data.table, SummarizedExperiment, forcats
-Suggests: knitr, BiocStyle, testthat, rmarkdown, tibble, DT, TCGAutils, ontoProc, ggbeeswarm
+Suggests: knitr, BiocStyle, testthat, rmarkdown, tibble, DT, TCGAutils, ontoProc, ggbeeswarm,
+	jsonlite, devtools
 License: Artistic-2.0
 VignetteBuilder: knitr
 biocViews: Cancer
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
 Encoding: UTF-8
 BugReports: https://github.com/vjcitn/YESCDS/issues
 URL: https://github.com/vjcitn/YESCDS

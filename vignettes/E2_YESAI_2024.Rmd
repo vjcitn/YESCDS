@@ -1,0 +1,200 @@
+---
+title: "E2: Language analysis and production with R and some LLMs"
+author: "Vincent J. Carey, stvjc at channing.harvard.edu"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+vignette: >
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteIndexEntry{E2 Language analysis and production with R and some LLMs}
+  %\VignetteEncoding{UTF-8}
+output:
+  BiocStyle::html_document:
+    highlight: pygments
+    number_sections: yes
+    theme: united
+    toc: yes
+---
+
+# Elegant nonsense
+
+With a very simple model of English grammar and a little vocabulary,
+we can randomly generate 'normal-sounding' sentences.
+
+Here is a vector of elegant nouns.
+```{r lk1}
+nouns = c("Mercedes", "Tiffany", "Lamborghini", "Maserati", "Tosca", "La Traviata",
+   "Diamonds", "Crystal", "Lenox")
+```
+We'll continue to set up some vectors of verbs (past tense), prepositions,
+adjectives, prepositions, and indicatives.
+
+```{r voca}
+pastverbs = c("radiated", "glowed", "luxuriated", "ecstatized", "overwhelmed",
+  "hyperventilated", "raptured", "raved", "stupendousized")
+preps = c("on", "over", "beyond", "above", "beneath", "within", "across")
+adjectives = c("magnificent", "majestic", "sophisticated", "exquisite",
+  "glorious", "regal")
+preps = c("on", "over", "beyond", "above", "beneath", "within", "across")
+indic = c("the", "a", "any", "some")
+```
+
+Our model for a sentence is
+```
+indicative + noun + verb(tensed) + preposition + indicative + adjective + noun
+```
+
+We produce a sentence by sampling purely randomly from the
+relevant vocabulary vectors.  We use `sprintf` to substitute
+our choices into a template of seven strings.
+
+```{r lksent1}
+get1 = function (x) sample(x, size=1)
+up1 = function(x) paste0(toupper(substring(x,1,1)), substring(x,2))
+sentence = function() {
+  cat(sprintf("%s %s %s %s %s %s %s.", up1(get1(indic)), get1(nouns), get1(pastverbs),
+     get1(preps), get1(indic), get1(adjectives), get1(nouns)))
+}
+set.seed(12345) # reproducible
+sentence()
+sentence()
+sentence()
+sentence()
+```
+
+The potential repetitiousness of purely random sampling
+can be avoided.  In the following sentence generator,
+we prevent reuse of the initial noun or indicative.
+```{r domore}
+sentence_nr = function() {
+  i1 = get1(indic)
+  n1 = get1(nouns) 
+  pv1 = get1(pastverbs)
+  p1 = get1(preps)
+  i2 = get1(setdiff(indic,i1))   # don't repeat indicative
+  ad = get1(adjectives) 
+  n2 = get1(setdiff(nouns,n1)) # don't repeat noun
+  sprintf("%s %s %s %s %s %s %s.", up1(i1), n1, pv1, p1, i2, ad, n2)
+}
+sentence_nr()
+sentence_nr()
+```
+
+We can also compose longer sentences, using the
+conjunction "because":
+
+```{r dobec}
+linked = function() cat(sprintf("%s,\n because %s", sub(".$", "", sentence_nr()), sentence_nr()))
+linked()
+linked()
+```
+
+Exercise 1.  What does the `up1` function do?  Apply it to the string "foo".  What
+is the result?
+
+Exercise 2.  There is something wrong with the last two productions.  What is
+it and how would you go about correcting it?
+
+
+# Lexical tagging of English sentences
+
+I asked perplexity.ai ($20/mo) to produce 10 lexically tagged sentences.
+By "lexical tagging" we refer to a process of associating with each word
+or phrase a category defining the word's role in sentence meaning.  Examples
+of tags include
+```
+- DT: Determiner
+- NN: Noun, singular or mass
+- NNP: Proper noun, singular
+- VB: Verb, base form
+- VBZ: Verb, 3rd person singular present
+- JJ: Adjective
+- IN: Preposition or subordinating conjunction
+- CD: Cardinal number
+```
+The full set of "part of speech" tags can be found
+at the [U Penn linguistics site](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html).
+
+
+Here's what came back from perplexity.ai:
+
+- [The/DT] [Eiffel/NNP] [Tower/NNP] [is/VBZ] [a/DT] [wrought-iron/JJ] [lattice/NN] [tower/NN] [on/IN] [the/DT] [Champ/NNP] [de/NNP] [Mars/NNP] [in/IN] [Paris/NNP] [,/,] [France/NNP] [./.]
+
+- [Photosynthesis/NN] [is/VBZ] [the/DT] [process/NN] [by/IN] [which/WDT] [plants/NNS] [use/VBP] [sunlight/NN] [,/,] [water/NN] [and/CC] [carbon/NN] [dioxide/NN] [to/TO] [produce/VB] [oxygen/NN] [and/CC] [energy/NN] [in/IN] [the/DT] [form/NN] [of/IN] [sugar/NN] [./.]
+
+- [The/DT] [Great/NNP] [Wall/NNP] [of/IN] [China/NNP] [is/VBZ] [a/DT] [series/NN] [of/IN] [fortifications/NNS] [and/CC] [walls/NNS] [built/VBN] [across/IN] [the/DT] [historical/JJ] [northern/JJ] [borders/NNS] [of/IN] [ancient/JJ] [Chinese/JJ] [states/NNS] [./.]
+
+- [William/NNP] [Shakespeare/NNP] [was/VBD] [an/DT] [English/JJ] [playwright/NN] [,/,] [poet/NN] [,/,] [and/CC] [actor/NN] [widely/RB] [regarded/VBN] [as/IN] [the/DT] [greatest/JJS] [writer/NN] [in/IN] [the/DT] [English/JJ] [language/NN] [./.]
+
+- [The/DT] [human/JJ] [genome/NN] [contains/VBZ] [approximately/RB] [3/CD] [billion/CD] [base/NN] [pairs/NNS] [of/IN] [DNA/NN] [./.]
+
+- [Albert/NNP] [Einstein/NNP] [developed/VBD] [the/DT] [theory/NN] [of/IN] [relativity/NN] [,/,] [one/CD] [of/IN] [the/DT] [two/CD] [pillars/NNS] [of/IN] [modern/JJ] [physics/NN] [./.]
+
+- [The/DT] [Amazon/NNP] [rainforest/NN] [,/,] [covering/VBG] [much/JJ] [of/IN] [northwestern/JJ] [Brazil/NNP] [and/CC] [extending/VBG] [into/IN] [Colombia/NNP] [,/,] [Peru/NNP] [and/CC] [other/JJ] [South/NNP] [American/NNP] [countries/NNS] [,/,] [is/VBZ] [the/DT] [world's/NN$] [largest/JJS] [tropical/JJ] [rainforest/NN] [./.]
+
+- [The/DT] [periodic/JJ] [table/NN] [is/VBZ] [a/DT] [tabular/JJ] [arrangement/NN] [of/IN] [the/DT] [chemical/JJ] [elements/NNS] [,/,] [organized/VBN] [on/IN] [the/DT] [basis/NN] [of/IN] [their/PRP$] [atomic/JJ] [numbers/NNS] [,/,] [electron/NN] [configurations/NNS] [,/,] [and/CC] [recurring/VBG] [chemical/JJ] [properties/NNS] [./.]
+
+- [The/DT] [United/NNP] [Nations/NNPS] [(/] [UN/NNP] [)/] [is/VBZ] [an/DT] [intergovernmental/JJ] [organization/NN] [that/WDT] [aims/VBZ] [to/TO] [maintain/VB] [international/JJ] [peace/NN] [and/CC] [security/NN] [,/,] [develop/VB] [friendly/JJ] [relations/NNS] [among/IN] [nations/NNS] [,/,] [achieve/VB] [international/JJ] [cooperation/NN] [,/,] [and/CC] [be/VB] [a/DT] [center/NN] [for/IN] [harmonizing/VBG] [the/DT] [actions/NNS] [of/IN] [nations/NNS] [./.]
+
+- [The/DT] [Mona/NNP] [Lisa/NNP] [is/VBZ] [a/DT] [half-length/JJ] [portrait/NN] [painting/NN] [by/IN] [Italian/JJ] [artist/NN] [Leonardo/NNP] [da/NNP] [Vinci/NNP] [,/,] [considered/VBN] [an/DT] [archetypal/JJ] [masterpiece/NN] [of/IN] [the/DT] [Italian/NNP] [Renaissance/NNP] [./.]
+
+# Statistics of parts of speech
+
+The sentnce data do not possess a regular structure amenable to tabulation.  There
+is a hierarchical format: arbitrary numbers of language particles and annotations are ordered
+within each sentence, and the sentences form a group of ten.  
+
+A popular
+format for irregularly structured data is "JSON".  We
+asked perplexity.ai to produce the tagged sentences in
+JSON format.  R can ingest JSON
+for programmatic analysis using the jsonlite package.
+
+```{r djson,message=FALSE}
+library(jsonlite)
+myj = system.file("json/tensent.json", package="YESCDS")
+sdat = fromJSON(myj, flatten=FALSE)
+frames = sdat[[2]]
+frames[[1]]
+```
+
+We see that for each sentence we have a data.frame with one row for each English word and
+associated part of speech.
+
+The overall frequency distribution of parts of speech in this little
+collection is:
+```{r lkfreq}
+alltags = lapply(seq_len(length(frames)), function(x) frames[[x]][,2])
+sort(table(unlist(alltags)))
+```
+
+Here's how we might use R to determine how many words into a sentence
+we need to go to find a verb:
+```{r lkdep}
+sapply(frames, function(z) min(grep("VB", z[,2])))
+```
+
+Exercise 1.  What is the position of the verb in the fourth sentence?
+What is the verb, and what type is it?  Consult the link to U Penn
+linguistics given above.
+
+Exercise 2.  Which sentence has the verb in the "latest" position, and why
+is the position number so high?  Should the counting procedure be adjusted?
+
+# Using an LLM
+
+In this section we will assume that you are working on a machine that
+is able to use software and data organized at huggingface.co, specifically
+a version of [BERT](https://huggingface.co/google-bert/bert-base-uncased).
+
+We will 'source' a github gist that will work if python is present, and if
+it and the reticulate package have been configured to be able to find
+python packages torch and transformers.
+
+This code chunk will produce a table of scores and completions for the
+prompt `The capital of Spain is [MASK].`.
+
+```{r dogist}
+devtools::source_gist("https://gist.github.com/vjcitn/0e1b0289eb1a219b98d60b5b863f8d62")
+```
+
+The code in the gist can be modified to change the model, and the prompt
+can be changed to seek scored responses to different prompts.
