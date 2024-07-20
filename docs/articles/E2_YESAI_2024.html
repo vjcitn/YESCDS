@@ -132,7 +132,7 @@
       <h1 data-toc-skip>E2: Language analysis and production with R and some LLMs</h1>
                         <h4 data-toc-skip class="author">Vincent J. Carey, stvjc at channing.harvard.edu</h4>
             
-            <h4 data-toc-skip class="date">July 17, 2024</h4>
+            <h4 data-toc-skip class="date">July 20, 2024</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/vjcitn/YESCDS/blob/HEAD/vignettes/E2_YESAI_2024.Rmd"><code>vignettes/E2_YESAI_2024.Rmd</code></a></small>
       <div class="hidden name"><code>E2_YESAI_2024.Rmd</code></div>
@@ -159,7 +159,7 @@
 <span><span class="va">preps</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"on"</span>, <span class="st">"over"</span>, <span class="st">"beyond"</span>, <span class="st">"above"</span>, <span class="st">"beneath"</span>, <span class="st">"within"</span>, <span class="st">"across"</span><span class="op">)</span></span>
 <span><span class="va">indic</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"the"</span>, <span class="st">"a"</span>, <span class="st">"any"</span>, <span class="st">"some"</span><span class="op">)</span></span></code></pre></div>
 <p>Our model for a sentence is</p>
-<pre><code><span><span class="va">indicative</span> <span class="op">+</span> <span class="va">noun</span> <span class="op">+</span> <span class="fu">verb</span><span class="op">(</span><span class="va">tensed</span><span class="op">)</span> <span class="op">+</span> <span class="va">preposition</span> <span class="op">+</span> <span class="va">indicative</span> <span class="op">+</span> <span class="va">adjective</span> <span class="op">+</span> <span class="va">noun</span></span></code></pre>
+<pre><code>(*) indicative + noun + verb(tensed) + preposition + indicative + adjective + noun</code></pre>
 <p>We produce a sentence by sampling purely randomly from the relevant vocabulary vectors. We use <code>sprintf</code> to substitute our choices into a template of seven strings.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">get1</span> <span class="op">=</span> <span class="kw">function</span> <span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">x</span>, size<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
@@ -209,6 +209,19 @@
 <span><span class="co">##  because Any Diamonds raptured across a glorious La Traviata.</span></span></code></pre>
 <p>Exercise 1. What does the <code>up1</code> function do? Apply it to the string “foo”. What is the result?</p>
 <p>Exercise 2. There is something wrong with the last two productions. What is it and how would you go about correcting it?</p>
+<p>Exercise 3. Propose an alternate schematic to the one noted above as <code>(*)</code>. Implement it in a function <code>altsentence</code> and illustrate its use with our vocaularies. For example</p>
+<pre><code><span><span class="va">noun</span> <span class="op">+</span> <span class="st">"is not"</span> <span class="op">+</span> <span class="va">noun</span></span></code></pre>
+<p>could be implemented as</p>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">altsentence</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
+<span>   <span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"%s is not %s"</span>, <span class="fu">get1</span><span class="op">(</span><span class="va">nouns</span><span class="op">)</span>, <span class="fu">get1</span><span class="op">(</span><span class="va">nouns</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu">altsentence</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## [1] "Diamonds is not Crystal"</span></span></code></pre>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">altsentence</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## [1] "Lamborghini is not Tosca"</span></span></code></pre>
+<p>Come up with something more interesting than this!</p>
 </div>
 <div class="section level2">
 <h2 id="lexical-tagging-of-english-sentences">Lexical tagging of English sentences<a class="anchor" aria-label="anchor" href="#lexical-tagging-of-english-sentences"></a>
@@ -242,7 +255,7 @@
 </h2>
 <p>The sentnce data do not possess a regular structure amenable to tabulation. There is a hierarchical format: arbitrary numbers of language particles and annotations are ordered within each sentence, and the sentences form a group of ten.</p>
 <p>A popular format for irregularly structured data is “JSON”. We asked perplexity.ai to produce the tagged sentences in JSON format. R can ingest JSON for programmatic analysis using the jsonlite package.</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://jeroen.r-universe.dev/jsonlite" class="external-link">jsonlite</a></span><span class="op">)</span></span>
 <span><span class="va">myj</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"json/tensent.json"</span>, package<span class="op">=</span><span class="st">"YESCDS"</span><span class="op">)</span></span>
 <span><span class="va">sdat</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/jsonlite/man/fromJSON.html" class="external-link">fromJSON</a></span><span class="op">(</span><span class="va">myj</span>, flatten<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span>
@@ -269,7 +282,7 @@
 <span><span class="co">## 18            .   .</span></span></code></pre>
 <p>We see that for each sentence we have a data.frame with one row for each English word and associated part of speech.</p>
 <p>The overall frequency distribution of parts of speech in this little collection is:</p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">alltags</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq_len</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">frames</span><span class="op">)</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="va">frames</span><span class="op">[[</span><span class="va">x</span><span class="op">]</span><span class="op">]</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html" class="external-link">unlist</a></span><span class="op">(</span><span class="va">alltags</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## </span></span>
@@ -278,7 +291,7 @@
 <span><span class="co">##  VBZ    .    ,  NNS   IN   JJ   DT  NNP   NN </span></span>
 <span><span class="co">##    9   10   15   16   25   25   28   29   39</span></span></code></pre>
 <p>Here’s how we might use R to determine how many words into a sentence we need to go to find a verb:</p>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="va">frames</span>, <span class="kw">function</span><span class="op">(</span><span class="va">z</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">min</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html" class="external-link">grep</a></span><span class="op">(</span><span class="st">"VB"</span>, <span class="va">z</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##  [1] 4 2 6 3 4 3 5 4 7 4</span></span></code></pre>
 <p>Exercise 1. What is the position of the verb in the fourth sentence? What is the verb, and what type is it? Consult the link to U Penn linguistics given above.</p>
@@ -290,18 +303,13 @@
 <p>In this section we will assume that you are working on a machine that is able to use software and data organized at huggingface.co, specifically a version of <a href="https://huggingface.co/google-bert/bert-base-uncased" class="external-link">BERT</a>.</p>
 <p>We will ‘source’ a github gist that will work if python is present, and if it and the reticulate package have been configured to be able to find python packages torch and transformers.</p>
 <p>This code chunk will produce a table of scores and completions for the prompt <code>The capital of Spain is [MASK].</code>.</p>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/source_gist.html" class="external-link">source_gist</a></span><span class="op">(</span><span class="st">"https://gist.github.com/vjcitn/0e1b0289eb1a219b98d60b5b863f8d62"</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## <span style="color: #00BBBB;">ℹ</span> Sourcing gist "0e1b0289eb1a219b98d60b5b863f8d62"</span></span>
-<span><span class="co">## <span style="color: #00BBBB;">ℹ</span> SHA-1 hash of file is "639934f1c514357c798aaa72ac393b501cf9c4b5"</span></span></code></pre>
-<pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 5 × 4</span></span></span>
-<span><span class="co">##    score token token_str sequence                          </span></span>
-<span><span class="co">##    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                             </span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">1</span> 0.647   <span style="text-decoration: underline;">6</span>921 madrid    the capital of spain is madrid.   </span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">2</span> 0.103   <span style="text-decoration: underline;">7</span>623 barcelona the capital of spain is barcelona.</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">3</span> 0.052<span style="text-decoration: underline;">1</span> <span style="text-decoration: underline;">18</span>983 seville   the capital of spain is seville.  </span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">4</span> 0.026<span style="text-decoration: underline;">7</span> <span style="text-decoration: underline;">13</span>083 valencia  the capital of spain is valencia. </span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">5</span> 0.021<span style="text-decoration: underline;">8</span> <span style="text-decoration: underline;">27</span>382 malaga    the capital of spain is malaga.</span></span></code></pre>
+<p>This turns out to be difficult to use on the ‘free’ galaxy instance. The software can be demonstrated at <code>https://vjcitn.shinyapps.io/AIapp</code>. Of interest:</p>
+<ul>
+<li>positive scores for factually false completions</li>
+<li>better score distributions when the prompt is ‘warmed up’ – for example, beginning the prompt with “You are a scholar of …” to build context.</li>
+</ul>
 <p>The code in the gist can be modified to change the model, and the prompt can be changed to seek scored responses to different prompts.</p>
 </div>
   </div>
