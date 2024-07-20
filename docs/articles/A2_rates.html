@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A2 Cancer rates for public health assessment • YESCDS</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">YESCDS</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.99.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.99.4</span>
       </span>
     </div>
 
@@ -103,6 +103,9 @@
     <li>
       <a href="../articles/E1_heidelberg2022.html">E1 Inclusive genomic data science education, illustrated with cancer genomics</a>
     </li>
+    <li>
+      <a href="../articles/E2_YESAI_2024.html">E2: Language analysis and production with R and some LLMs</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -123,13 +126,13 @@
 
       
 
-      </header><div class="row">
+      </header><script src="A2_rates_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>A2 Cancer rates for public health assessment</h1>
                         <h4 data-toc-skip class="author">Vincent J. Carey, stvjc at channing.harvard.edu</h4>
             
-            <h4 data-toc-skip class="date">April 06, 2023</h4>
+            <h4 data-toc-skip class="date">July 17, 2024</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/vjcitn/YESCDS/blob/HEAD/vignettes/A2_rates.Rmd"><code>vignettes/A2_rates.Rmd</code></a></small>
       <div class="hidden name"><code>A2_rates.Rmd</code></div>
@@ -171,14 +174,14 @@
 <p>“SEER” stands for Surveillance, Epidemiology and End Results. It is a program developed at the National Institutes of Health (NIH) National Cancer Institute (NCI). Data are collected at 17 regional centers.</p>
 <p>The SEER web site, offers various facets of cancer data to investigate.</p>
 <div class="figure">
-<img src="images/SEERlist.jpg" alt="SEERlist"><p class="caption">SEERlist</p>
+<img src="images/SEERlist.jpg" alt=""><p class="caption">SEERlist</p>
 </div>
 </div>
 <div class="section level3">
 <h3 id="body-sites-with-relatively-high-cancer-incidence">Body sites with relatively high cancer incidence<a class="anchor" aria-label="anchor" href="#body-sites-with-relatively-high-cancer-incidence"></a>
 </h3>
 <div class="figure">
-<img src="images/piecharts.jpg" alt="SEER 2021 pie charts"><p class="caption">SEER 2021 pie charts</p>
+<img src="images/piecharts.jpg" alt=""><p class="caption">SEER 2021 pie charts</p>
 </div>
 </div>
 <div class="section level3">
@@ -186,7 +189,7 @@
 </h3>
 <p>A very broad overview of cancer’s impact on Americans over the past 20 years:</p>
 <div class="figure">
-<img src="images/rateOverview.jpg" alt="SEER overview, 2021"><p class="caption">SEER overview, 2021</p>
+<img src="images/rateOverview.jpg" alt=""><p class="caption">SEER overview, 2021</p>
 </div>
 </div>
 <div class="section level3">
@@ -208,7 +211,7 @@
 </h2>
 <p>We can “drill down” on specific cancer types using the drop-down menu at seer.cancer.gov. For cancer of the pancreas we have:</p>
 <div class="figure">
-<img src="images/pancreas.jpg" alt="SEER pancreas, 2021"><p class="caption">SEER pancreas, 2021</p>
+<img src="images/pancreas.jpg" alt=""><p class="caption">SEER pancreas, 2021</p>
 </div>
 </div>
 <div class="section level2">
@@ -216,7 +219,7 @@
 </h2>
 <p>For cancer of the colon or rectum we have:</p>
 <div class="figure">
-<img src="images/colon.jpg" alt="SEER colon and rectum, 2021"><p class="caption">SEER colon and rectum, 2021</p>
+<img src="images/colon.jpg" alt=""><p class="caption">SEER colon and rectum, 2021</p>
 </div>
 <div class="section level3">
 <h3 id="exercises-1">Exercises<a class="anchor" aria-label="anchor" href="#exercises-1"></a>
@@ -256,7 +259,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
 </div>
 
       </footer>

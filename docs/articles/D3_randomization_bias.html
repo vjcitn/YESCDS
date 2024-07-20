@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>D3 Randomization to reduce bias • YESCDS</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">YESCDS</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.99.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.99.4</span>
       </span>
     </div>
 
@@ -103,6 +103,9 @@
     <li>
       <a href="../articles/E1_heidelberg2022.html">E1 Inclusive genomic data science education, illustrated with cancer genomics</a>
     </li>
+    <li>
+      <a href="../articles/E2_YESAI_2024.html">E2: Language analysis and production with R and some LLMs</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -123,13 +126,13 @@
 
       
 
-      </header><div class="row">
+      </header><script src="D3_randomization_bias_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>D3 Randomization to reduce bias</h1>
                         <h4 data-toc-skip class="author">Vincent J. Carey, stvjc at channing.harvard.edu</h4>
             
-            <h4 data-toc-skip class="date">April 06, 2023</h4>
+            <h4 data-toc-skip class="date">July 17, 2024</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/vjcitn/YESCDS/blob/HEAD/vignettes/D3_randomization_bias.Rmd"><code>vignettes/D3_randomization_bias.Rmd</code></a></small>
       <div class="hidden name"><code>D3_randomization_bias.Rmd</code></div>
@@ -162,12 +165,12 @@ Time of day    AM   PM   AM  PM  AM  PM</code></pre>
 <p>If, instead of alternation, the treatment assignment were randomized, the patients receiving treatment A would have characteristics that are <em>on average</em> indistinguishable from those receiving treatment B.</p>
 <p>Details of the approach to randomization will have an impact on its effectivness. Challenges can arise in multicenter studies with many centers. The following display plots the excess numbers of patients assigned to one arm in a trial, against the total number enrolled.</p>
 <div class="figure">
-<img src="images/loose.jpg" alt="Excursions 1"><p class="caption">Excursions 1</p>
+<img src="images/loose.jpg" alt=""><p class="caption">Excursions 1</p>
 </div>
 <p>There are long stretches of time during which more patients in the study are receiving one of the treatments than the other.</p>
 <p>The use of a different approach to randomization, in which small blocks of allocations are randomized independently, can reduce the size and duration of periods of imbalance over time.</p>
 <div class="figure">
-<img src="images/tight.jpg" alt="Excursions 2"><p class="caption">Excursions 2</p>
+<img src="images/tight.jpg" alt=""><p class="caption">Excursions 2</p>
 </div>
 <p>Randomization is a well-accepted tool in experimental design, but must be conducted with care. The <a href="https://en.wikipedia.org/wiki/Randomized_experiment" class="external-link">wikipedia article</a> has some interesting references on assessment of the overall effect of use of randomization in health research.</p>
 </div>
@@ -195,7 +198,7 @@ Time of day    AM   PM   AM  PM  AM  PM</code></pre>
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
 </div>
 
       </footer>
