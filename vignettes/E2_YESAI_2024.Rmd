@@ -39,7 +39,7 @@ indic = c("the", "a", "any", "some")
 
 Our model for a sentence is
 ```
-indicative + noun + verb(tensed) + preposition + indicative + adjective + noun
+(*) indicative + noun + verb(tensed) + preposition + indicative + adjective + noun
 ```
 
 We produce a sentence by sampling purely randomly from the
@@ -92,6 +92,22 @@ is the result?
 
 Exercise 2.  There is something wrong with the last two productions.  What is
 it and how would you go about correcting it?
+
+Exercise 3.  Propose an alternate schematic to the one noted above as `(*)`.
+Implement it in a function `altsentence` and illustrate its use with
+our vocaularies.  For example 
+```
+noun + "is not" + noun
+```
+could be implemented as
+```{r doalt}
+altsentence = function() {
+   sprintf("%s is not %s", get1(nouns), get1(nouns))
+}
+altsentence()
+altsentence()
+```
+Come up with something more interesting than this!
 
 
 # Lexical tagging of English sentences
@@ -192,9 +208,18 @@ python packages torch and transformers.
 This code chunk will produce a table of scores and completions for the
 prompt `The capital of Spain is [MASK].`.
 
-```{r dogist}
+```{r dogist, eval=FALSE}
 devtools::source_gist("https://gist.github.com/vjcitn/0e1b0289eb1a219b98d60b5b863f8d62")
 ```
+
+This turns out to be difficult to use on the 'free' galaxy instance.  The
+software can be demonstrated at `https://vjcitn.shinyapps.io/AIapp`.
+Of interest:
+
+- positive scores for factually false completions
+- better score distributions when the prompt is 'warmed up' -- for example,
+beginning the prompt with "You are a scholar of ..." to build context.
+
 
 The code in the gist can be modified to change the model, and the prompt
 can be changed to seek scored responses to different prompts.
