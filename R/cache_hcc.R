@@ -16,9 +16,11 @@ url_6NR = function()
 #' the basis for the "1R" example.
 #' \url{https://pubmed.ncbi.nlm.nih.gov/37723590/} is the primary paper.
 #' @return character(1) path to rda file
+#' @examples
+#' get_hcc_spatial_path()
 #' @export
 get_hcc_spatial_path = function(sample="1R", cache = BiocFileCache::BiocFileCache()) {
-  stopfinot(sample %in% c("1R", "6NR"))
+  stopifnot(sample %in% c("1R", "6NR"))
   src = url_6NR()
   if (sample == "1R") src = url_1R()
   q = BiocFileCache::bfcquery(cache, basename(src))
