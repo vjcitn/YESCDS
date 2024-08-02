@@ -7,7 +7,7 @@
 mass_cancer_map(site = "breast")
 }
 \arguments{
-\item{body_site}{character(1) defaults to "breast", can also take value "prostate"}
+\item{site}{character(1) defaults to "breast", can also take value "prostate"}
 }
 \description{
 map cancer rates for selected sites to MA counties

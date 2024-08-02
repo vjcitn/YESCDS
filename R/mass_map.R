@@ -25,7 +25,7 @@ us_map = function(provider="CartoDB.Positron")
 
 #' map cancer rates for selected sites to MA counties
 #' @importFrom htmltools HTML
-#' @param body_site character(1) defaults to "breast", can also take value "prostate"
+#' @param site character(1) defaults to "breast", can also take value "prostate"
 #' @examples
 #' mass_cancer_map()
 #' @export

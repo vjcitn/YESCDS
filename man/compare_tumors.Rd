@@ -20,7 +20,7 @@ compare multiple tumor times with respect to survival
 }
 \examples{
 cmp = compare_tumors()
-plot(survfit(cmp$survlist[[1]]~1), conf.int=FALSE, xlab="years", ylab="Survival prob.", main="TCGA survival", lwd=2)
-lines(survfit(cmp$survlist[[2]]~1), lwd=2, lty=2, conf.int=FALSE)
+plot(survival::survfit(cmp$survlist[[1]]~1), conf.int=FALSE, xlab="years", ylab="Survival prob.", main="TCGA survival", lwd=2)
+lines(survival::survfit(cmp$survlist[[2]]~1), lwd=2, lty=2, conf.int=FALSE)
 legend(15, .98, lty=c(1,2), lwd=2, legend=c("BRCA", "GBM"), bty="n")
 }
