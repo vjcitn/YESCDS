@@ -1,5 +1,5 @@
-pandoc: 2.9.2.1
-pkgdown: 2.0.9
+pandoc: '2.13'
+pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
   A0_intro_notebook: A0_intro_notebook.html
@@ -21,8 +21,7 @@ articles:
   D4_comparing_trt: D4_comparing_trt.html
   E1_heidelberg2022: E1_heidelberg2022.html
   E2_YESAI_2024: E2_YESAI_2024.html
-last_built: 2024-07-20T18:23Z
+last_built: 2024-10-30T12:23Z
 urls:
   reference: https://github.com/vjcitn/YESCDS/reference
   article: https://github.com/vjcitn/YESCDS/articles
-
