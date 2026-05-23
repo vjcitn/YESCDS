@@ -8,7 +8,7 @@
 SummarizedExperiment
 }
 \usage{
-brcamutSE
+data(brcamutSE)
 }
 \description{
 a SummarizedExperiment collecting BRCA mutations and colData from curatedTCGAData

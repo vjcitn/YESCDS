@@ -8,7 +8,7 @@
 data.frame
 }
 \usage{
-statcrunch_msa
+data(statcrunch_msa)
 }
 \description{
 geographic information from statcrunch.com on metropolitan statistical areas

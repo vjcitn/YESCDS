@@ -8,7 +8,7 @@
 data.frame
 }
 \usage{
-canada_crude
+data(canada_crude)
 }
 \description{
 a data.frame with (rounded) crude rates of cancer as presented at https://www.statcan.gc.ca/en/dai/btd/asr

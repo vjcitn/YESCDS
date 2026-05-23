@@ -4,6 +4,7 @@ library(png)
 library(SingleCellExperiment)
 library(ggplot2)
 library(plotly)
+library(YESCDS)
 
 ui = fluidPage(
  sidebarLayout(
@@ -32,6 +33,7 @@ ui = fluidPage(
 tabPanel("about",
 helpText("
 on 7/30/2024 the content in the 'Supplementary file' table at ", a("this GEO URL for GSM7661255", href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM7661255")," was retrieved"),
+helpText("The ", a("publication", href="https://pubmed.ncbi.nlm.nih.gov/37723590/"), "is available."),
 helpText("Upon using 'tar zxf' on the payload, a folder was produced with contents"),
 pre("
 HCC1R

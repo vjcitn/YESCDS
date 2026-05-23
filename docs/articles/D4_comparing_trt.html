@@ -4,147 +4,93 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>D4 Methods of comparing treatments • YESCDS</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
-<script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="D4 Methods of comparing treatments">
-<!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
+<script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="D4 Methods of comparing treatments">
 </head>
-<body data-spy="scroll" data-target="#toc">
+<body>
+    <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
 
-    <div class="container template-article">
-      <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">YESCDS</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.99.6</span>
-      </span>
-    </div>
+    <nav class="navbar navbar-expand-lg fixed-top bg-light" data-bs-theme="light" aria-label="Site navigation"><div class="container">
 
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-<li>
-  <a href="../reference/index.html">Reference</a>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Articles
+    <a class="navbar-brand me-2" href="../index.html">YESCDS</a>
 
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-<li>
-      <a href="../articles/A0_intro_notebook.html">A0 Introductory Notebook</a>
-    </li>
-    <li>
-      <a href="../articles/A1_cancer_table.html">A1 Cancers in my world</a>
-    </li>
-    <li>
-      <a href="../articles/A2_rates.html">A2 Cancer rates for public health assessment</a>
-    </li>
-    <li>
-      <a href="../articles/A3_monitoring.html">A3 Monitoring of cancer by public health institutions</a>
-    </li>
-    <li>
-      <a href="../articles/A4_interactive_tables.html">A4 Using interactive tables</a>
-    </li>
-    <li>
-      <a href="../articles/A5_data_graphics.html">A5 Data graphics</a>
-    </li>
-    <li>
-      <a href="../articles/A6_standardization.html">A6 Age standardization of cancer rates</a>
-    </li>
-    <li>
-      <a href="../articles/B1_global.html">B1 Cancer across the globe</a>
-    </li>
-    <li>
-      <a href="../articles/B2_table_plus_geo.html">B2 Enhancing tables with geography</a>
-    </li>
-    <li>
-      <a href="../articles/B3_counties.html">B3 Cancer in our counties</a>
-    </li>
-    <li>
-      <a href="../articles/C1_body_overall.html">C1 Cancer in our bodies: Overall view</a>
-    </li>
-    <li>
-      <a href="../articles/C2_variation_survival.html">C2 Variation in survival with cancer</a>
-    </li>
-    <li>
-      <a href="../articles/C3_subtypes_molecular.html">C3 Molecular origins of diverse cancers</a>
-    </li>
-    <li>
-      <a href="../articles/D1_clin_trial_concepts.html">D1 Clinical trials concepts</a>
-    </li>
-    <li>
-      <a href="../articles/D2_equipoise.html">D2 Equipoise: when medical knowledge can only advance by experimenting</a>
-    </li>
-    <li>
-      <a href="../articles/D3_randomization_bias.html">D3 Randomization to reduce bias</a>
-    </li>
-    <li>
-      <a href="../articles/D4_comparing_trt.html">D4 Methods of comparing treatments</a>
-    </li>
-    <li>
-      <a href="../articles/E1_heidelberg2022.html">E1 Inclusive genomic data science education, illustrated with cancer genomics</a>
-    </li>
-    <li>
-      <a href="../articles/E2_YESAI_2024.html">E2: Language analysis and production with R and some LLMs</a>
-    </li>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.99.8</small>
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar" class="collapse navbar-collapse ms-3">
+      <ul class="navbar-nav me-auto">
+<li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
+<li class="active nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
+<li><a class="dropdown-item" href="../articles/A0_intro_notebook.html">A0 Introductory Notebook</a></li>
+    <li><a class="dropdown-item" href="../articles/A1_cancer_table.html">A1 Cancers in my world</a></li>
+    <li><a class="dropdown-item" href="../articles/A2_rates.html">A2 Cancer rates for public health assessment</a></li>
+    <li><a class="dropdown-item" href="../articles/A3_monitoring.html">A3 Monitoring of cancer by public health institutions</a></li>
+    <li><a class="dropdown-item" href="../articles/A4_interactive_tables.html">A4 Using interactive tables</a></li>
+    <li><a class="dropdown-item" href="../articles/A5_data_graphics.html">A5 Data graphics</a></li>
+    <li><a class="dropdown-item" href="../articles/A6_standardization.html">A6 Age standardization of cancer rates</a></li>
+    <li><a class="dropdown-item" href="../articles/B1_global.html">B1 Cancer across the globe</a></li>
+    <li><a class="dropdown-item" href="../articles/B2_table_plus_geo.html">B2 Enhancing tables with geography</a></li>
+    <li><a class="dropdown-item" href="../articles/B3_counties.html">B3 Cancer in our counties</a></li>
+    <li><a class="dropdown-item" href="../articles/C1_body_overall.html">C1 Cancer in our bodies: Overall view</a></li>
+    <li><a class="dropdown-item" href="../articles/C2_variation_survival.html">C2 Variation in survival with cancer</a></li>
+    <li><a class="dropdown-item" href="../articles/C3_subtypes_molecular.html">C3 Molecular origins of diverse cancers</a></li>
+    <li><a class="dropdown-item" href="../articles/D1_clin_trial_concepts.html">D1 Clinical trials concepts</a></li>
+    <li><a class="dropdown-item" href="../articles/D2_equipoise.html">D2 Equipoise: when medical knowledge can only advance by experimenting</a></li>
+    <li><a class="dropdown-item" href="../articles/D3_randomization_bias.html">D3 Randomization to reduce bias</a></li>
+    <li><a class="dropdown-item" href="../articles/D4_comparing_trt.html">D4 Methods of comparing treatments</a></li>
+    <li><a class="dropdown-item" href="../articles/E1_heidelberg2022.html">E1 Inclusive genomic data science education, illustrated with cancer genomics</a></li>
+    <li><a class="dropdown-item" href="../articles/E2_YESAI_2024.html">E2: Language analysis and production with R and some LLMs</a></li>
   </ul>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right">
-<li>
-  <a href="https://github.com/vjcitn/YESCDS/">
-    <span class="fab fa-github fa-lg"></span>
-
-  </a>
-</li>
+<ul class="navbar-nav">
+<li class="nav-item"><form class="form-inline" role="search">
+ <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
+</form></li>
+<li class="nav-item"><a class="nav-link" href="https://github.com/vjcitn/YESCDS/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
-<!--/.nav-collapse -->
+
+
   </div>
-<!--/.container -->
-</div>
-<!--/.navbar -->
+</nav><div class="container template-article">
 
 
 
-      </header><link href="D4_comparing_trt_files/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<link href="D4_comparing_trt_files/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
 <script src="D4_comparing_trt_files/htmlwidgets-1.6.4/htmlwidgets.js"></script><link href="D4_comparing_trt_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-<script src="D4_comparing_trt_files/datatables-binding-0.33/datatables.js"></script><link href="D4_comparing_trt_files/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<script src="D4_comparing_trt_files/datatables-binding-0.34.0/datatables.js"></script><link href="D4_comparing_trt_files/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
 <link href="D4_comparing_trt_files/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
-<script src="D4_comparing_trt_files/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="D4_comparing_trt_files/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
-<script src="D4_comparing_trt_files/crosstalk-1.2.1/js/crosstalk.min.js"></script><div class="row">
-  <div class="col-md-9 contents">
-    <div class="page-header toc-ignore">
-      <h1 data-toc-skip>D4 Methods of comparing treatments</h1>
+<script src="D4_comparing_trt_files/dt-core-1.13.6/js/jquery.dataTables.min.js"></script><link href="D4_comparing_trt_files/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+<script src="D4_comparing_trt_files/crosstalk-1.2.2/js/crosstalk.min.js"></script><div class="row">
+  <main id="main" class="col-md-9"><div class="page-header">
+
+      <h1>D4 Methods of comparing treatments</h1>
                         <h4 data-toc-skip class="author">Vincent J. Carey, stvjc at channing.harvard.edu</h4>
             
-            <h4 data-toc-skip class="date">October 30, 2024</h4>
+            <h4 data-toc-skip class="date">May 22, 2026</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/vjcitn/YESCDS/blob/HEAD/vignettes/D4_comparing_trt.Rmd"><code>vignettes/D4_comparing_trt.Rmd</code></a></small>
-      <div class="hidden name"><code>D4_comparing_trt.Rmd</code></div>
-
+      <div class="d-none name"><code>D4_comparing_trt.Rmd</code></div>
     </div>
 
     
     
+<pre><code><span><span class="co">## Warning: multiple methods tables found for 'scale'</span></span></code></pre>
+<pre><code><span><span class="co">## Warning: replacing previous import 'BiocGenerics::scale' by</span></span>
+<span><span class="co">## 'DelayedArray::scale' when loading 'SummarizedExperiment'</span></span></code></pre>
 <div class="section level2">
 <h2 id="comparing-cancer-treatments">Comparing cancer treatments<a class="anchor" aria-label="anchor" href="#comparing-cancer-treatments"></a>
 </h2>
@@ -157,7 +103,7 @@ Different chemotherapeutic sensitivities and host factors affecting prognosis in
 advanced ovarian carcinoma versus minimal residual disease</code></pre>
 <p>The abstract is provided at the end of this vignette.</p>
 <p>The data for the ovarian cancer study has the following form:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/therneau/survival" class="external-link">survival</a></span><span class="op">)</span></span>
 <span><span class="fu">datatable</span><span class="op">(</span><span class="va">ovarian</span><span class="op">)</span></span></code></pre></div>
 <div class="datatables html-widget html-fill-item" id="htmlwidget-ac96cb3ee4656e2e9ec3" style="width:100%;height:auto;"></div>
@@ -174,17 +120,17 @@ advanced ovarian carcinoma versus minimal residual disease</code></pre>
 <div class="section level3">
 <h3 id="estimation-of-survival-probabilities-by-treatment-group">Estimation of survival probabilities by treatment group<a class="anchor" aria-label="anchor" href="#estimation-of-survival-probabilities-by-treatment-group"></a>
 </h3>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">osurv</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">Surv</a></span><span class="op">(</span><span class="va">ovarian</span><span class="op">$</span><span class="va">futime</span>, <span class="va">ovarian</span><span class="op">$</span><span class="va">fustat</span><span class="op">)</span></span>
 <span><span class="va">ofit1</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/survival/man/survfit.html" class="external-link">survfit</a></span><span class="op">(</span><span class="va">osurv</span><span class="op">~</span><span class="va">ovarian</span><span class="op">$</span><span class="va">rx</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">ofit1</span>, lty<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/legend.html" class="external-link">legend</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">.4</span>, lty<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span>, legend<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"cyc 1g/m2"</span>, <span class="st">"cyc .5g/m2 + adria"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="D4_comparing_trt_files/figure-html/doplot-1.png" width="700"></p>
+<p><img src="D4_comparing_trt_files/figure-html/doplot-1.png" class="r-plt" alt="" width="700"></p>
 </div>
 <div class="section level3">
 <h3 id="testing-for-treatment-effect">Testing for treatment effect<a class="anchor" aria-label="anchor" href="#testing-for-treatment-effect"></a>
 </h3>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/survdiff.html" class="external-link">survdiff</a></span><span class="op">(</span><span class="va">osurv</span><span class="op">~</span><span class="va">ovarian</span><span class="op">$</span><span class="va">rx</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Call:</span></span>
 <span><span class="co">## survdiff(formula = osurv ~ ovarian$rx)</span></span>
@@ -199,7 +145,7 @@ advanced ovarian carcinoma versus minimal residual disease</code></pre>
 <h3 id="modeling-the-survival-curves-for-the-effect-of-residual-disease">Modeling the survival curves for the effect of residual disease<a class="anchor" aria-label="anchor" href="#modeling-the-survival-curves-for-the-effect-of-residual-disease"></a>
 </h3>
 <p>We can produce a very compact, two parameter model for the survival distributions for patients with and without residual disease.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/survreg.html" class="external-link">survreg</a></span><span class="op">(</span><span class="va">osurv</span><span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/AsIs.html" class="external-link">I</a></span><span class="op">(</span><span class="va">ovarian</span><span class="op">$</span><span class="va">resid.ds</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span>, </span>
 <span>   dist<span class="op">=</span><span class="st">"exponential"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## </span></span>
@@ -216,7 +162,7 @@ advanced ovarian carcinoma versus minimal residual disease</code></pre>
 <span><span class="co">##  Chisq= 3.87 on 1 degrees of freedom, p= 0.049 </span></span>
 <span><span class="co">## Number of Newton-Raphson Iterations: 4 </span></span>
 <span><span class="co">## n= 26</span></span></code></pre>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ofit2</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/survival/man/survfit.html" class="external-link">survfit</a></span><span class="op">(</span><span class="va">osurv</span><span class="op">~</span><span class="va">ovarian</span><span class="op">$</span><span class="va">resid.ds</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">ofit2</span>, lty<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="va">tim</span> <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">1200</span></span>
@@ -224,17 +170,17 @@ advanced ovarian carcinoma versus minimal residual disease</code></pre>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">tim</span>, <span class="va">pp_nores</span>, col<span class="op">=</span><span class="st">"blue"</span><span class="op">)</span></span>
 <span><span class="va">pp_res</span> <span class="op">=</span> <span class="fl">1</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/stats/Exponential.html" class="external-link">pexp</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">1200</span>, <span class="fl">1</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">exp</a></span><span class="op">(</span><span class="fl">7.9</span><span class="op">-</span><span class="fl">1.2</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">tim</span>, <span class="va">pp_res</span>, col<span class="op">=</span><span class="st">"red"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="D4_comparing_trt_files/figure-html/dosummmm-1.png" width="700"></p>
+<p><img src="D4_comparing_trt_files/figure-html/dosummmm-1.png" class="r-plt" alt="" width="700"></p>
 </div>
 <div class="section level3">
 <h3 id="exercises">Exercises<a class="anchor" aria-label="anchor" href="#exercises"></a>
 </h3>
 <p>D.4.1 Interpret confidence intervals for the one-year survival probabilities for the two treatments, ignoring the presence or absence of residual disease.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/with.html" class="external-link">with</a></span><span class="op">(</span><span class="va">ovarian</span><span class="op">[</span><span class="va">ovarian</span><span class="op">$</span><span class="va">rx</span><span class="op">==</span><span class="fl">1</span>,<span class="op">]</span>, <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/survfit.html" class="external-link">survfit</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">Surv</a></span><span class="op">(</span><span class="va">futime</span>,<span class="va">fustat</span><span class="op">)</span><span class="op">~</span><span class="fl">1</span><span class="op">)</span>,conf.int<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/with.html" class="external-link">with</a></span><span class="op">(</span><span class="va">ovarian</span><span class="op">[</span><span class="va">ovarian</span><span class="op">$</span><span class="va">rx</span><span class="op">==</span><span class="fl">2</span>,<span class="op">]</span>, <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/survfit.html" class="external-link">survfit</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">Surv</a></span><span class="op">(</span><span class="va">futime</span>,<span class="va">fustat</span><span class="op">)</span><span class="op">~</span><span class="fl">1</span><span class="op">)</span>,conf.int<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="D4_comparing_trt_files/figure-html/doconf-1.png" width="700"></p>
+<p><img src="D4_comparing_trt_files/figure-html/doconf-1.png" class="r-plt" alt="" width="700"></p>
 </div>
 <div class="section level3">
 <h3 id="answers">Answers<a class="anchor" aria-label="anchor" href="#answers"></a>
@@ -260,29 +206,22 @@ of this prognostic superiority appeared to be related to menopausal
 status and presumably to the depletion of endogenous estrogens in the older patients.</code></pre>
 </div>
 </div>
-  </div>
-
-  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-
-      </div>
-
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 
 
-      <footer><div class="copyright">
-  <p></p>
-<p>Developed by Vince Carey.</p>
+    <footer><div class="pkgdown-footer-left">
+  <p>Developed by Vince Carey.</p>
 </div>
 
-<div class="pkgdown">
-  <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
+<div class="pkgdown-footer-right">
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
-      </footer>
+    </footer>
 </div>
-
 
 
 

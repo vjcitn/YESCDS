@@ -8,7 +8,7 @@
 character
 }
 \usage{
-woncan_meta
+data(woncan_meta)
 }
 \description{
 metadata on cancer rate data by metropolitan statistical area, 1999-2018, from CDC WONDER system

@@ -4,6 +4,7 @@ library(png)
 library(SingleCellExperiment)
 library(ggplot2)
 library(plotly)
+library(YESCDS)
 
 server = function(input, output) {
  output$hne = renderPlot({
@@ -30,7 +31,7 @@ server = function(input, output) {
   else if (input$pick == "6NR") process6NR()
   })
  process1R = reactive({
-  load("hcc1rYES.rda")
+  load(get_hcc_spatial_path("1R"))
   assn = hcc1rYES$clustid+1
   classes = c("Tum/SAA1", "M0a", "Tum/HP", "M0b", "CAF", "Tum/CYP2E1",
        "U1", "U2", "U3")
@@ -44,7 +45,7 @@ server = function(input, output) {
   plotly::ggplotly(pl)
   })
  process6NR = reactive({
-  load("hcc6nrYES.rda")
+  load(get_hcc_spatial_path("6NR"))
   assn = hcc6nrYES$clustid+1
   classes = c("Tum/PRSS1", "Tum/PRSS1", "Tum/AFP", "Tum/HBA2", "CAF", "Tum/CYP2E1",
        "U1", "U2", "CAF")

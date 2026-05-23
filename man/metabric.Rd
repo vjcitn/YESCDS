@@ -8,7 +8,7 @@
 data.frame
 }
 \usage{
-metabric
+data(metabric)
 }
 \description{
 a data.frame with clinical features of a breast cancer study (METABRIC) derived from cBioPortal

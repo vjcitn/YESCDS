@@ -8,7 +8,7 @@
 data.frame
 }
 \usage{
-world_cancer_2020_all
+data(world_cancer_2020_all)
 }
 \description{
 a table of cancer rate data by country, retrieved from https://gco.iarc.fr/today/online-analysis-map

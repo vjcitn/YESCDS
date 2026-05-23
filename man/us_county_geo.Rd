@@ -8,7 +8,7 @@
 sf instance
 }
 \usage{
-us_county_geo
+data(us_county_geo)
 }
 \description{
 locations of US counties

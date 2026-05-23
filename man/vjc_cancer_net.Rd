@@ -8,7 +8,7 @@
 data.frame
 }
 \usage{
-vjc_cancer_net
+data(vjc_cancer_net)
 }
 \description{
 a table of data of Vince's contacts who developed cancer

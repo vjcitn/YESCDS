@@ -8,7 +8,7 @@
 data.frame
 }
 \usage{
-SEER_2018
+data(SEER_2018)
 }
 \description{
 a data.frame with SEER estimates of cancer incidence for 2018
