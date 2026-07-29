@@ -1,13 +1,4 @@
-<div id="main" class="col-md-9" role="main">
-
 # A2 Cancer rates for public health assessment
-
-    ## Warning: multiple methods tables found for 'scale'
-
-    ## Warning: replacing previous import 'BiocGenerics::scale' by
-    ## 'DelayedArray::scale' when loading 'SummarizedExperiment'
-
-<div class="section level2">
 
 ## Cancer rates and public health
 
@@ -17,9 +8,9 @@ page.](https://www.cancer.gov/research/areas/public-health)
 
 Briefly, cancers contribute to
 
--   years of life lost
--   loss of quality of life for patients and families
--   lost productivity
+- years of life lost
+- loss of quality of life for patients and families
+- lost productivity
 
 Furthermore, as the population ages, the effects of cancer will be more
 pronounced as time goes on.
@@ -35,11 +26,11 @@ us immediately to data science and statistics.
 
 Two terms of epidemiology will be of use to us
 
--   *prevalence*: the proportion of the population currently affected by
-    a disease
--   *incidence*: the proportion of the population, in a given time
-    interval, that was disease-free prior to the interval but developed
-    the disease within the interval
+- *prevalence*: the proportion of the population currently affected by a
+  disease
+- *incidence*: the proportion of the population, in a given time
+  interval, that was disease-free prior to the interval but developed
+  the disease within the interval
 
 Prevalence expresses the current burden of disease within a population.
 
@@ -53,8 +44,6 @@ An excellent resource on rate estimation and interpretation is the
 [online book on cancer
 screening](https://www.ncbi.nlm.nih.gov/books/NBK550212/pdf/Bookshelf_NBK550212.pdf)
 by Pamela Marcus, hosted at NCI.
-
-<div class="section level3">
 
 ### Collecting cancer data
 
@@ -74,48 +63,24 @@ Cancer Institute (NCI). Data are collected at 17 regional centers.
 
 The SEER web site, offers various facets of cancer data to investigate.
 
-<div class="figure">
-
-![](images/SEERlist.jpg)
+![SEERlist](images/A2SEERlist.png)
 
 SEERlist
 
-</div>
-
-</div>
-
-<div class="section level3">
-
 ### Body sites with relatively high cancer incidence
 
-<div class="figure">
+![SEER 2026 pie charts](images/A2piechart.png)
 
-![](images/piecharts.jpg)
-
-SEER 2021 pie charts
-
-</div>
-
-</div>
-
-<div class="section level3">
+SEER 2026 pie charts
 
 ### New diagnoses, and deaths, over time
 
 A very broad overview of cancer’s impact on Americans over the past 20
 years:
 
-<div class="figure">
+![SEER overview, 2026](images/A2-seeroverview.png)
 
-![](images/rateOverview.jpg)
-
-SEER overview, 2021
-
-</div>
-
-</div>
-
-<div class="section level3">
+SEER overview, 2026
 
 ### Exercises
 
@@ -126,80 +91,46 @@ prediction as a “rate per 100,000 persons”.
 A.2.2 True or False: Of cancers newly identified in US citizens in 2021,
 more than 8% arise in the pancreas.
 
-</div>
-
-<div class="section level3">
-
 ### Answers
 
     A.2.1
 
     A.2.2
 
-</div>
-
-</div>
-
-<div class="section level2">
-
 ## A view of pancreatic cancer incidence
 
 We can “drill down” on specific cancer types using the drop-down menu at
 seer.cancer.gov. For cancer of the pancreas we have:
 
-<div class="figure">
+![SEER pancreas, 2026](images/A2-pancreatic-survivialrates.png)
 
-![](images/pancreas.jpg)
-
-SEER pancreas, 2021
-
-</div>
-
-</div>
-
-<div class="section level2">
+SEER pancreas, 2026
 
 ## A view of colorectal cancer incidence
 
 For cancer of the colon or rectum we have:
 
-<div class="figure">
+![SEER colon and rectum, 2026](images/A2-colorectalsurvivalrates.png)
 
-![](images/colon.jpg)
-
-SEER colon and rectum, 2021
-
-</div>
-
-<div class="section level3">
+SEER colon and rectum, 2026
 
 ### Exercises
 
 A.2.3 Which of the following describes observations on pancreatic cancer
 between 1992 and 2019?
 
--   the death rate per 100000 population increased by two,
--   the rate of new pancreatic cancers per 100000 population increased
-    by two,
--   the rate of new pancreatic cancers per 100000 population remained
-    stable.
+- the death rate per 100000 population increased by two,
+- the rate of new pancreatic cancers per 100000 population increased by
+  two,
+- the rate of new pancreatic cancers per 100000 population remained
+  stable.
 
 A.2.4 True or false: The death rate, and the incidence rate, for cancers
 of colon and rectum were approximately halved in the interval between
 1992 and 2019.
-
-</div>
-
-<div class="section level3">
 
 ### Answers
 
     A.2.3
 
     A.2.4
-
-</div>
-
-</div>
-
-</div>

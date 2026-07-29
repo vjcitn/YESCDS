@@ -1,54 +1,41 @@
-<div id="main" class="col-md-9" role="main">
-
 # D1 Clinical trials concepts
-
-    ## Warning: multiple methods tables found for 'scale'
-
-    ## Warning: replacing previous import 'BiocGenerics::scale' by
-    ## 'DelayedArray::scale' when loading 'SummarizedExperiment'
-
-<div class="section level2">
 
 ## Clinical trials for cancer treatments
 
--   Despite massive investments in cancer research and treatment
-    development, cancer remains a leading cause of death
+- Despite massive investments in cancer research and treatment
+  development, cancer remains a leading cause of death
 
--   We have examined many aspects of cancer’s diversity
+- We have examined many aspects of cancer’s diversity
 
-    -   tissue of origin
-    -   somatic mutations
-    -   response to treatment
+  - tissue of origin
+  - somatic mutations
+  - response to treatment
 
--   The main modalities of medical response to cancer are
+- The main modalities of medical response to cancer are
 
-    -   surgery
-    -   chemotherapy
-    -   radiation
+  - surgery
+  - chemotherapy
+  - radiation
 
--   Each of these modalities has a collection of subtypes, and they are
-    often used in combination
+- Each of these modalities has a collection of subtypes, and they are
+  often used in combination
 
--   How do doctors and patients navigate the available options?
+- How do doctors and patients navigate the available options?
 
-    -   Answer: interpret available data as evidence in favor of or
-        against certain options
+  - Answer: interpret available data as evidence in favor of or against
+    certain options
 
--   The “gold standard” for evidence in medical decisionmaking is the
-    randomized clinical trial (RCT)
+- The “gold standard” for evidence in medical decisionmaking is the
+  randomized clinical trial (RCT)
 
-    -   Trials are generally preceded by “pre-clinical” studies of drugs
-        or other treatment techniques
-    -   Analysis of data in pre-clinical research often demands great
-        versatility of the statisticians and data scientists
-        -   such data are often sparse and noisy
-        -   ideally one integrates all available scientific information
-            about the proposed alternative, requiring extensive
-            literature search and acquisition of public data
-
-</div>
-
-<div class="section level2">
+  - Trials are generally preceded by “pre-clinical” studies of drugs or
+    other treatment techniques
+  - Analysis of data in pre-clinical research often demands great
+    versatility of the statisticians and data scientists
+    - such data are often sparse and noisy
+    - ideally one integrates all available scientific information about
+      the proposed alternative, requiring extensive literature search
+      and acquisition of public data
 
 ## Questions to answer in designing a clinical trial [(Article)](https://www.cancer.org/treatment/treatments-and-side-effects/clinical-trials/what-you-need-to-know/phases-of-clinical-trials.html)
 
@@ -69,10 +56,6 @@ all?
 D.1.6 How do we measure the overall benefit conferred by using the
 alternative method?
 
-</div>
-
-<div class="section level2">
-
 ## Answers
 
     D.1.1
@@ -87,33 +70,24 @@ alternative method?
 
     D.1.6
 
-</div>
-
-<div class="section level2">
-
 ## The typical strategy: Three phases
 
--   Phase I: enroll healthy volunteers to do dose finding, assessing
-    toxicity and side effects
--   Phase II: enroll patients with the disease and administer the
-    maximum tolerated dose to establish that the new treatment has some
-    beneficial effect
--   Phase III: enroll patients with the disease, but set up a comparison
-    of the new treatment versus the standard of care
-    -   a design plan is produced detailing how many patients are to be
-        enrolled, how the treatments will be administered, and how the
-        data will be analyzed
-    -   patients are randomly assigned either the new treatment, or the
-        standard of care
-    -   a Data Safety Monitoring Board will review study data
-        periodically
-        -   studies may end prematurely if great benefit is seen early
-            on, or if it appears no benefit could be documented by
-            continuing the trial
-
-</div>
-
-<div class="section level2">
+- Phase I: enroll healthy volunteers to do dose finding, assessing
+  toxicity and side effects
+- Phase II: enroll patients with the disease and administer the maximum
+  tolerated dose to establish that the new treatment has some beneficial
+  effect
+- Phase III: enroll patients with the disease, but set up a comparison
+  of the new treatment versus the standard of care
+  - a design plan is produced detailing how many patients are to be
+    enrolled, how the treatments will be administered, and how the data
+    will be analyzed
+  - patients are randomly assigned either the new treatment, or the
+    standard of care
+  - a Data Safety Monitoring Board will review study data periodically
+    - studies may end prematurely if great benefit is seen early on, or
+      if it appears no benefit could be documented by continuing the
+      trial
 
 ## Experimentation with human subjects is carefully regulated
 
@@ -124,7 +98,3 @@ is central in the implementation of clinical trials.
 The [Belmont
 report](https://www.hhs.gov/ohrp/regulations-and-policy/belmont-report/index.html)
 defined principles and guidelines for all human subjects research.
-
-</div>
-
-</div>

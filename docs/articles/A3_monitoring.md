@@ -1,29 +1,12 @@
-<div id="main" class="col-md-9" role="main">
-
 # A3 Monitoring of cancer by public health institutions
-
-    ## Warning: multiple methods tables found for 'scale'
-
-    ## Warning: replacing previous import 'BiocGenerics::scale' by
-    ## 'DelayedArray::scale' when loading 'SummarizedExperiment'
-
-<div class="section level2">
 
 ## County-level variation in cancer rates
 
 We focus on colorectal cancer:
 
-<div class="figure">
-
-![](images/colon8GroupIncidence.jpg)
+![NIH/CDC State Cancer Profiles](images/colon8GroupIncidence.jpg)
 
 NIH/CDC State Cancer Profiles
-
-</div>
-
-</div>
-
-<div class="section level2">
 
 ## Exercises
 
@@ -52,10 +35,6 @@ statistic for females of all ages?
 A.3.5 Using the EPA chart in Exhibit 5, which type of cancer in females
 shows a steady decrease in incidence from 2000 to 2017?
 
-</div>
-
-<div class="section level2">
-
 ## Answers
 
     A.3.1
@@ -67,7 +46,3 @@ shows a steady decrease in incidence from 2000 to 2017?
     A.3.4
 
     A.3.5
-
-</div>
-
-</div>

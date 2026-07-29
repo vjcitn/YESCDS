@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>C2 Variation in survival with cancer • YESCDS</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="C2 Variation in survival with cancer">
 </head>
@@ -74,9 +74,10 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>C2 Variation in survival with cancer</h1>
-                        <h4 data-toc-skip class="author">Vincent J. Carey, stvjc at channing.harvard.edu</h4>
+                        <h4 data-toc-skip class="author">Vincent J.
+Carey, stvjc at channing.harvard.edu</h4>
             
-            <h4 data-toc-skip class="date">May 22, 2026</h4>
+            <h4 data-toc-skip class="date">July 29, 2026</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/vjcitn/YESCDS/blob/HEAD/vignettes/C2_variation_survival.Rmd"><code>vignettes/C2_variation_survival.Rmd</code></a></small>
       <div class="d-none name"><code>C2_variation_survival.Rmd</code></div>
@@ -84,48 +85,68 @@
 
     
     
-<pre><code><span><span class="co">## Warning: multiple methods tables found for 'scale'</span></span></code></pre>
-<pre><code><span><span class="co">## Warning: replacing previous import 'BiocGenerics::scale' by</span></span>
-<span><span class="co">## 'DelayedArray::scale' when loading 'SummarizedExperiment'</span></span></code></pre>
 <div class="section level2">
 <h2 id="the-survival-curve-for-a-cohort-of-individuals">The survival curve for a cohort of individuals<a class="anchor" aria-label="anchor" href="#the-survival-curve-for-a-cohort-of-individuals"></a>
 </h2>
-<p>For a variety of factors that are mostly demanding of further research, individuals with a given type of cancer may exhibit longer or shorter times from diagnosis to death.</p>
+<p>For a variety of factors that are mostly demanding of further
+research, individuals with a given type of cancer may exhibit longer or
+shorter times from diagnosis to death.</p>
 <div class="section level3">
 <h3 id="basic-definition">Basic definition<a class="anchor" aria-label="anchor" href="#basic-definition"></a>
 </h3>
-<p>When times from diagnosis to death have been recorded on individuals in a cohort, a survival curve is a plot with values (x, y) where x is time elapsed from diagnosis, and y is the proportion of individuals surviving at least x units of time.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<p>When times from diagnosis to death have been recorded on individuals
+in a cohort, a survival curve is a plot with values (x, y) where x is
+time elapsed from diagnosis, and y is the proportion of individuals
+surviving at least x units of time.</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/build_simple_survival_curve.html">build_simple_survival_curve</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="C2_variation_survival_files/figure-html/show1-1.png" class="r-plt" alt="" width="700"></p>
-<p>Note that at 0 months, the probability of surviving is 100%. The probability of surviving at least 12 years (144 months) in this cohort is very small.</p>
+<p>Note that at 0 months, the probability of surviving is 100%. The
+probability of surviving at least 12 years (144 months) in this cohort
+is very small.</p>
 </div>
 <div class="section level3">
 <h3 id="reading-off-the-median-survival-time">Reading off the median survival time<a class="anchor" aria-label="anchor" href="#reading-off-the-median-survival-time"></a>
 </h3>
-<p>The median of a set of numbers is the “middle” number <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>, with as many values smaller than <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math> as there are values larger than <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>. Thus the median of the numbers 1, 2, 3, 4, 5 is 3. If there is an even number of values, we average the two middle numbers (e.g., for 1, 2, 3, 4, 5, 6, we would use 3.5 as the median.)</p>
-<p>The following display shows how to read the median survival time from a survival curve: draw the horizontal line at <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">y = 1/2</annotation></semantics></math> and determine the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math> value where the intersection occurs.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<p>The median of a set of numbers is the “middle” number
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>,
+with as many values smaller than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>
+as there are values larger than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>.
+Thus the median of the numbers 1, 2, 3, 4, 5 is 3. If there is an even
+number of values, we average the two middle numbers (e.g., for 1, 2, 3,
+4, 5, 6, we would use 3.5 as the median.)</p>
+<p>The following display shows how to read the median survival time from
+a survival curve: draw the horizontal line at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">y = 1/2</annotation></semantics></math>
+and determine the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>
+value where the intersection occurs.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/show_median_estimate.html">show_median_estimate</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="C2_variation_survival_files/figure-html/show2-1.png" class="r-plt" alt="" width="700"></p>
 </div>
 <div class="section level3">
 <h3 id="reading-off-the-five-year-survival-probability">Reading off the five-year survival probability<a class="anchor" aria-label="anchor" href="#reading-off-the-five-year-survival-probability"></a>
 </h3>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/show_5y_estimate.html">show_5y_estimate</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="C2_variation_survival_files/figure-html/show3-1.png" class="r-plt" alt="" width="700"></p>
 </div>
 <div class="section level3">
 <h3 id="exercises">Exercises<a class="anchor" aria-label="anchor" href="#exercises"></a>
 </h3>
-<p>For a different cohort of patients, the survival curve is depicted below:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<p>For a different cohort of patients, the survival curve is depicted
+below:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/do_new_surv.html">do_new_surv</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="C2_variation_survival_files/figure-html/show4-1.png" class="r-plt" alt="" width="700"></p>
-<p>C.2.1 True or false: For this cohort, almost all individuals live at least 1.5 years after diagnosis</p>
+<p>C.2.1 True or false: For this cohort, almost all individuals live at
+least 1.5 years after diagnosis</p>
 <p>C.2.2 Estimate the median survival time in months.</p>
-<p>C.2.3 What is the one-year survival probability? What is the ten-year survival probability?</p>
+<p>C.2.3 What is the one-year survival probability? What is the ten-year
+survival probability?</p>
 </div>
 <div class="section level3">
 <h3 id="answers">Answers<a class="anchor" aria-label="anchor" href="#answers"></a>
@@ -148,7 +169,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer>

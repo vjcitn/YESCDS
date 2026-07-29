@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>D1 Clinical trials concepts • YESCDS</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="D1 Clinical trials concepts">
 </head>
@@ -74,9 +74,10 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>D1 Clinical trials concepts</h1>
-                        <h4 data-toc-skip class="author">Vincent J. Carey, stvjc at channing.harvard.edu</h4>
+                        <h4 data-toc-skip class="author">Vincent J.
+Carey, stvjc at channing.harvard.edu</h4>
             
-            <h4 data-toc-skip class="date">May 22, 2026</h4>
+            <h4 data-toc-skip class="date">July 29, 2026</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/vjcitn/YESCDS/blob/HEAD/vignettes/D1_clin_trial_concepts.Rmd"><code>vignettes/D1_clin_trial_concepts.Rmd</code></a></small>
       <div class="d-none name"><code>D1_clin_trial_concepts.Rmd</code></div>
@@ -84,14 +85,12 @@
 
     
     
-<pre><code><span><span class="co">## Warning: multiple methods tables found for 'scale'</span></span></code></pre>
-<pre><code><span><span class="co">## Warning: replacing previous import 'BiocGenerics::scale' by</span></span>
-<span><span class="co">## 'DelayedArray::scale' when loading 'SummarizedExperiment'</span></span></code></pre>
 <div class="section level2">
 <h2 id="clinical-trials-for-cancer-treatments">Clinical trials for cancer treatments<a class="anchor" aria-label="anchor" href="#clinical-trials-for-cancer-treatments"></a>
 </h2>
 <ul>
-<li><p>Despite massive investments in cancer research and treatment development, cancer remains a leading cause of death</p></li>
+<li><p>Despite massive investments in cancer research and treatment
+development, cancer remains a leading cause of death</p></li>
 <li>
 <p>We have examined many aspects of cancer’s diversity</p>
 <ul>
@@ -108,21 +107,28 @@
 <li>radiation</li>
 </ul>
 </li>
-<li><p>Each of these modalities has a collection of subtypes, and they are often used in combination</p></li>
+<li><p>Each of these modalities has a collection of subtypes, and they
+are often used in combination</p></li>
 <li>
 <p>How do doctors and patients navigate the available options?</p>
 <ul>
-<li>Answer: interpret available data as evidence in favor of or against certain options</li>
+<li>Answer: interpret available data as evidence in favor of or against
+certain options</li>
 </ul>
 </li>
 <li>
-<p>The “gold standard” for evidence in medical decisionmaking is the randomized clinical trial (RCT)</p>
+<p>The “gold standard” for evidence in medical decisionmaking is the
+randomized clinical trial (RCT)</p>
 <ul>
-<li>Trials are generally preceded by “pre-clinical” studies of drugs or other treatment techniques</li>
-<li>Analysis of data in pre-clinical research often demands great versatility of the statisticians and data scientists
+<li>Trials are generally preceded by “pre-clinical” studies of drugs or
+other treatment techniques</li>
+<li>Analysis of data in pre-clinical research often demands great
+versatility of the statisticians and data scientists
 <ul>
 <li>such data are often sparse and noisy</li>
-<li>ideally one integrates all available scientific information about the proposed alternative, requiring extensive literature search and acquisition of public data</li>
+<li>ideally one integrates all available scientific information about
+the proposed alternative, requiring extensive literature search and
+acquisition of public data</li>
 </ul>
 </li>
 </ul>
@@ -133,11 +139,16 @@
 <h2 id="questions-to-answer-in-designing-a-clinical-trial-article">Questions to answer in designing a clinical trial <a href="https://www.cancer.org/treatment/treatments-and-side-effects/clinical-trials/what-you-need-to-know/phases-of-clinical-trials.html" class="external-link">(Article)</a><a class="anchor" aria-label="anchor" href="#questions-to-answer-in-designing-a-clinical-trial-article"></a>
 </h2>
 <p>D.1.1 What is the current standard of care?</p>
-<p>D.1.2 What care outcomes do we want to improve, and how much improvement would count as a real advance? (Here risk-benefit comparison becomes important)</p>
+<p>D.1.2 What care outcomes do we want to improve, and how much
+improvement would count as a real advance? (Here risk-benefit comparison
+becomes important)</p>
 <p>D.1.3 What is the proposed alternative?</p>
-<p>D.1.4 How do we determine a safe “dose” of the proposed alternative? (In the case of surgery this question may not make sense)</p>
-<p>D.1.5 How do we verify that the proposed alternative has any effect at all?</p>
-<p>D.1.6 How do we measure the overall benefit conferred by using the alternative method?</p>
+<p>D.1.4 How do we determine a safe “dose” of the proposed alternative?
+(In the case of surgery this question may not make sense)</p>
+<p>D.1.5 How do we verify that the proposed alternative has any effect
+at all?</p>
+<p>D.1.6 How do we measure the overall benefit conferred by using the
+alternative method?</p>
 </div>
 <div class="section level2">
 <h2 id="answers">Answers<a class="anchor" aria-label="anchor" href="#answers"></a>
@@ -158,15 +169,23 @@
 <h2 id="the-typical-strategy-three-phases">The typical strategy: Three phases<a class="anchor" aria-label="anchor" href="#the-typical-strategy-three-phases"></a>
 </h2>
 <ul>
-<li>Phase I: enroll healthy volunteers to do dose finding, assessing toxicity and side effects</li>
-<li>Phase II: enroll patients with the disease and administer the maximum tolerated dose to establish that the new treatment has some beneficial effect</li>
-<li>Phase III: enroll patients with the disease, but set up a comparison of the new treatment versus the standard of care
+<li>Phase I: enroll healthy volunteers to do dose finding, assessing
+toxicity and side effects</li>
+<li>Phase II: enroll patients with the disease and administer the
+maximum tolerated dose to establish that the new treatment has some
+beneficial effect</li>
+<li>Phase III: enroll patients with the disease, but set up a comparison
+of the new treatment versus the standard of care
 <ul>
-<li>a design plan is produced detailing how many patients are to be enrolled, how the treatments will be administered, and how the data will be analyzed</li>
-<li>patients are randomly assigned either the new treatment, or the standard of care</li>
+<li>a design plan is produced detailing how many patients are to be
+enrolled, how the treatments will be administered, and how the data will
+be analyzed</li>
+<li>patients are randomly assigned either the new treatment, or the
+standard of care</li>
 <li>a Data Safety Monitoring Board will review study data periodically
 <ul>
-<li>studies may end prematurely if great benefit is seen early on, or if it appears no benefit could be documented by continuing the trial</li>
+<li>studies may end prematurely if great benefit is seen early on, or if
+it appears no benefit could be documented by continuing the trial</li>
 </ul>
 </li>
 </ul>
@@ -176,8 +195,11 @@
 <div class="section level2">
 <h2 id="experimentation-with-human-subjects-is-carefully-regulated">Experimentation with human subjects is carefully regulated<a class="anchor" aria-label="anchor" href="#experimentation-with-human-subjects-is-carefully-regulated"></a>
 </h2>
-<p>The concept of <a href="https://www.cancer.org/treatment/treatments-and-side-effects/clinical-trials/what-you-need-to-know/what-does-a-clinical-trial-involve.html" class="external-link">informed consent</a> is central in the implementation of clinical trials.</p>
-<p>The <a href="https://www.hhs.gov/ohrp/regulations-and-policy/belmont-report/index.html" class="external-link">Belmont report</a> defined principles and guidelines for all human subjects research.</p>
+<p>The concept of <a href="https://www.cancer.org/treatment/treatments-and-side-effects/clinical-trials/what-you-need-to-know/what-does-a-clinical-trial-involve.html" class="external-link">informed
+consent</a> is central in the implementation of clinical trials.</p>
+<p>The <a href="https://www.hhs.gov/ohrp/regulations-and-policy/belmont-report/index.html" class="external-link">Belmont
+report</a> defined principles and guidelines for all human subjects
+research.</p>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
@@ -190,7 +212,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer>

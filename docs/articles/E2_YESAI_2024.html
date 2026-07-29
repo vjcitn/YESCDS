@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>E2: Language analysis and production with R and some LLMs • YESCDS</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="E2: Language analysis and production with R and some LLMs">
 </head>
@@ -74,9 +74,10 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>E2: Language analysis and production with R and some LLMs</h1>
-                        <h4 data-toc-skip class="author">Vincent J. Carey, stvjc at channing.harvard.edu</h4>
+                        <h4 data-toc-skip class="author">Vincent J.
+Carey, stvjc at channing.harvard.edu</h4>
             
-            <h4 data-toc-skip class="date">May 22, 2026</h4>
+            <h4 data-toc-skip class="date">July 29, 2026</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/vjcitn/YESCDS/blob/HEAD/vignettes/E2_YESAI_2024.Rmd"><code>vignettes/E2_YESAI_2024.Rmd</code></a></small>
       <div class="d-none name"><code>E2_YESAI_2024.Rmd</code></div>
@@ -87,12 +88,14 @@
 <div class="section level2">
 <h2 id="elegant-nonsense">Elegant nonsense<a class="anchor" aria-label="anchor" href="#elegant-nonsense"></a>
 </h2>
-<p>With a very simple model of English grammar and a little vocabulary, we can randomly generate ‘normal-sounding’ sentences.</p>
+<p>With a very simple model of English grammar and a little vocabulary,
+we can randomly generate ‘normal-sounding’ sentences.</p>
 <p>Here is a vector of elegant nouns.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">nouns</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Mercedes"</span>, <span class="st">"Tiffany"</span>, <span class="st">"Lamborghini"</span>, <span class="st">"Maserati"</span>, <span class="st">"Tosca"</span>, <span class="st">"La Traviata"</span>,</span>
 <span>   <span class="st">"Diamonds"</span>, <span class="st">"Crystal"</span>, <span class="st">"Lenox"</span><span class="op">)</span></span></code></pre></div>
-<p>We’ll continue to set up some vectors of verbs (past tense), prepositions, adjectives, prepositions, and indicatives.</p>
+<p>We’ll continue to set up some vectors of verbs (past tense),
+prepositions, adjectives, prepositions, and indicatives.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pastverbs</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"radiated"</span>, <span class="st">"glowed"</span>, <span class="st">"luxuriated"</span>, <span class="st">"ecstatized"</span>, <span class="st">"overwhelmed"</span>,</span>
 <span>  <span class="st">"hyperventilated"</span>, <span class="st">"raptured"</span>, <span class="st">"raved"</span>, <span class="st">"stupendousized"</span><span class="op">)</span></span>
@@ -103,7 +106,9 @@
 <span><span class="va">indic</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"the"</span>, <span class="st">"a"</span>, <span class="st">"any"</span>, <span class="st">"some"</span><span class="op">)</span></span></code></pre></div>
 <p>Our model for a sentence is</p>
 <pre><code>(*) indicative + noun + verb(tensed) + preposition + indicative + adjective + noun</code></pre>
-<p>We produce a sentence by sampling purely randomly from the relevant vocabulary vectors. We use <code>sprintf</code> to substitute our choices into a template of seven strings.</p>
+<p>We produce a sentence by sampling purely randomly from the relevant
+vocabulary vectors. We use <code>sprintf</code> to substitute our
+choices into a template of seven strings.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">get1</span> <span class="op">=</span> <span class="kw">function</span> <span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html" class="external-link">sample</a></span><span class="op">(</span><span class="va">x</span>, size<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
 <span><span class="va">up1</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/chartr.html" class="external-link">toupper</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/substr.html" class="external-link">substring</a></span><span class="op">(</span><span class="va">x</span>,<span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/substr.html" class="external-link">substring</a></span><span class="op">(</span><span class="va">x</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
@@ -123,7 +128,9 @@
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">sentence</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Some Lamborghini stupendousized within the exquisite Diamonds.</span></span></code></pre>
-<p>The potential repetitiousness of purely random sampling can be avoided. In the following sentence generator, we prevent reuse of the initial noun or indicative.</p>
+<p>The potential repetitiousness of purely random sampling can be
+avoided. In the following sentence generator, we prevent reuse of the
+initial noun or indicative.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sentence_nr</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="va">i1</span> <span class="op">=</span> <span class="fu">get1</span><span class="op">(</span><span class="va">indic</span><span class="op">)</span></span>
@@ -140,7 +147,8 @@
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">sentence_nr</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] "Some La Traviata stupendousized beneath any sophisticated Mercedes."</span></span></code></pre>
-<p>We can also compose longer sentences, using the conjunction “because”:</p>
+<p>We can also compose longer sentences, using the conjunction
+“because”:</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">linked</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"%s,\n because %s"</span>, <span class="fu"><a href="https://rdrr.io/r/base/grep.html" class="external-link">sub</a></span><span class="op">(</span><span class="st">".$"</span>, <span class="st">""</span>, <span class="fu">sentence_nr</span><span class="op">(</span><span class="op">)</span><span class="op">)</span>, <span class="fu">sentence_nr</span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu">linked</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -150,9 +158,13 @@
 <code class="sourceCode R"><span><span class="fu">linked</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Any Maserati glowed above some glorious Diamonds,</span></span>
 <span><span class="co">##  because Any Diamonds raptured across a glorious La Traviata.</span></span></code></pre>
-<p>Exercise 1. What does the <code>up1</code> function do? Apply it to the string “foo”. What is the result?</p>
-<p>Exercise 2. There is something wrong with the last two productions. What is it and how would you go about correcting it?</p>
-<p>Exercise 3. Propose an alternate schematic to the one noted above as <code>(*)</code>. Implement it in a function <code>altsentence</code> and illustrate its use with our vocaularies. For example</p>
+<p>Exercise 1. What does the <code>up1</code> function do? Apply it to
+the string “foo”. What is the result?</p>
+<p>Exercise 2. There is something wrong with the last two productions.
+What is it and how would you go about correcting it?</p>
+<p>Exercise 3. Propose an alternate schematic to the one noted above as
+<code>(*)</code>. Implement it in a function <code>altsentence</code>
+and illustrate its use with our vocaularies. For example</p>
 <pre><code><span><span class="va">noun</span> <span class="op">+</span> <span class="st">"is not"</span> <span class="op">+</span> <span class="va">noun</span></span></code></pre>
 <p>could be implemented as</p>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
@@ -169,7 +181,10 @@
 <div class="section level2">
 <h2 id="lexical-tagging-of-english-sentences">Lexical tagging of English sentences<a class="anchor" aria-label="anchor" href="#lexical-tagging-of-english-sentences"></a>
 </h2>
-<p>I asked perplexity.ai ($20/mo) to produce 10 lexically tagged sentences. By “lexical tagging” we refer to a process of associating with each word or phrase a category defining the word’s role in sentence meaning. Examples of tags include</p>
+<p>I asked perplexity.ai ($20/mo) to produce 10 lexically tagged
+sentences. By “lexical tagging” we refer to a process of associating
+with each word or phrase a category defining the word’s role in sentence
+meaning. Examples of tags include</p>
 <pre><code>- DT: Determiner
 - NN: Noun, singular or mass
 - NNP: Proper noun, singular
@@ -178,26 +193,70 @@
 - JJ: Adjective
 - IN: Preposition or subordinating conjunction
 - CD: Cardinal number</code></pre>
-<p>The full set of “part of speech” tags can be found at the <a href="https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html" class="external-link">U Penn linguistics site</a>.</p>
+<p>The full set of “part of speech” tags can be found at the <a href="https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html" class="external-link">U
+Penn linguistics site</a>.</p>
 <p>Here’s what came back from perplexity.ai:</p>
 <ul>
-<li><p>[The/DT] [Eiffel/NNP] [Tower/NNP] [is/VBZ] [a/DT] [wrought-iron/JJ] [lattice/NN] [tower/NN] [on/IN] [the/DT] [Champ/NNP] [de/NNP] [Mars/NNP] [in/IN] [Paris/NNP] [,/,] [France/NNP] [./.]</p></li>
-<li><p>[Photosynthesis/NN] [is/VBZ] [the/DT] [process/NN] [by/IN] [which/WDT] [plants/NNS] [use/VBP] [sunlight/NN] [,/,] [water/NN] [and/CC] [carbon/NN] [dioxide/NN] [to/TO] [produce/VB] [oxygen/NN] [and/CC] [energy/NN] [in/IN] [the/DT] [form/NN] [of/IN] [sugar/NN] [./.]</p></li>
-<li><p>[The/DT] [Great/NNP] [Wall/NNP] [of/IN] [China/NNP] [is/VBZ] [a/DT] [series/NN] [of/IN] [fortifications/NNS] [and/CC] [walls/NNS] [built/VBN] [across/IN] [the/DT] [historical/JJ] [northern/JJ] [borders/NNS] [of/IN] [ancient/JJ] [Chinese/JJ] [states/NNS] [./.]</p></li>
-<li><p>[William/NNP] [Shakespeare/NNP] [was/VBD] [an/DT] [English/JJ] [playwright/NN] [,/,] [poet/NN] [,/,] [and/CC] [actor/NN] [widely/RB] [regarded/VBN] [as/IN] [the/DT] [greatest/JJS] [writer/NN] [in/IN] [the/DT] [English/JJ] [language/NN] [./.]</p></li>
-<li><p>[The/DT] [human/JJ] [genome/NN] [contains/VBZ] [approximately/RB] [3/CD] [billion/CD] [base/NN] [pairs/NNS] [of/IN] [DNA/NN] [./.]</p></li>
-<li><p>[Albert/NNP] [Einstein/NNP] [developed/VBD] [the/DT] [theory/NN] [of/IN] [relativity/NN] [,/,] [one/CD] [of/IN] [the/DT] [two/CD] [pillars/NNS] [of/IN] [modern/JJ] [physics/NN] [./.]</p></li>
-<li><p>[The/DT] [Amazon/NNP] [rainforest/NN] [,/,] [covering/VBG] [much/JJ] [of/IN] [northwestern/JJ] [Brazil/NNP] [and/CC] [extending/VBG] [into/IN] [Colombia/NNP] [,/,] [Peru/NNP] [and/CC] [other/JJ] [South/NNP] [American/NNP] [countries/NNS] [,/,] [is/VBZ] [the/DT] [world’s/NN$] [largest/JJS] [tropical/JJ] [rainforest/NN] [./.]</p></li>
-<li><p>[The/DT] [periodic/JJ] [table/NN] [is/VBZ] [a/DT] [tabular/JJ] [arrangement/NN] [of/IN] [the/DT] [chemical/JJ] [elements/NNS] [,/,] [organized/VBN] [on/IN] [the/DT] [basis/NN] [of/IN] [their/PRP$] [atomic/JJ] [numbers/NNS] [,/,] [electron/NN] [configurations/NNS] [,/,] [and/CC] [recurring/VBG] [chemical/JJ] [properties/NNS] [./.]</p></li>
-<li><p>[The/DT] [United/NNP] [Nations/NNPS] [(/] [UN/NNP] [)/] [is/VBZ] [an/DT] [intergovernmental/JJ] [organization/NN] [that/WDT] [aims/VBZ] [to/TO] [maintain/VB] [international/JJ] [peace/NN] [and/CC] [security/NN] [,/,] [develop/VB] [friendly/JJ] [relations/NNS] [among/IN] [nations/NNS] [,/,] [achieve/VB] [international/JJ] [cooperation/NN] [,/,] [and/CC] [be/VB] [a/DT] [center/NN] [for/IN] [harmonizing/VBG] [the/DT] [actions/NNS] [of/IN] [nations/NNS] [./.]</p></li>
-<li><p>[The/DT] [Mona/NNP] [Lisa/NNP] [is/VBZ] [a/DT] [half-length/JJ] [portrait/NN] [painting/NN] [by/IN] [Italian/JJ] [artist/NN] [Leonardo/NNP] [da/NNP] [Vinci/NNP] [,/,] [considered/VBN] [an/DT] [archetypal/JJ] [masterpiece/NN] [of/IN] [the/DT] [Italian/NNP] [Renaissance/NNP] [./.]</p></li>
+<li><p>[The/DT] [Eiffel/NNP] [Tower/NNP] [is/VBZ] [a/DT]
+[wrought-iron/JJ] [lattice/NN] [tower/NN] [on/IN] [the/DT] [Champ/NNP]
+[de/NNP] [Mars/NNP] [in/IN] [Paris/NNP] [,/,] [France/NNP]
+[./.]</p></li>
+<li><p>[Photosynthesis/NN] [is/VBZ] [the/DT] [process/NN] [by/IN]
+[which/WDT] [plants/NNS] [use/VBP] [sunlight/NN] [,/,] [water/NN]
+[and/CC] [carbon/NN] [dioxide/NN] [to/TO] [produce/VB] [oxygen/NN]
+[and/CC] [energy/NN] [in/IN] [the/DT] [form/NN] [of/IN] [sugar/NN]
+[./.]</p></li>
+<li><p>[The/DT] [Great/NNP] [Wall/NNP] [of/IN] [China/NNP] [is/VBZ]
+[a/DT] [series/NN] [of/IN] [fortifications/NNS] [and/CC] [walls/NNS]
+[built/VBN] [across/IN] [the/DT] [historical/JJ] [northern/JJ]
+[borders/NNS] [of/IN] [ancient/JJ] [Chinese/JJ] [states/NNS]
+[./.]</p></li>
+<li><p>[William/NNP] [Shakespeare/NNP] [was/VBD] [an/DT] [English/JJ]
+[playwright/NN] [,/,] [poet/NN] [,/,] [and/CC] [actor/NN] [widely/RB]
+[regarded/VBN] [as/IN] [the/DT] [greatest/JJS] [writer/NN] [in/IN]
+[the/DT] [English/JJ] [language/NN] [./.]</p></li>
+<li><p>[The/DT] [human/JJ] [genome/NN] [contains/VBZ] [approximately/RB]
+[3/CD] [billion/CD] [base/NN] [pairs/NNS] [of/IN] [DNA/NN]
+[./.]</p></li>
+<li><p>[Albert/NNP] [Einstein/NNP] [developed/VBD] [the/DT] [theory/NN]
+[of/IN] [relativity/NN] [,/,] [one/CD] [of/IN] [the/DT] [two/CD]
+[pillars/NNS] [of/IN] [modern/JJ] [physics/NN] [./.]</p></li>
+<li><p>[The/DT] [Amazon/NNP] [rainforest/NN] [,/,] [covering/VBG]
+[much/JJ] [of/IN] [northwestern/JJ] [Brazil/NNP] [and/CC]
+[extending/VBG] [into/IN] [Colombia/NNP] [,/,] [Peru/NNP] [and/CC]
+[other/JJ] [South/NNP] [American/NNP] [countries/NNS] [,/,] [is/VBZ]
+[the/DT] [world’s/NN$] [largest/JJS] [tropical/JJ] [rainforest/NN]
+[./.]</p></li>
+<li><p>[The/DT] [periodic/JJ] [table/NN] [is/VBZ] [a/DT] [tabular/JJ]
+[arrangement/NN] [of/IN] [the/DT] [chemical/JJ] [elements/NNS] [,/,]
+[organized/VBN] [on/IN] [the/DT] [basis/NN] [of/IN] [their/PRP$]
+[atomic/JJ] [numbers/NNS] [,/,] [electron/NN] [configurations/NNS] [,/,]
+[and/CC] [recurring/VBG] [chemical/JJ] [properties/NNS] [./.]</p></li>
+<li><p>[The/DT] [United/NNP] [Nations/NNPS] [(/] [UN/NNP] [)/] [is/VBZ]
+[an/DT] [intergovernmental/JJ] [organization/NN] [that/WDT] [aims/VBZ]
+[to/TO] [maintain/VB] [international/JJ] [peace/NN] [and/CC]
+[security/NN] [,/,] [develop/VB] [friendly/JJ] [relations/NNS]
+[among/IN] [nations/NNS] [,/,] [achieve/VB] [international/JJ]
+[cooperation/NN] [,/,] [and/CC] [be/VB] [a/DT] [center/NN] [for/IN]
+[harmonizing/VBG] [the/DT] [actions/NNS] [of/IN] [nations/NNS]
+[./.]</p></li>
+<li><p>[The/DT] [Mona/NNP] [Lisa/NNP] [is/VBZ] [a/DT] [half-length/JJ]
+[portrait/NN] [painting/NN] [by/IN] [Italian/JJ] [artist/NN]
+[Leonardo/NNP] [da/NNP] [Vinci/NNP] [,/,] [considered/VBN] [an/DT]
+[archetypal/JJ] [masterpiece/NN] [of/IN] [the/DT] [Italian/NNP]
+[Renaissance/NNP] [./.]</p></li>
 </ul>
 </div>
 <div class="section level2">
 <h2 id="statistics-of-parts-of-speech">Statistics of parts of speech<a class="anchor" aria-label="anchor" href="#statistics-of-parts-of-speech"></a>
 </h2>
-<p>The sentnce data do not possess a regular structure amenable to tabulation. There is a hierarchical format: arbitrary numbers of language particles and annotations are ordered within each sentence, and the sentences form a group of ten.</p>
-<p>A popular format for irregularly structured data is “JSON”. We asked perplexity.ai to produce the tagged sentences in JSON format. R can ingest JSON for programmatic analysis using the jsonlite package.</p>
+<p>The sentnce data do not possess a regular structure amenable to
+tabulation. There is a hierarchical format: arbitrary numbers of
+language particles and annotations are ordered within each sentence, and
+the sentences form a group of ten.</p>
+<p>A popular format for irregularly structured data is “JSON”. We asked
+perplexity.ai to produce the tagged sentences in JSON format. R can
+ingest JSON for programmatic analysis using the jsonlite package.</p>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://jeroen.r-universe.dev/jsonlite" class="external-link">jsonlite</a></span><span class="op">)</span></span>
 <span><span class="va">myj</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"json/tensent.json"</span>, package<span class="op">=</span><span class="st">"YESCDS"</span><span class="op">)</span></span>
@@ -223,8 +282,10 @@
 <span><span class="co">## 16            ,   ,</span></span>
 <span><span class="co">## 17       France NNP</span></span>
 <span><span class="co">## 18            .   .</span></span></code></pre>
-<p>We see that for each sentence we have a data.frame with one row for each English word and associated part of speech.</p>
-<p>The overall frequency distribution of parts of speech in this little collection is:</p>
+<p>We see that for each sentence we have a data.frame with one row for
+each English word and associated part of speech.</p>
+<p>The overall frequency distribution of parts of speech in this little
+collection is:</p>
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">alltags</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq_len</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">frames</span><span class="op">)</span><span class="op">)</span>, <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="va">frames</span><span class="op">[[</span><span class="va">x</span><span class="op">]</span><span class="op">]</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html" class="external-link">unlist</a></span><span class="op">(</span><span class="va">alltags</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -233,27 +294,42 @@
 <span><span class="co">##    1    1    1    1    1    1    2    2    2    2    2    4    4    4    5    9 </span></span>
 <span><span class="co">##  VBZ    .    ,  NNS   IN   JJ   DT  NNP   NN </span></span>
 <span><span class="co">##    9   10   15   16   25   25   28   29   39</span></span></code></pre>
-<p>Here’s how we might use R to determine how many words into a sentence we need to go to find a verb:</p>
+<p>Here’s how we might use R to determine how many words into a sentence
+we need to go to find a verb:</p>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">sapply</a></span><span class="op">(</span><span class="va">frames</span>, <span class="kw">function</span><span class="op">(</span><span class="va">z</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">min</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html" class="external-link">grep</a></span><span class="op">(</span><span class="st">"VB"</span>, <span class="va">z</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##  [1] 4 2 6 3 4 3 5 4 7 4</span></span></code></pre>
-<p>Exercise 1. What is the position of the verb in the fourth sentence? What is the verb, and what type is it? Consult the link to U Penn linguistics given above.</p>
-<p>Exercise 2. Which sentence has the verb in the “latest” position, and why is the position number so high? Should the counting procedure be adjusted?</p>
+<p>Exercise 1. What is the position of the verb in the fourth sentence?
+What is the verb, and what type is it? Consult the link to U Penn
+linguistics given above.</p>
+<p>Exercise 2. Which sentence has the verb in the “latest” position, and
+why is the position number so high? Should the counting procedure be
+adjusted?</p>
 </div>
 <div class="section level2">
 <h2 id="using-an-llm">Using an LLM<a class="anchor" aria-label="anchor" href="#using-an-llm"></a>
 </h2>
-<p>In this section we will assume that you are working on a machine that is able to use software and data organized at huggingface.co, specifically a version of <a href="https://huggingface.co/google-bert/bert-base-uncased" class="external-link">BERT</a>.</p>
-<p>We will ‘source’ a github gist that will work if python is present, and if it and the reticulate package have been configured to be able to find python packages torch and transformers.</p>
-<p>This code chunk will produce a table of scores and completions for the prompt <code>The capital of Spain is [MASK].</code>.</p>
+<p>In this section we will assume that you are working on a machine that
+is able to use software and data organized at huggingface.co,
+specifically a version of <a href="https://huggingface.co/google-bert/bert-base-uncased" class="external-link">BERT</a>.</p>
+<p>We will ‘source’ a github gist that will work if python is present,
+and if it and the reticulate package have been configured to be able to
+find python packages torch and transformers.</p>
+<p>This code chunk will produce a table of scores and completions for
+the prompt <code>The capital of Spain is [MASK].</code>.</p>
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/source_gist.html" class="external-link">source_gist</a></span><span class="op">(</span><span class="st">"https://gist.github.com/vjcitn/0e1b0289eb1a219b98d60b5b863f8d62"</span><span class="op">)</span></span></code></pre></div>
-<p>This turns out to be difficult to use on the ‘free’ galaxy instance. The software can be demonstrated at <code>https://vjcitn.shinyapps.io/AIapp</code>. Of interest:</p>
+<p>This turns out to be difficult to use on the ‘free’ galaxy instance.
+The software can be demonstrated at
+<code>https://vjcitn.shinyapps.io/AIapp</code>. Of interest:</p>
 <ul>
 <li>positive scores for factually false completions</li>
-<li>better score distributions when the prompt is ‘warmed up’ – for example, beginning the prompt with “You are a scholar of …” to build context.</li>
+<li>better score distributions when the prompt is ‘warmed up’ – for
+example, beginning the prompt with “You are a scholar of …” to build
+context.</li>
 </ul>
-<p>The code in the gist can be modified to change the model, and the prompt can be changed to seek scored responses to different prompts.</p>
+<p>The code in the gist can be modified to change the model, and the
+prompt can be changed to seek scored responses to different prompts.</p>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
@@ -266,7 +342,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer>

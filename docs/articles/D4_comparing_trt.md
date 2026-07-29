@@ -1,13 +1,4 @@
-<div id="main" class="col-md-9" role="main">
-
 # D4 Methods of comparing treatments
-
-    ## Warning: multiple methods tables found for 'scale'
-
-    ## Warning: replacing previous import 'BiocGenerics::scale' by
-    ## 'DelayedArray::scale' when loading 'SummarizedExperiment'
-
-<div class="section level2">
 
 ## Comparing cancer treatments
 
@@ -29,20 +20,11 @@ The abstract is provided at the end of this vignette.
 
 The data for the ovarian cancer study has the following form:
 
-<div id="cb4" class="sourceCode">
-
 ``` r
+
 library(survival)
 datatable(ovarian)
 ```
-
-</div>
-
-<div id="htmlwidget-ac96cb3ee4656e2e9ec3"
-class="datatables html-widget html-fill-item"
-style="width:100%;height:auto;">
-
-</div>
 
 The variable description is
 
@@ -57,36 +39,24 @@ The variable description is
 
 We will consider three aspects of interpretation of these data.
 
-<div class="section level3">
-
 ### Estimation of survival probabilities by treatment group
 
-<div id="cb6" class="sourceCode">
-
 ``` r
+
 osurv = Surv(ovarian$futime, ovarian$fustat)
 ofit1 = survfit(osurv~ovarian$rx)
 plot(ofit1, lty=1:2)
 legend(0, .4, lty=1:2, legend=c("cyc 1g/m2", "cyc .5g/m2 + adria"))
 ```
 
-</div>
-
 ![](D4_comparing_trt_files/figure-html/doplot-1.png)
-
-</div>
-
-<div class="section level3">
 
 ### Testing for treatment effect
 
-<div id="cb7" class="sourceCode">
-
 ``` r
+
 survdiff(osurv~ovarian$rx)
 ```
-
-</div>
 
     ## Call:
     ## survdiff(formula = osurv ~ ovarian$rx)
@@ -97,23 +67,16 @@ survdiff(osurv~ovarian$rx)
     ## 
     ##  Chisq= 1.1  on 1 degrees of freedom, p= 0.3
 
-</div>
-
-<div class="section level3">
-
 ### Modeling the survival curves for the effect of residual disease
 
 We can produce a very compact, two parameter model for the survival
 distributions for patients with and without residual disease.
 
-<div id="cb9" class="sourceCode">
-
 ``` r
+
 summary(survreg(osurv~I(ovarian$resid.ds-1), 
    dist="exponential"))
 ```
-
-</div>
 
     ## 
     ## Call:
@@ -130,9 +93,8 @@ summary(survreg(osurv~I(ovarian$resid.ds-1),
     ## Number of Newton-Raphson Iterations: 4 
     ## n= 26
 
-<div id="cb11" class="sourceCode">
-
 ``` r
+
 ofit2 = survfit(osurv~ovarian$resid.ds)
 plot(ofit2, lty=1:2)
 tim = 1:1200
@@ -142,13 +104,7 @@ pp_res = 1-pexp(1:1200, 1/exp(7.9-1.2))
 lines(tim, pp_res, col="red")
 ```
 
-</div>
-
 ![](D4_comparing_trt_files/figure-html/dosummmm-1.png)
-
-</div>
-
-<div class="section level3">
 
 ### Exercises
 
@@ -156,21 +112,14 @@ D.4.1 Interpret confidence intervals for the one-year survival
 probabilities for the two treatments, ignoring the presence or absence
 of residual disease.
 
-<div id="cb12" class="sourceCode">
-
 ``` r
+
 par(mfrow=c(1,2))
 with(ovarian[ovarian$rx==1,], plot(survfit(Surv(futime,fustat)~1),conf.int=TRUE))
 with(ovarian[ovarian$rx==2,], plot(survfit(Surv(futime,fustat)~1),conf.int=TRUE))
 ```
 
-</div>
-
 ![](D4_comparing_trt_files/figure-html/doconf-1.png)
-
-</div>
-
-<div class="section level3">
 
 ### Answers
 
@@ -195,9 +144,3 @@ Abstract of 1979 paper:
     despite their generally less favorable performance scores. Much 
     of this prognostic superiority appeared to be related to menopausal 
     status and presumably to the depletion of endogenous estrogens in the older patients.
-
-</div>
-
-</div>
-
-</div>

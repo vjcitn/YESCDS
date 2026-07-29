@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>A3 Monitoring of cancer by public health institutions • YESCDS</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="A3 Monitoring of cancer by public health institutions">
 </head>
@@ -74,9 +74,10 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>A3 Monitoring of cancer by public health institutions</h1>
-                        <h4 data-toc-skip class="author">Vincent J. Carey, stvjc at channing.harvard.edu</h4>
+                        <h4 data-toc-skip class="author">Vincent J.
+Carey, stvjc at channing.harvard.edu</h4>
             
-            <h4 data-toc-skip class="date">May 22, 2026</h4>
+            <h4 data-toc-skip class="date">July 29, 2026</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/vjcitn/YESCDS/blob/HEAD/vignettes/A3_monitoring.Rmd"><code>vignettes/A3_monitoring.Rmd</code></a></small>
       <div class="d-none name"><code>A3_monitoring.Rmd</code></div>
@@ -84,25 +85,39 @@
 
     
     
-<pre><code><span><span class="co">## Warning: multiple methods tables found for 'scale'</span></span></code></pre>
-<pre><code><span><span class="co">## Warning: replacing previous import 'BiocGenerics::scale' by</span></span>
-<span><span class="co">## 'DelayedArray::scale' when loading 'SummarizedExperiment'</span></span></code></pre>
 <div class="section level2">
 <h2 id="county-level-variation-in-cancer-rates">County-level variation in cancer rates<a class="anchor" aria-label="anchor" href="#county-level-variation-in-cancer-rates"></a>
 </h2>
 <p>We focus on colorectal cancer:</p>
-<div class="figure">
-<img src="images/colon8GroupIncidence.jpg" alt=""><p class="caption">NIH/CDC State Cancer Profiles</p>
+<div class="float">
+<img src="images/colon8GroupIncidence.jpg" alt="NIH/CDC State Cancer Profiles"><div class="figcaption">NIH/CDC State Cancer Profiles</div>
 </div>
 </div>
 <div class="section level2">
 <h2 id="exercises">Exercises<a class="anchor" aria-label="anchor" href="#exercises"></a>
 </h2>
-<p>A.3.1 Use <a href="https://statecancerprofiles.cancer.gov/map/map.noimage.php" class="external-link">State Cancer Profiles</a> to produce a map of colorectal cancer incidence for Massachusetts. You will have to make selections in the web interface. Choose the Quantiles interval type with 8 intervals. Obtain the map for both sexes, all ages. What is the county with lowest incidence of colorectal cancer?</p>
-<p>A.3.2 True or false: In Massachusetts, the age-adjusted incidence of colorectal cancer for individuals greater than 65 years of age is approximately ten times that of individuals less than 50 years of age.</p>
-<p>A.3.3 Return to cancers of colon and rectum. Form a map for Area “United States”, Area Type “By State”. Limit to age less than 50. Which state has the highest incidence of colorectal cancer in this age group?</p>
-<p>A.3.4 Data presented by the Environmental Protection Agency can be seen at <a href="https://cfpub.epa.gov/roe/indicator.cfm?i=73#5" class="external-link">Exhibit 5 of the current Report on the Environment</a>. What is the estimated incidence rate for colorectal cancer for females in 2017 (end of the curve)? How does this compare to the “State Cancer Profile” statistic for females of all ages?</p>
-<p>A.3.5 Using the EPA chart in Exhibit 5, which type of cancer in females shows a steady decrease in incidence from 2000 to 2017?</p>
+<p>A.3.1 Use <a href="https://statecancerprofiles.cancer.gov/map/map.noimage.php" class="external-link">State
+Cancer Profiles</a> to produce a map of colorectal cancer incidence for
+Massachusetts. You will have to make selections in the web interface.
+Choose the Quantiles interval type with 8 intervals. Obtain the map for
+both sexes, all ages. What is the county with lowest incidence of
+colorectal cancer?</p>
+<p>A.3.2 True or false: In Massachusetts, the age-adjusted incidence of
+colorectal cancer for individuals greater than 65 years of age is
+approximately ten times that of individuals less than 50 years of
+age.</p>
+<p>A.3.3 Return to cancers of colon and rectum. Form a map for Area
+“United States”, Area Type “By State”. Limit to age less than 50. Which
+state has the highest incidence of colorectal cancer in this age
+group?</p>
+<p>A.3.4 Data presented by the Environmental Protection Agency can be
+seen at <a href="https://cfpub.epa.gov/roe/indicator.cfm?i=73#5" class="external-link">Exhibit
+5 of the current Report on the Environment</a>. What is the estimated
+incidence rate for colorectal cancer for females in 2017 (end of the
+curve)? How does this compare to the “State Cancer Profile” statistic
+for females of all ages?</p>
+<p>A.3.5 Using the EPA chart in Exhibit 5, which type of cancer in
+females shows a steady decrease in incidence from 2000 to 2017?</p>
 </div>
 <div class="section level2">
 <h2 id="answers">Answers<a class="anchor" aria-label="anchor" href="#answers"></a>
@@ -128,7 +143,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer>

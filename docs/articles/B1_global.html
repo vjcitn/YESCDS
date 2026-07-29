@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>B1 Cancer across the globe • YESCDS</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="B1 Cancer across the globe">
 </head>
@@ -74,9 +74,10 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>B1 Cancer across the globe</h1>
-                        <h4 data-toc-skip class="author">Vincent J. Carey, stvjc at channing.harvard.edu</h4>
+                        <h4 data-toc-skip class="author">Vincent J.
+Carey, stvjc at channing.harvard.edu</h4>
             
-            <h4 data-toc-skip class="date">May 22, 2026</h4>
+            <h4 data-toc-skip class="date">July 29, 2026</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/vjcitn/YESCDS/blob/HEAD/vignettes/B1_global.Rmd"><code>vignettes/B1_global.Rmd</code></a></small>
       <div class="d-none name"><code>B1_global.Rmd</code></div>
@@ -84,44 +85,66 @@
 
     
     
-<pre><code><span><span class="co">## Warning: multiple methods tables found for 'scale'</span></span></code></pre>
-<pre><code><span><span class="co">## Warning: replacing previous import 'BiocGenerics::scale' by</span></span>
-<span><span class="co">## 'DelayedArray::scale' when loading 'SummarizedExperiment'</span></span></code></pre>
 <div class="section level2">
 <h2 id="interactive-cancer-maps">Interactive cancer maps<a class="anchor" aria-label="anchor" href="#interactive-cancer-maps"></a>
 </h2>
 <ul>
-<li>Twenty years ago the most common Geographic Information System was the paper map or road atlas</li>
-<li>Now our cell-phones can ask the internet how to get to where we want to go, efficiently</li>
-<li>Understanding how cancer events unfold in different geographic regions is important for public health
+<li>Twenty years ago the most common Geographic Information System was
+the paper map or road atlas</li>
+<li>Now our cell-phones can ask the internet how to get to where we want
+to go, efficiently</li>
+<li>Understanding how cancer events unfold in different geographic
+regions is important for public health
 <ul>
-<li>Are there important environmental hazards at specific locations?</li>
+<li>Are there important environmental hazards at specific
+locations?</li>
 <li>Are there clues to genetic origins of particular cancers?</li>
 <li>Are culturally shared behaviors leading to increased risk?</li>
 </ul>
 </li>
-<li>Even though we are comfortable with annotated maps, creating and using “cancer maps” to reason about cancer risk requires some training</li>
-<li>In this notebook we will work with some interactive maps on the web, and we will produce some maps using R programming</li>
+<li>Even though we are comfortable with annotated maps, creating and
+using “cancer maps” to reason about cancer risk requires some
+training</li>
+<li>In this notebook we will work with some interactive maps on the web,
+and we will produce some maps using R programming</li>
 </ul>
-<p>A basic concern in mapping cancer rates is discovery of “clusters”. A review of cancer cluster investigations was <a href="https://pubmed.ncbi.nlm.nih.gov/22519802/" class="external-link">published in 2012</a>. Results:</p>
+<p>A basic concern in mapping cancer rates is discovery of “clusters”. A
+review of cancer cluster investigations was <a href="https://pubmed.ncbi.nlm.nih.gov/22519802/" class="external-link">published in 2012</a>.
+Results:</p>
 <blockquote>
-<p>We reviewed 428 investigations evaluating 567 cancers of concern. An increase in incidence was confirmed for 72 (13%) cancer categories (including the category “all sites”). Three of those were linked (with variable degree of certainty) to hypothesized exposures, but only one investigation revealed a clear cause.</p>
+<p>We reviewed 428 investigations evaluating 567 cancers of concern. An
+increase in incidence was confirmed for 72 (13%) cancer categories
+(including the category “all sites”). Three of those were linked (with
+variable degree of certainty) to hypothesized exposures, but only one
+investigation revealed a clear cause.</p>
 </blockquote>
 <p>The conclusion of this report:</p>
 <blockquote>
-<p>There are fundamental shortcomings to our current methods of investigating community cancer clusters. We recommend a multidisciplinary national dialogue on creative, innovative approaches to understanding when and why cancer and other chronic diseases cluster in space and time.</p>
+<p>There are fundamental shortcomings to our current methods of
+investigating community cancer clusters. We recommend a
+multidisciplinary national dialogue on creative, innovative approaches
+to understanding when and why cancer and other chronic diseases cluster
+in space and time.</p>
 </blockquote>
-<p>This motivates us to learn about map production and rate estimation in YES for CURE.</p>
+<p>This motivates us to learn about map production and rate estimation
+in YES for CURE.</p>
 <div class="section level3">
 <h3 id="exercises">Exercises<a class="anchor" aria-label="anchor" href="#exercises"></a>
 </h3>
-<p>Use the <a href="https://gco.iarc.fr/today/online-analysis-map?v=2020&amp;mode=population&amp;mode_population=continents&amp;population=900&amp;populations=900&amp;key=asr&amp;sex=0&amp;cancer=39&amp;type=0&amp;statistic=5&amp;prevalence=0&amp;population_group=0&amp;ages_group%5B%5D=0&amp;ages_group%5B%5D=17&amp;nb_items=10&amp;group_cancer=1&amp;include_nmsc=0&amp;include_nmsc_other=0&amp;projection=natural-earth&amp;color_palette=default&amp;map_scale=quantile&amp;map_nb_colors=5&amp;continent=0&amp;show_ranking=0&amp;rotate=%255B10%252C0%255D" class="external-link">International Agency for Research on Cancer (IARC) map tool</a> to survey mortality from cancer in 2020 for individuals aged 10-24. You should see something like the display below.</p>
-<div class="figure">
-<img src="images/IARCoverall.jpg" alt=""><p class="caption">IARC map</p>
+<p>Use the <a href="https://gco.iarc.fr/today/online-analysis-map?v=2020&amp;mode=population&amp;mode_population=continents&amp;population=900&amp;populations=900&amp;key=asr&amp;sex=0&amp;cancer=39&amp;type=0&amp;statistic=5&amp;prevalence=0&amp;population_group=0&amp;ages_group%5B%5D=0&amp;ages_group%5B%5D=17&amp;nb_items=10&amp;group_cancer=1&amp;include_nmsc=0&amp;include_nmsc_other=0&amp;projection=natural-earth&amp;color_palette=default&amp;map_scale=quantile&amp;map_nb_colors=5&amp;continent=0&amp;show_ranking=0&amp;rotate=%255B10%252C0%255D" class="external-link">International
+Agency for Research on Cancer (IARC) map tool</a> to survey mortality
+from cancer in 2020 for individuals aged 10-24. You should see something
+like the display below.</p>
+<div class="float">
+<img src="images/IARCoverall.jpg" alt="IARC map"><div class="figcaption">IARC map</div>
 </div>
-<p>B.1.1 True or False: Age standardized mortality from cancer in 2020 for persons aged 10-24 is greater in Vietnam than in neighboring countries.</p>
-<p>Use the IARC map tool to produce a worldwide map of breast cancer incidence for women aged 60-79.</p>
-<p>B.1.2 What is the Scandinavian country with largest estimate of age-standardized breast cancer incidence for women aged 60-79?</p>
+<p>B.1.1 True or False: Age standardized mortality from cancer in 2020
+for persons aged 10-24 is greater in Vietnam than in neighboring
+countries.</p>
+<p>Use the IARC map tool to produce a worldwide map of breast cancer
+incidence for women aged 60-79.</p>
+<p>B.1.2 What is the Scandinavian country with largest estimate of
+age-standardized breast cancer incidence for women aged 60-79?</p>
 </div>
 <div class="section level3">
 <h3 id="answers">Answers<a class="anchor" aria-label="anchor" href="#answers"></a>
@@ -142,7 +165,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer>

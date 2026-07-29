@@ -1,13 +1,4 @@
-<div id="main" class="col-md-9" role="main">
-
 # A5 Data graphics
-
-    ## Warning: multiple methods tables found for 'scale'
-
-    ## Warning: replacing previous import 'BiocGenerics::scale' by
-    ## 'DelayedArray::scale' when loading 'SummarizedExperiment'
-
-<div class="section level2">
 
 ## Visualizing variability
 
@@ -19,8 +10,6 @@ is to develop a sense of variation in a quantity of interest, by
 aggregating data values in various ways and presenting these aggregates
 in graphical form.
 
-<div class="section level3">
-
 ### Histograms
 
 Histograms help visualize variability in a quantity of interest. The
@@ -30,38 +19,18 @@ and counts of values in bins are plotted on the y axis.
 
 We illustrate with the CDC WONDER data on Prostate cancer incidence.
 
-<div id="cb3" class="sourceCode">
-
 ``` r
+
 make_hist(site="Prostate", binwidth=5, rate_table=littab)
 ```
-
-</div>
-
-<div id="htmlwidget-ac96cb3ee4656e2e9ec3"
-class="plotly html-widget html-fill-item"
-style="width:700px;height:432.632880098888px;">
-
-</div>
 
 We can change the visual character of the histogram display by reducing
 the bin width.
 
-<div id="cb4" class="sourceCode">
-
 ``` r
+
 make_hist(site="Prostate", binwidth=2, rate_table=littab)
 ```
-
-</div>
-
-<div id="htmlwidget-e5c8c404fe174e4c81bd"
-class="plotly html-widget html-fill-item"
-style="width:700px;height:432.632880098888px;">
-
-</div>
-
-<div class="section level4">
 
 #### Exercises
 
@@ -87,10 +56,6 @@ A.5.5 Hover over the leftmost block in the display. What is the MSA with
 lowest value of Female Breast cancer incidence, and what is the reported
 rate?
 
-</div>
-
-<div class="section level4">
-
 #### Answers
 
     A.5.1
@@ -103,50 +68,24 @@ rate?
 
     A.5.5
 
-</div>
-
-</div>
-
-<div class="section level3">
-
 ### Using a histogram to compare cancer incidence rates in two areas
 
 By computing differences or ratios and forming the histogram, we can
 assess whether there is a tendency to higher values in one of the areas
 of interest.
 
-<div id="cb6" class="sourceCode">
-
 ``` r
+
 ggplotly(make_comparison(rate_table=littab, type="ratios"))
 ```
-
-</div>
-
-<div id="htmlwidget-36aa3d2a04d42bbc2145"
-class="plotly html-widget html-fill-item"
-style="width:700px;height:432.632880098888px;">
-
-</div>
 
 More detail about individual values can be obtained with an approach
 called “beeswarm” plotting.
 
-<div id="cb7" class="sourceCode">
-
 ``` r
+
 ggplotly(make_pair(type="beeswarm", rate_table=littab ))
 ```
-
-</div>
-
-<div id="htmlwidget-febe03efa1a2d8d52a86"
-class="plotly html-widget html-fill-item"
-style="width:700px;height:432.632880098888px;">
-
-</div>
-
-<div class="section level4">
 
 #### Exercises
 
@@ -172,20 +111,8 @@ the ratio of incidence rates for prostate cancer in Baton Rouge compared
 to those in Tucson. Compare to the result provided in the
 `make_comparison` histogram above.
 
-</div>
-
-<div class="section level4">
-
 #### Answers
 
     A.5.6
 
     A.5.7
-
-</div>
-
-</div>
-
-</div>
-
-</div>

@@ -1,22 +1,13 @@
-<div id="main" class="col-md-9" role="main">
-
 # D3 Randomization to reduce bias
-
-    ## Warning: multiple methods tables found for 'scale'
-
-    ## Warning: replacing previous import 'BiocGenerics::scale' by
-    ## 'DelayedArray::scale' when loading 'SummarizedExperiment'
-
-<div class="section level2">
 
 ## Blinding and randomization to reduce bias
 
 The concept of the double-blind clinical experiment is well-established
 
--   The investigator does not know what treatment has been given to the
-    patient
+- The investigator does not know what treatment has been given to the
+  patient
 
--   The patient does not know what drug they have received
+- The patient does not know what drug they have received
 
 This is accomplished by providing treatments that are identical in
 appearance, taste, etc., but differ in their chemical composition and
@@ -28,10 +19,6 @@ The role of blinding in experimentation is reviewed in a [Nature
 commentary](https://www.nature.com/articles/526187a), and the [Wikipedia
 article](https://en.wikipedia.org/wiki/Blinded_experiment) has many
 useful references.
-
-</div>
-
-<div class="section level2">
 
 ## Randomization to reduce bias
 
@@ -67,13 +54,9 @@ effectivness. Challenges can arise in multicenter studies with many
 centers. The following display plots the excess numbers of patients
 assigned to one arm in a trial, against the total number enrolled.
 
-<div class="figure">
-
-![](images/loose.jpg)
+![Excursions 1](images/loose.jpg)
 
 Excursions 1
-
-</div>
 
 There are long stretches of time during which more patients in the study
 are receiving one of the treatments than the other.
@@ -82,13 +65,9 @@ The use of a different approach to randomization, in which small blocks
 of allocations are randomized independently, can reduce the size and
 duration of periods of imbalance over time.
 
-<div class="figure">
-
-![](images/tight.jpg)
+![Excursions 2](images/tight.jpg)
 
 Excursions 2
-
-</div>
 
 Randomization is a well-accepted tool in experimental design, but must
 be conducted with care. The [wikipedia
@@ -96,14 +75,6 @@ article](https://en.wikipedia.org/wiki/Randomized_experiment) has some
 interesting references on assessment of the overall effect of use of
 randomization in health research.
 
-</div>
-
-<div class="section level2">
-
 ## Discussion Questions
 
 D.3.1
-
-</div>
-
-</div>

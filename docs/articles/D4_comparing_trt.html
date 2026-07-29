@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>D4 Methods of comparing treatments • YESCDS</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="D4 Methods of comparing treatments">
 </head>
@@ -78,9 +78,10 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>D4 Methods of comparing treatments</h1>
-                        <h4 data-toc-skip class="author">Vincent J. Carey, stvjc at channing.harvard.edu</h4>
+                        <h4 data-toc-skip class="author">Vincent J.
+Carey, stvjc at channing.harvard.edu</h4>
             
-            <h4 data-toc-skip class="date">May 22, 2026</h4>
+            <h4 data-toc-skip class="date">July 29, 2026</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/vjcitn/YESCDS/blob/HEAD/vignettes/D4_comparing_trt.Rmd"><code>vignettes/D4_comparing_trt.Rmd</code></a></small>
       <div class="d-none name"><code>D4_comparing_trt.Rmd</code></div>
@@ -88,14 +89,15 @@
 
     
     
-<pre><code><span><span class="co">## Warning: multiple methods tables found for 'scale'</span></span></code></pre>
-<pre><code><span><span class="co">## Warning: replacing previous import 'BiocGenerics::scale' by</span></span>
-<span><span class="co">## 'DelayedArray::scale' when loading 'SummarizedExperiment'</span></span></code></pre>
 <div class="section level2">
 <h2 id="comparing-cancer-treatments">Comparing cancer treatments<a class="anchor" aria-label="anchor" href="#comparing-cancer-treatments"></a>
 </h2>
-<p>In section C2 we learned how to interpret survival curves, which indicate the probability of surviving beyond a given period of time from diagnosis of disease.</p>
-<p>In this section we will examine data from a study published in 1979, that is conveniently available with R’s <code>survival</code> package.</p>
+<p>In section C2 we learned how to interpret survival curves, which
+indicate the probability of surviving beyond a given period of time from
+diagnosis of disease.</p>
+<p>In this section we will examine data from a study published in 1979,
+that is conveniently available with R’s <code>survival</code>
+package.</p>
 <p>The citation for the study is</p>
 <pre><code>J H Edmonson, T R Fleming, D G Decker, G D Malkasian, E O Jorgensen, J A Jefferies, 
 M J Webb, L K Kvols, Cancer Treat Rep . 1979 Feb;63(2):241-7.
@@ -103,7 +105,7 @@ Different chemotherapeutic sensitivities and host factors affecting prognosis in
 advanced ovarian carcinoma versus minimal residual disease</code></pre>
 <p>The abstract is provided at the end of this vignette.</p>
 <p>The data for the ovarian cancer study has the following form:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/therneau/survival" class="external-link">survival</a></span><span class="op">)</span></span>
 <span><span class="fu">datatable</span><span class="op">(</span><span class="va">ovarian</span><span class="op">)</span></span></code></pre></div>
 <div class="datatables html-widget html-fill-item" id="htmlwidget-ac96cb3ee4656e2e9ec3" style="width:100%;height:auto;"></div>
@@ -120,7 +122,7 @@ advanced ovarian carcinoma versus minimal residual disease</code></pre>
 <div class="section level3">
 <h3 id="estimation-of-survival-probabilities-by-treatment-group">Estimation of survival probabilities by treatment group<a class="anchor" aria-label="anchor" href="#estimation-of-survival-probabilities-by-treatment-group"></a>
 </h3>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">osurv</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">Surv</a></span><span class="op">(</span><span class="va">ovarian</span><span class="op">$</span><span class="va">futime</span>, <span class="va">ovarian</span><span class="op">$</span><span class="va">fustat</span><span class="op">)</span></span>
 <span><span class="va">ofit1</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/survival/man/survfit.html" class="external-link">survfit</a></span><span class="op">(</span><span class="va">osurv</span><span class="op">~</span><span class="va">ovarian</span><span class="op">$</span><span class="va">rx</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">ofit1</span>, lty<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">)</span></span>
@@ -130,7 +132,7 @@ advanced ovarian carcinoma versus minimal residual disease</code></pre>
 <div class="section level3">
 <h3 id="testing-for-treatment-effect">Testing for treatment effect<a class="anchor" aria-label="anchor" href="#testing-for-treatment-effect"></a>
 </h3>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/survdiff.html" class="external-link">survdiff</a></span><span class="op">(</span><span class="va">osurv</span><span class="op">~</span><span class="va">ovarian</span><span class="op">$</span><span class="va">rx</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Call:</span></span>
 <span><span class="co">## survdiff(formula = osurv ~ ovarian$rx)</span></span>
@@ -144,8 +146,9 @@ advanced ovarian carcinoma versus minimal residual disease</code></pre>
 <div class="section level3">
 <h3 id="modeling-the-survival-curves-for-the-effect-of-residual-disease">Modeling the survival curves for the effect of residual disease<a class="anchor" aria-label="anchor" href="#modeling-the-survival-curves-for-the-effect-of-residual-disease"></a>
 </h3>
-<p>We can produce a very compact, two parameter model for the survival distributions for patients with and without residual disease.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<p>We can produce a very compact, two parameter model for the survival
+distributions for patients with and without residual disease.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/survreg.html" class="external-link">survreg</a></span><span class="op">(</span><span class="va">osurv</span><span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/AsIs.html" class="external-link">I</a></span><span class="op">(</span><span class="va">ovarian</span><span class="op">$</span><span class="va">resid.ds</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span>, </span>
 <span>   dist<span class="op">=</span><span class="st">"exponential"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## </span></span>
@@ -162,7 +165,7 @@ advanced ovarian carcinoma versus minimal residual disease</code></pre>
 <span><span class="co">##  Chisq= 3.87 on 1 degrees of freedom, p= 0.049 </span></span>
 <span><span class="co">## Number of Newton-Raphson Iterations: 4 </span></span>
 <span><span class="co">## n= 26</span></span></code></pre>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ofit2</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/survival/man/survfit.html" class="external-link">survfit</a></span><span class="op">(</span><span class="va">osurv</span><span class="op">~</span><span class="va">ovarian</span><span class="op">$</span><span class="va">resid.ds</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">ofit2</span>, lty<span class="op">=</span><span class="fl">1</span><span class="op">:</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="va">tim</span> <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">1200</span></span>
@@ -175,8 +178,10 @@ advanced ovarian carcinoma versus minimal residual disease</code></pre>
 <div class="section level3">
 <h3 id="exercises">Exercises<a class="anchor" aria-label="anchor" href="#exercises"></a>
 </h3>
-<p>D.4.1 Interpret confidence intervals for the one-year survival probabilities for the two treatments, ignoring the presence or absence of residual disease.</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<p>D.4.1 Interpret confidence intervals for the one-year survival
+probabilities for the two treatments, ignoring the presence or absence
+of residual disease.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/with.html" class="external-link">with</a></span><span class="op">(</span><span class="va">ovarian</span><span class="op">[</span><span class="va">ovarian</span><span class="op">$</span><span class="va">rx</span><span class="op">==</span><span class="fl">1</span>,<span class="op">]</span>, <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/survfit.html" class="external-link">survfit</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">Surv</a></span><span class="op">(</span><span class="va">futime</span>,<span class="va">fustat</span><span class="op">)</span><span class="op">~</span><span class="fl">1</span><span class="op">)</span>,conf.int<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/with.html" class="external-link">with</a></span><span class="op">(</span><span class="va">ovarian</span><span class="op">[</span><span class="va">ovarian</span><span class="op">$</span><span class="va">rx</span><span class="op">==</span><span class="fl">2</span>,<span class="op">]</span>, <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/survfit.html" class="external-link">survfit</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/survival/man/Surv.html" class="external-link">Surv</a></span><span class="op">(</span><span class="va">futime</span>,<span class="va">fustat</span><span class="op">)</span><span class="op">~</span><span class="fl">1</span><span class="op">)</span>,conf.int<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -217,7 +222,7 @@ status and presumably to the depletion of endogenous estrogens in the older pati
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer>

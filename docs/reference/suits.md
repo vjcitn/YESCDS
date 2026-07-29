@@ -1,42 +1,20 @@
-<div id="main" class="col-md-9" role="main">
-
 # get suits of a collection of cards
-
-<div class="ref-description section level2">
 
 get suits of a collection of cards
 
-</div>
-
-<div class="section level2">
-
 ## Usage
-
-<div class="sourceCode">
 
 ``` r
 suits(x)
 ```
 
-</div>
-
-</div>
-
-<div class="section level2">
-
 ## Arguments
 
--   x:
+- x:
 
-    a card from a deck made by \`build\_deck\`
-
-</div>
-
-<div class="section level2">
+  a card from a deck made by \`build_deck\`
 
 ## Examples
-
-<div class="sourceCode">
 
 ``` r
 d = build_deck()
@@ -45,9 +23,3 @@ d[1]
 suits(d[1:2])
 #> [1] "♡" "♡"
 ```
-
-</div>
-
-</div>
-
-</div>

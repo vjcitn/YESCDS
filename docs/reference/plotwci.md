@@ -1,18 +1,8 @@
-<div id="main" class="col-md-9" role="main">
-
 # simple display of confidence intervals for cancer incidence
-
-<div class="ref-description section level2">
 
 simple display of confidence intervals for cancer incidence
 
-</div>
-
-<div class="section level2">
-
 ## Usage
-
-<div class="sourceCode">
 
 ``` r
 plotwci(
@@ -24,42 +14,30 @@ plotwci(
 )
 ```
 
-</div>
-
-</div>
-
-<div class="section level2">
-
 ## Arguments
 
--   tab:
+- tab:
 
-    a CSV file with columns as provided via
-    <https://gis.cdc.gov/CANCER/USCS/#/StateCounty/>
+  a CSV file with columns as provided via
+  <https://gis.cdc.gov/CANCER/USCS/#/StateCounty/>
 
--   metric:
+- metric:
 
-    character(1) detailed description of statistic
+  character(1) detailed description of statistic
 
--   site:
+- site:
 
-    character(1) name of anatomic site
+  character(1) name of anatomic site
 
--   xlab:
+- xlab:
 
-    character(1) label for x axis
+  character(1) label for x axis
 
--   ylim:
+- ylim:
 
-    numeric(2) extent of y axis in units of incidence per 100000
-
-</div>
-
-<div class="section level2">
+  numeric(2) extent of y axis in units of incidence per 100000
 
 ## Examples
-
-<div class="sourceCode">
 
 ``` r
 oldpar = par(no.readonly=TRUE)
@@ -71,9 +49,3 @@ plotwci(bre, site="Breast", ylim=c(60,280))
 
 par(oldpar)
 ```
-
-</div>
-
-</div>
-
-</div>

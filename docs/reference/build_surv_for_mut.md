@@ -1,68 +1,39 @@
-<div id="main" class="col-md-9" role="main">
-
 # use curatedTCGAData to produce survival time structure and mutation matrix for a TCGA tumor type
-
-<div class="ref-description section level2">
 
 use curatedTCGAData to produce survival time structure and mutation
 matrix for a TCGA tumor type
 
-</div>
-
-<div class="section level2">
-
 ## Usage
-
-<div class="sourceCode">
 
 ``` r
 build_surv_for_mut(project = "BRCA", min.numevents = 10)
 ```
 
-</div>
-
-</div>
-
-<div class="section level2">
-
 ## Arguments
 
--   project:
+- project:
 
-    character(1), defaults to "BRCA"
+  character(1), defaults to "BRCA"
 
--   min.numevents:
+- min.numevents:
 
-    numeric(1), defaults to 10; fail if there are fewer than this number
-    of events overall
-
-</div>
-
-<div class="section level2">
+  numeric(1), defaults to 10; fail if there are fewer than this number
+  of events overall
 
 ## Value
 
 a list with components surv, coldata, and mutdata
 
-</div>
-
-<div class="section level2">
-
 ## Note
 
 observations lacking positive follow up time are silently omitted
 
-</div>
-
-<div class="section level2">
-
 ## Examples
-
-<div class="sourceCode">
 
 ``` r
 requireNamespace("survival")
 br = build_surv_for_mut("BRCA")
+#> snapshotDate(): 2026-04-21
 #> Querying and downloading: BRCA_Mutation-20160128
 #> see ?curatedTCGAData and browseVignettes('curatedTCGAData') for documentation
 #> loading from cache
@@ -85,9 +56,3 @@ plot(fi, lwd=2, col=c("blue", "orange"), xlab = "t = Years from diagnosis", ylab
 legend(.1, .3, lwd=2, col=c("blue", "orange"), lty=1, legend=c("TTN wild-type", "TTN-mutant"), bty="n")
 title("TCGA BRCA survival")
 ```
-
-</div>
-
-</div>
-
-</div>

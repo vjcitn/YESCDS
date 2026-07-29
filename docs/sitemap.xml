@@ -1,7 +1,5 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
 <url><loc>https://github.com/vjcitn/YESCDS/404.html</loc></url>
-<url><loc>https://github.com/vjcitn/YESCDS/CLAUDE.html</loc></url>
-<url><loc>https://github.com/vjcitn/YESCDS/OVERVIEW.html</loc></url>
 <url><loc>https://github.com/vjcitn/YESCDS/articles/A0_intro_notebook.html</loc></url>
 <url><loc>https://github.com/vjcitn/YESCDS/articles/A1_cancer_table.html</loc></url>
 <url><loc>https://github.com/vjcitn/YESCDS/articles/A2_rates.html</loc></url>
@@ -23,9 +21,9 @@
 <url><loc>https://github.com/vjcitn/YESCDS/articles/E2_YESAI_2024.html</loc></url>
 <url><loc>https://github.com/vjcitn/YESCDS/articles/index.html</loc></url>
 <url><loc>https://github.com/vjcitn/YESCDS/authors.html</loc></url>
+<url><loc>https://github.com/vjcitn/YESCDS/CLAUDE.html</loc></url>
 <url><loc>https://github.com/vjcitn/YESCDS/index.html</loc></url>
-<url><loc>https://github.com/vjcitn/YESCDS/reference/MA_cancer_rate_table.html</loc></url>
-<url><loc>https://github.com/vjcitn/YESCDS/reference/SEER_2018.html</loc></url>
+<url><loc>https://github.com/vjcitn/YESCDS/OVERVIEW.html</loc></url>
 <url><loc>https://github.com/vjcitn/YESCDS/reference/brcamutSE.html</loc></url>
 <url><loc>https://github.com/vjcitn/YESCDS/reference/build_deck.html</loc></url>
 <url><loc>https://github.com/vjcitn/YESCDS/reference/build_simple_survival_curve.html</loc></url>
@@ -49,14 +47,16 @@
 <url><loc>https://github.com/vjcitn/YESCDS/reference/map_app.html</loc></url>
 <url><loc>https://github.com/vjcitn/YESCDS/reference/mass_cancer_map.html</loc></url>
 <url><loc>https://github.com/vjcitn/YESCDS/reference/mass_map.html</loc></url>
+<url><loc>https://github.com/vjcitn/YESCDS/reference/MA_cancer_rate_table.html</loc></url>
 <url><loc>https://github.com/vjcitn/YESCDS/reference/metabric.html</loc></url>
 <url><loc>https://github.com/vjcitn/YESCDS/reference/one_pair.html</loc></url>
 <url><loc>https://github.com/vjcitn/YESCDS/reference/ordered_seg_cal.html</loc></url>
 <url><loc>https://github.com/vjcitn/YESCDS/reference/plot.two_sample_mut_surv.html</loc></url>
-<url><loc>https://github.com/vjcitn/YESCDS/reference/plot_seer_trend.html</loc></url>
 <url><loc>https://github.com/vjcitn/YESCDS/reference/plotwci.html</loc></url>
+<url><loc>https://github.com/vjcitn/YESCDS/reference/plot_seer_trend.html</loc></url>
 <url><loc>https://github.com/vjcitn/YESCDS/reference/print.two_sample_mut_surv.html</loc></url>
 <url><loc>https://github.com/vjcitn/YESCDS/reference/prostate_met_adeno.html</loc></url>
+<url><loc>https://github.com/vjcitn/YESCDS/reference/SEER_2018.html</loc></url>
 <url><loc>https://github.com/vjcitn/YESCDS/reference/show_5y_estimate.html</loc></url>
 <url><loc>https://github.com/vjcitn/YESCDS/reference/show_median_estimate.html</loc></url>
 <url><loc>https://github.com/vjcitn/YESCDS/reference/statcrunch_msa.html</loc></url>

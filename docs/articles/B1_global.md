@@ -1,30 +1,20 @@
-<div id="main" class="col-md-9" role="main">
-
 # B1 Cancer across the globe
-
-    ## Warning: multiple methods tables found for 'scale'
-
-    ## Warning: replacing previous import 'BiocGenerics::scale' by
-    ## 'DelayedArray::scale' when loading 'SummarizedExperiment'
-
-<div class="section level2">
 
 ## Interactive cancer maps
 
--   Twenty years ago the most common Geographic Information System was
-    the paper map or road atlas
--   Now our cell-phones can ask the internet how to get to where we want
-    to go, efficiently
--   Understanding how cancer events unfold in different geographic
-    regions is important for public health
-    -   Are there important environmental hazards at specific locations?
-    -   Are there clues to genetic origins of particular cancers?
-    -   Are culturally shared behaviors leading to increased risk?
--   Even though we are comfortable with annotated maps, creating and
-    using “cancer maps” to reason about cancer risk requires some
-    training
--   In this notebook we will work with some interactive maps on the web,
-    and we will produce some maps using R programming
+- Twenty years ago the most common Geographic Information System was the
+  paper map or road atlas
+- Now our cell-phones can ask the internet how to get to where we want
+  to go, efficiently
+- Understanding how cancer events unfold in different geographic regions
+  is important for public health
+  - Are there important environmental hazards at specific locations?
+  - Are there clues to genetic origins of particular cancers?
+  - Are culturally shared behaviors leading to increased risk?
+- Even though we are comfortable with annotated maps, creating and using
+  “cancer maps” to reason about cancer risk requires some training
+- In this notebook we will work with some interactive maps on the web,
+  and we will produce some maps using R programming
 
 A basic concern in mapping cancer rates is discovery of “clusters”. A
 review of cancer cluster investigations was [published in
@@ -47,8 +37,6 @@ The conclusion of this report:
 This motivates us to learn about map production and rate estimation in
 YES for CURE.
 
-<div class="section level3">
-
 ### Exercises
 
 Use the [International Agency for Research on Cancer (IARC) map
@@ -56,13 +44,9 @@ tool](https://gco.iarc.fr/today/online-analysis-map?v=2020&mode=population&mode_
 to survey mortality from cancer in 2020 for individuals aged 10-24. You
 should see something like the display below.
 
-<div class="figure">
-
-![](images/IARCoverall.jpg)
+![IARC map](images/IARCoverall.jpg)
 
 IARC map
-
-</div>
 
 B.1.1 True or False: Age standardized mortality from cancer in 2020 for
 persons aged 10-24 is greater in Vietnam than in neighboring countries.
@@ -73,18 +57,8 @@ incidence for women aged 60-79.
 B.1.2 What is the Scandinavian country with largest estimate of
 age-standardized breast cancer incidence for women aged 60-79?
 
-</div>
-
-<div class="section level3">
-
 ### Answers
 
     B.1.1
 
     B.1.2
-
-</div>
-
-</div>
-
-</div>

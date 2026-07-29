@@ -1,13 +1,4 @@
-<div id="main" class="col-md-9" role="main">
-
 # C3 Molecular origins of diverse cancers
-
-    ## Warning: multiple methods tables found for 'scale'
-
-    ## Warning: replacing previous import 'BiocGenerics::scale' by
-    ## 'DelayedArray::scale' when loading 'SummarizedExperiment'
-
-<div class="section level2">
 
 ## Molecular origins of tumors and their spread
 
@@ -15,25 +6,15 @@ In this segment we will review basic definitions underlying the use of
 data to understand variation in genetic processes connnected with
 initiation and progression of cancer.
 
-<div class="section level3">
-
 ### Human genome
 
 The human genome is composed of 22 autosomal chromosome pairs and 1 pair
 of sex chromosomes. Autosomal chromosomes are numbered 1-22; females
 have a pair of X chromosomes, and males have a pair labeled X and Y.
 
-<div class="figure">
-
-![](images/chromosomes.jpg)
+![Genome overview](images/chromosomes.jpg)
 
 Genome overview
-
-</div>
-
-</div>
-
-<div class="section level3">
 
 ### Central dogma
 
@@ -50,17 +31,9 @@ A schematic from
 [Wikipedia](https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology#/media/File:Cdmb.svg),
 by Adenosine
 
-<div class="figure">
-
-![](images/centralDogma.jpg)
+![Central dogma](images/centralDogma.jpg)
 
 Central dogma
-
-</div>
-
-</div>
-
-<div class="section level3">
 
 ### Gene counts by chromosome
 
@@ -73,17 +46,9 @@ analysis.
 The sizes of chromosomes and numbers of genes currently known are
 depicted here:
 
-<div class="figure">
-
-![](images/genecounts.jpg)
+![Gene counts](images/genecounts.jpg)
 
 Gene counts
-
-</div>
-
-</div>
-
-<div class="section level3">
 
 ### Browsing the reference genome
 
@@ -91,13 +56,9 @@ Visit [the genome browser for the gene called
 TTN](https://genome.ucsc.edu/cgi-bin/hgTracks?db=hg19&lastVirtModeType=default&lastVirtModeExtraState=&virtModeType=default&virtMode=0&nonVirtPosition=&position=chr2%3A179250000%2D179812868&hgsid=1377911977_sxQEMUOHBeopzad7Oql0bsSeaceA)
 and you will see something like
 
-<div class="figure">
-
-![](images/genomeBrowser.jpg)
+![browser](images/genomeBrowser.jpg)
 
 browser
-
-</div>
 
 The display includes a karyogram (depiction of the entire chromosome)
 with a red patch indicating the portion of the chromosome being viewed.
@@ -108,8 +69,6 @@ Distinct transcripts are formed as transcriptional machinery splices out
 different subsequences that we call introns. The transcript is a series
 of stitched-together exons.
 
-<div class="section level4">
-
 #### Exercises
 
 C.3.1 Use the UCSC genome browser to visualize the entirety of
@@ -118,47 +77,25 @@ chromosome in base pairs?
 
 C.3.2 Browse to the gene BRCA2. What is its length in base pairs?
 
-</div>
-
-<div class="section level4">
-
 #### Answers
 
     C.3.1
 
     C.3.2
 
-</div>
-
-</div>
-
-<div class="section level3">
-
 ### Copy number alterations
 
 Changes to chromosome structure are often found in tumor DNA when
 compared to normal tissue DNA. An example is region duplication:
 
-<div class="figure">
-
-![](images/CNAdup.jpg)
+![CNA](images/CNAdup.jpg)
 
 CNA
-
-</div>
 
 Deletions and translocations (parts of chromosomes are exchanged) are
 other important genomic alterations in cancer.
 
-</div>
-
-</div>
-
-<div class="section level2">
-
 ## Views of genomic variation in breast cancer
-
-<div class="section level3">
 
 ### A [2012 view](http://www.ncbi.nlm.nih.gov/pubmed/22522925) of the whole genome
 
@@ -174,13 +111,9 @@ or deleted in the tumor. Red spikes denote positions where duplicating
 CNAs are associated with expression changes of nearby genes, blue spikes
 where a deleting CNA affects expression.
 
-<div class="figure">
-
-![](images/shahGenomeWide.jpg)
+![Genome-wide drivers](images/shahGenomeWide.jpg)
 
 Genome-wide drivers
-
-</div>
 
 The figure above is drawn from a paper studying 2000 breast tumors. A
 more recent
@@ -188,29 +121,17 @@ more recent
 shows that the phenomenon pervades a broad spectrum of cancer types
 studied in The Cancer Genome Atlas (TCGA).
 
-<div class="figure">
-
-![](images/COSMICCNA.jpg)
+![2021 CNA survey](images/COSMICCNA.jpg)
 
 2021 CNA survey
-
-</div>
-
-</div>
-
-<div class="section level3">
 
 ### TCGA: common mutations; TTN mutation and survival
 
 This display is from the NCI Genomic Data Commons:
 
-<div class="figure">
-
-![](images/breastTTN.jpg)
+![Breast cancer summary](images/breastTTN.jpg)
 
 Breast cancer summary
-
-</div>
 
 While the “titin” gene (TTN) is frequently mutated in TCGA breast cancer
 samples, and there is some indication that TTN mutations are
@@ -223,20 +144,14 @@ functional significance.
 The mutation “spectrum” is sometimes depicted using the oncogrid
 display.
 
-<div class="figure">
-
-![](images/oncogridBRCA.jpg)
+![OncoGrid](images/oncogridBRCA.jpg)
 
 OncoGrid
-
-</div>
 
 Each column is a single tumor; each row a gene in which mutations were
 found for at least one of the patients. The overall interpretation is
 that there is striking diversity in the collection of mutated genes
 found for each patient.
-
-<div class="section level4">
 
 #### Exercises
 
@@ -244,28 +159,18 @@ C.3.3 Use the Genomic Data Commons data portal to explore data on
 prostate cancer in the TCGA project. What are the five genes reported to
 present the largest number of mutations across patients in that project?
 
--   Repeat the exercise for ovarian cancer in TCGA.
+- Repeat the exercise for ovarian cancer in TCGA.
 
 C.3.4 Use the “Survival” widget at the Genomic Data Commons to compare
 the survival times for ovarian cancer patients with and without mutation
 in CSMD3. Is CSMD3 mutation associated with longer or shorter median
 survival time? About how large is the difference?
 
-</div>
-
-<div class="section level4">
-
 #### Answers
 
     C.3.3
 
     C.3.4
-
-</div>
-
-</div>
-
-<div class="section level3">
 
 ### Clustering mRNA profiles of genes and tumors to find subtypes: [van ’t Veer et al. 2002](https://www.nature.com/articles/415530a.pdf?origin=ppub)
 
@@ -276,19 +181,9 @@ trees are included to show the existence of groups genes that have
 similar expression across tumors, and groups of tumors that show similar
 expression across genes.
 
-<div class="figure">
-
-![](images/vantveerHeat.jpg)
+![Classic heatmap](images/vantveerHeat.jpg)
 
 Classic heatmap
-
-</div>
-
-</div>
-
-</div>
-
-<div class="section level2">
 
 ## Evolution of tumor genome within a patient with metastatic breast cancer
 
@@ -302,33 +197,21 @@ A [2021 paper from the Gabor Marth
 lab](https://genomemedicine.biomedcentral.com/track/pdf/10.1186/s13073-021-00989-6.pdf)
 details the experience of one patient.
 
-<div class="figure">
-
-![](images/marthPatient.jpg)
+![Patient history](images/marthPatient.jpg)
 
 Patient history
-
-</div>
 
 Using a rapid autopsy and genetic sequencing of tumors that metastasized
 to multiple organs, Huang and colleagues map the clonal diversification
 of the primary tumor genome into tumors that emerged in different
 organs.
 
-<div class="figure">
-
-![](images/marthEvolve.jpg)
+![Evolutionary map](images/marthEvolve.jpg)
 
 Evolutionary map
-
-</div>
 
 One of the elements with which this map of progressive metastasis was
 constructed is an analysis of copy number aberrations (CNAs). An
 interactive view of these CNAs in sampes from the 28 tumors in different
 body site is
 [here](https://github.com/vjcitn/YESCDS/articles/cnv-heatmap.md).
-
-</div>
-
-</div>

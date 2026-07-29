@@ -1,50 +1,24 @@
-<div id="main" class="col-md-9" role="main">
-
 # test for one pair
-
-<div class="ref-description section level2">
 
 test for one pair
 
-</div>
-
-<div class="section level2">
-
 ## Usage
-
-<div class="sourceCode">
 
 ``` r
 one_pair(x)
 ```
 
-</div>
-
-</div>
-
-<div class="section level2">
-
 ## Arguments
 
--   x:
+- x:
 
-    a vector of cards
-
-</div>
-
-<div class="section level2">
+  a vector of cards
 
 ## Value
 
 logical(1)
 
-</div>
-
-<div class="section level2">
-
 ## Examples
-
-<div class="sourceCode">
 
 ``` r
 d = build_deck()
@@ -59,9 +33,3 @@ hand_2
 one_pair(hand_2)
 #> [1] FALSE
 ```
-
-</div>
-
-</div>
-
-</div>
