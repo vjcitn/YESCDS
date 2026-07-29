@@ -1,6 +1,6 @@
 Package: YESCDS
 Title: Cancer data science activities for CZI YES for CURE collaboration
-Version: 0.99.8
+Version: 0.99.9
 Authors@R:
     c(person(given = "Vince",
            family = "Carey",
